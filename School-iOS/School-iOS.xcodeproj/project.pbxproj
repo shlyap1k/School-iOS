@@ -8,17 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		CE8EE4A02B04953D00D00ABE /* School_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */; };
-		CE8EE4A22B04953D00D00ABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4A12B04953D00D00ABE /* ContentView.swift */; };
 		CE8EE4A42B04953E00D00ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE4A32B04953E00D00ABE /* Assets.xcassets */; };
 		CE8EE4A72B04953E00D00ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE4A62B04953E00D00ABE /* Preview Assets.xcassets */; };
+		CE8EE4B02B04994E00D00ABE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE4AF2B04994E00D00ABE /* Localizable.strings */; };
+		CE8EE4B62B0499F900D00ABE /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4B52B0499F900D00ABE /* AuthScreen.swift */; };
+		CE8EE4BA2B049A1100D00ABE /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4B92B049A1100D00ABE /* AuthVM.swift */; };
+		CE8EE4BE2B04D66000D00ABE /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4BD2B04D66000D00ABE /* RegisterScreen.swift */; };
+		CE8EE4C02B04D66F00D00ABE /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4BF2B04D66F00D00ABE /* RegisterVM.swift */; };
+		CE8EE4C32B04DDCF00D00ABE /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4C22B04DDCF00D00ABE /* InputField.swift */; };
+		CE8EE4C52B04DDDD00D00ABE /* InputFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4C42B04DDDD00D00ABE /* InputFieldModel.swift */; };
+		CE8EE4CA2B04E11E00D00ABE /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4C82B04E11E00D00ABE /* Assets.swift */; };
+		CE8EE4CB2B04E11E00D00ABE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4C92B04E11E00D00ABE /* Strings.swift */; };
+		CE8EE4D82B04EC5100D00ABE /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4D72B04EC5100D00ABE /* StyledButton.swift */; };
+		CE8EE4DA2B04EC6100D00ABE /* StyledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4D92B04EC6100D00ABE /* StyledButtonStyle.swift */; };
+		CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4DB2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift */; };
+		CE8EE4DF2B04ED1400D00ABE /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4DE2B04ED1400D00ABE /* Loader.swift */; };
+		CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E02B04ED2700D00ABE /* LoaderModifier.swift */; };
+		CE8EE4E42B04FD0600D00ABE /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E32B04FD0600D00ABE /* Avatar.swift */; };
+		CE8EE4E62B04FD1600D00ABE /* AvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E52B04FD1600D00ABE /* AvatarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE8EE49C2B04953D00D00ABE /* School-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_iOSApp.swift; sourceTree = "<group>"; };
-		CE8EE4A12B04953D00D00ABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE8EE4A32B04953E00D00ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8EE4A62B04953E00D00ABE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE8EE4AF2B04994E00D00ABE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CE8EE4B52B0499F900D00ABE /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
+		CE8EE4B92B049A1100D00ABE /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
+		CE8EE4BD2B04D66000D00ABE /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		CE8EE4BF2B04D66F00D00ABE /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		CE8EE4C22B04DDCF00D00ABE /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		CE8EE4C42B04DDDD00D00ABE /* InputFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldModel.swift; sourceTree = "<group>"; };
+		CE8EE4C82B04E11E00D00ABE /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		CE8EE4C92B04E11E00D00ABE /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		CE8EE4D72B04EC5100D00ABE /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		CE8EE4D92B04EC6100D00ABE /* StyledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButtonStyle.swift; sourceTree = "<group>"; };
+		CE8EE4DB2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StyledButtonStyle+Default.swift"; sourceTree = "<group>"; };
+		CE8EE4DE2B04ED1400D00ABE /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		CE8EE4E02B04ED2700D00ABE /* LoaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModifier.swift; sourceTree = "<group>"; };
+		CE8EE4E32B04FD0600D00ABE /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		CE8EE4E52B04FD1600D00ABE /* AvatarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +81,9 @@
 		CE8EE49E2B04953D00D00ABE /* School-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CE8EE4AD2B04992300D00ABE /* Classes */,
+				CE8EE4AE2B04992900D00ABE /* Resources */,
 				CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */,
-				CE8EE4A12B04953D00D00ABE /* ContentView.swift */,
-				CE8EE4A32B04953E00D00ABE /* Assets.xcassets */,
 				CE8EE4A52B04953E00D00ABE /* Preview Content */,
 			);
 			path = "School-iOS";
@@ -65,6 +95,109 @@
 				CE8EE4A62B04953E00D00ABE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE8EE4AD2B04992300D00ABE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4B42B04999A00D00ABE /* Generated */,
+				CE8EE4B22B04997400D00ABE /* Modules */,
+				CE8EE4B12B04996F00D00ABE /* UI */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CE8EE4AE2B04992900D00ABE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4A32B04953E00D00ABE /* Assets.xcassets */,
+				CE8EE4AF2B04994E00D00ABE /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE8EE4B12B04996F00D00ABE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4E22B04FCF400D00ABE /* Avatar */,
+				CE8EE4DD2B04ECFC00D00ABE /* Loader */,
+				CE8EE4CC2B04E75600D00ABE /* StyledButton */,
+				CE8EE4C12B04DDBC00D00ABE /* InputField */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CE8EE4B22B04997400D00ABE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4BC2B04D64900D00ABE /* Register */,
+				CE8EE4BB2B04D64400D00ABE /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CE8EE4B42B04999A00D00ABE /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4C82B04E11E00D00ABE /* Assets.swift */,
+				CE8EE4C92B04E11E00D00ABE /* Strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		CE8EE4BB2B04D64400D00ABE /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4B52B0499F900D00ABE /* AuthScreen.swift */,
+				CE8EE4B92B049A1100D00ABE /* AuthVM.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CE8EE4BC2B04D64900D00ABE /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4BD2B04D66000D00ABE /* RegisterScreen.swift */,
+				CE8EE4BF2B04D66F00D00ABE /* RegisterVM.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		CE8EE4C12B04DDBC00D00ABE /* InputField */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4C22B04DDCF00D00ABE /* InputField.swift */,
+				CE8EE4C42B04DDDD00D00ABE /* InputFieldModel.swift */,
+			);
+			path = InputField;
+			sourceTree = "<group>";
+		};
+		CE8EE4CC2B04E75600D00ABE /* StyledButton */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4D72B04EC5100D00ABE /* StyledButton.swift */,
+				CE8EE4D92B04EC6100D00ABE /* StyledButtonStyle.swift */,
+				CE8EE4DB2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift */,
+			);
+			path = StyledButton;
+			sourceTree = "<group>";
+		};
+		CE8EE4DD2B04ECFC00D00ABE /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4DE2B04ED1400D00ABE /* Loader.swift */,
+				CE8EE4E02B04ED2700D00ABE /* LoaderModifier.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		CE8EE4E22B04FCF400D00ABE /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				CE8EE4E32B04FD0600D00ABE /* Avatar.swift */,
+				CE8EE4E52B04FD1600D00ABE /* AvatarModel.swift */,
+			);
+			path = Avatar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8EE4A72B04953E00D00ABE /* Preview Assets.xcassets in Resources */,
+				CE8EE4B02B04994E00D00ABE /* Localizable.strings in Resources */,
 				CE8EE4A42B04953E00D00ABE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +271,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8EE4A22B04953D00D00ABE /* ContentView.swift in Sources */,
+				CE8EE4DA2B04EC6100D00ABE /* StyledButtonStyle.swift in Sources */,
+				CE8EE4BE2B04D66000D00ABE /* RegisterScreen.swift in Sources */,
+				CE8EE4CB2B04E11E00D00ABE /* Strings.swift in Sources */,
+				CE8EE4E42B04FD0600D00ABE /* Avatar.swift in Sources */,
+				CE8EE4D82B04EC5100D00ABE /* StyledButton.swift in Sources */,
+				CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */,
+				CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */,
+				CE8EE4BA2B049A1100D00ABE /* AuthVM.swift in Sources */,
+				CE8EE4CA2B04E11E00D00ABE /* Assets.swift in Sources */,
 				CE8EE4A02B04953D00D00ABE /* School_iOSApp.swift in Sources */,
+				CE8EE4C52B04DDDD00D00ABE /* InputFieldModel.swift in Sources */,
+				CE8EE4DF2B04ED1400D00ABE /* Loader.swift in Sources */,
+				CE8EE4E62B04FD1600D00ABE /* AvatarModel.swift in Sources */,
+				CE8EE4B62B0499F900D00ABE /* AuthScreen.swift in Sources */,
+				CE8EE4C02B04D66F00D00ABE /* RegisterVM.swift in Sources */,
+				CE8EE4C32B04DDCF00D00ABE /* InputField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

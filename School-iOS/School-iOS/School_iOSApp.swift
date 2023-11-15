@@ -11,7 +11,10 @@ import SwiftUI
 struct School_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                AuthScreen(viewModel: AuthVM())
+//                RegisterScreen(viewModel: RegisterVM())
+            }
         }
     }
 }
