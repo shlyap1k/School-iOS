@@ -8,25 +8,35 @@
 import SwiftUI
 
 struct RegisterScreen: View {
-    
     @StateObject var viewModel: RegisterVM
-    
+
     var body: some View {
         VStack {
-            Avatar(avatar: .constant(AvatarModel(image: Assets.image)))
+            UserImageView(avatar: .constant(UserImageModel(image: Assets.image)))
                 .padding(.top, 19)
+
             InputField(title: L10n.Register.name, model: $viewModel.nameModel)
                 .padding(.top, 8)
+
             InputField(title: L10n.Register.lastName, model: $viewModel.lastnameModel)
                 .padding(.top, 8)
+
             InputField(title: L10n.Register.occupation, model: $viewModel.occupationModel)
                 .padding(.top, 8)
+
             InputField(title: L10n.Register.email, model: $viewModel.passwordModel)
                 .padding(.top, 8)
+
             InputField(title: L10n.Register.password, model: $viewModel.emailModel)
                 .padding(.top, 8)
+
             Spacer()
-            StyledButton(title: L10n.Register.action, style: .blue) {
+
+            StyledButton(
+                isLoading: $viewModel.isLoading,
+                title: L10n.Register.action,
+                style: .blue
+            ) {
                 viewModel.register()
             }
             .padding(.bottom, 16)

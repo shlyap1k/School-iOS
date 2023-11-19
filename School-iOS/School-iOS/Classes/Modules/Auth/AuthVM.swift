@@ -21,8 +21,6 @@ class AuthVM: ObservableObject {
     }
 
     func register() {
-        
 //        RegisterScreen(viewModel: RegisterVM())
-        
     }
 }

@@ -7,17 +7,15 @@
 
 import Foundation
 
-
 class RegisterVM: ObservableObject {
-    
     @Published var nameModel: InputFieldModel = .init(text: "")
 
     @Published var lastnameModel: InputFieldModel = .init(text: "")
-    
+
     @Published var occupationModel: InputFieldModel = .init(text: "")
-    
+
     @Published var emailModel: InputFieldModel = .init(text: "")
-    
+
     @Published var passwordModel: InputFieldModel = .init(text: "")
 
     @Published var isLoading: Bool = false

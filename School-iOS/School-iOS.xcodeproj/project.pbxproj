@@ -24,8 +24,8 @@
 		CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4DB2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift */; };
 		CE8EE4DF2B04ED1400D00ABE /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4DE2B04ED1400D00ABE /* Loader.swift */; };
 		CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E02B04ED2700D00ABE /* LoaderModifier.swift */; };
-		CE8EE4E42B04FD0600D00ABE /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E32B04FD0600D00ABE /* Avatar.swift */; };
-		CE8EE4E62B04FD1600D00ABE /* AvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E52B04FD1600D00ABE /* AvatarModel.swift */; };
+		CE8EE4E42B04FD0600D00ABE /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E32B04FD0600D00ABE /* UserImage.swift */; };
+		CE8EE4E62B04FD1600D00ABE /* UserImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E52B04FD1600D00ABE /* UserImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +47,8 @@
 		CE8EE4DB2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StyledButtonStyle+Default.swift"; sourceTree = "<group>"; };
 		CE8EE4DE2B04ED1400D00ABE /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		CE8EE4E02B04ED2700D00ABE /* LoaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModifier.swift; sourceTree = "<group>"; };
-		CE8EE4E32B04FD0600D00ABE /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
-		CE8EE4E52B04FD1600D00ABE /* AvatarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarModel.swift; sourceTree = "<group>"; };
+		CE8EE4E32B04FD0600D00ABE /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		CE8EE4E52B04FD1600D00ABE /* UserImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 		CE8EE4B12B04996F00D00ABE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CE8EE4E22B04FCF400D00ABE /* Avatar */,
+				CE8EE4E22B04FCF400D00ABE /* UserImage */,
 				CE8EE4DD2B04ECFC00D00ABE /* Loader */,
 				CE8EE4CC2B04E75600D00ABE /* StyledButton */,
 				CE8EE4C12B04DDBC00D00ABE /* InputField */,
@@ -191,13 +191,13 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
-		CE8EE4E22B04FCF400D00ABE /* Avatar */ = {
+		CE8EE4E22B04FCF400D00ABE /* UserImage */ = {
 			isa = PBXGroup;
 			children = (
-				CE8EE4E32B04FD0600D00ABE /* Avatar.swift */,
-				CE8EE4E52B04FD1600D00ABE /* AvatarModel.swift */,
+				CE8EE4E32B04FD0600D00ABE /* UserImage.swift */,
+				CE8EE4E52B04FD1600D00ABE /* UserImageModel.swift */,
 			);
-			path = Avatar;
+			path = UserImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +274,7 @@
 				CE8EE4DA2B04EC6100D00ABE /* StyledButtonStyle.swift in Sources */,
 				CE8EE4BE2B04D66000D00ABE /* RegisterScreen.swift in Sources */,
 				CE8EE4CB2B04E11E00D00ABE /* Strings.swift in Sources */,
-				CE8EE4E42B04FD0600D00ABE /* Avatar.swift in Sources */,
+				CE8EE4E42B04FD0600D00ABE /* UserImage.swift in Sources */,
 				CE8EE4D82B04EC5100D00ABE /* StyledButton.swift in Sources */,
 				CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */,
 				CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */,
@@ -283,7 +283,7 @@
 				CE8EE4A02B04953D00D00ABE /* School_iOSApp.swift in Sources */,
 				CE8EE4C52B04DDDD00D00ABE /* InputFieldModel.swift in Sources */,
 				CE8EE4DF2B04ED1400D00ABE /* Loader.swift in Sources */,
-				CE8EE4E62B04FD1600D00ABE /* AvatarModel.swift in Sources */,
+				CE8EE4E62B04FD1600D00ABE /* UserImageModel.swift in Sources */,
 				CE8EE4B62B0499F900D00ABE /* AuthScreen.swift in Sources */,
 				CE8EE4C02B04D66F00D00ABE /* RegisterVM.swift in Sources */,
 				CE8EE4C32B04DDCF00D00ABE /* InputField.swift in Sources */,

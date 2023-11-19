@@ -53,6 +53,7 @@ struct StyledButton: View {
                         .background(style.backgroundColor)
                         .cornerRadius(style.cornerRadius)
                         .opacity(isActive ? 1 : 0.5)
+                        .fontWeight(style.fontWeight)
                 }
             }
             .disabled(!isActive || isLoading)
@@ -76,4 +77,3 @@ struct StyledButtonPreview_Previews: PreviewProvider {
         }.padding(.horizontal, 16)
     }
 }
-

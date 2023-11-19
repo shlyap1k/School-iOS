@@ -10,7 +10,7 @@ import SwiftUI
 struct InputField: View {
     let title: String
     @Binding var model: InputFieldModel
-    
+
     var body: some View {
         VStack {
             TextField(title, text: $model.text)

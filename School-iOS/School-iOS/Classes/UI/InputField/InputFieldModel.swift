@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct InputFieldModel {
     var text: String
     var error: String?
