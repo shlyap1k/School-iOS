@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AuthScreen: View {
-    @StateObject var viewModel: AuthVM
+    @StateObject var viewModel: AuthVM = AuthVM()
 
     var body: some View {
         VStack {
@@ -43,6 +43,6 @@ struct AuthScreen: View {
 
 #Preview {
     NavigationStack {
-        AuthScreen(viewModel: AuthVM())
+        AuthScreen()
     }
 }

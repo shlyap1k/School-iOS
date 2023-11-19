@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4541102B09F5E90031BC53 /* RegisterPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45410F2B09F5E90031BC53 /* RegisterPayload.swift */; };
+		CE4541122B09F5F90031BC53 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4541112B09F5F90031BC53 /* RegisterRequest.swift */; };
+		CE4541142B09F6050031BC53 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4541132B09F6050031BC53 /* RegisterResponse.swift */; };
 		CE8EE4A02B04953D00D00ABE /* School_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */; };
 		CE8EE4A42B04953E00D00ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE4A32B04953E00D00ABE /* Assets.xcassets */; };
 		CE8EE4A72B04953E00D00ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE4A62B04953E00D00ABE /* Preview Assets.xcassets */; };
@@ -26,9 +29,49 @@
 		CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E02B04ED2700D00ABE /* LoaderModifier.swift */; };
 		CE8EE4E42B04FD0600D00ABE /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E32B04FD0600D00ABE /* UserImage.swift */; };
 		CE8EE4E62B04FD1600D00ABE /* UserImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE4E52B04FD1600D00ABE /* UserImageModel.swift */; };
+		CEB6D4CE2B09EE0E00AF598C /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = CEB6D4CD2B09EE0E00AF598C /* netfox */; };
+		CEB6D4D12B09EE2900AF598C /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = CEB6D4D02B09EE2900AF598C /* Factory */; };
+		CEB6D4D72B09EFCB00AF598C /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D4D42B09EFCB00AF598C /* AuthRequest.swift */; };
+		CEB6D4D82B09EFCB00AF598C /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D4D52B09EFCB00AF598C /* AuthResponse.swift */; };
+		CEB6D4D92B09EFCB00AF598C /* AuthPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D4D62B09EFCB00AF598C /* AuthPayload.swift */; };
+		CEB6D51A2B09F10500AF598C /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5192B09F10500AF598C /* UserDefaultValue.swift */; };
+		CEB6D51F2B09F25700AF598C /* CoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D51E2B09F25700AF598C /* CoreFactory.swift */; };
+		CEB6D53E2B09F27000AF598C /* RestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5222B09F27000AF598C /* RestResult.swift */; };
+		CEB6D53F2B09F27000AF598C /* RestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5232B09F27000AF598C /* RestConfiguration.swift */; };
+		CEB6D5402B09F27000AF598C /* RestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5242B09F27000AF598C /* RestParameters.swift */; };
+		CEB6D5412B09F27000AF598C /* RestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5252B09F27000AF598C /* RestProvider.swift */; };
+		CEB6D5422B09F27000AF598C /* URLRequest+cURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5262B09F27000AF598C /* URLRequest+cURL.swift */; };
+		CEB6D5432B09F27000AF598C /* AnyDecodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5272B09F27000AF598C /* AnyDecodableWrapper.swift */; };
+		CEB6D5442B09F27000AF598C /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5282B09F27000AF598C /* RequestBuilder.swift */; };
+		CEB6D5452B09F27000AF598C /* RefreshStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5292B09F27000AF598C /* RefreshStrategy.swift */; };
+		CEB6D5462B09F27000AF598C /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D52A2B09F27000AF598C /* Authenticator.swift */; };
+		CEB6D5472B09F27000AF598C /* NetworkErrorKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D52B2B09F27000AF598C /* NetworkErrorKind.swift */; };
+		CEB6D5482B09F27000AF598C /* VoidResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D52C2B09F27000AF598C /* VoidResult.swift */; };
+		CEB6D5492B09F27000AF598C /* Refresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D52D2B09F27000AF598C /* Refresher.swift */; };
+		CEB6D54A2B09F27000AF598C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D52E2B09F27000AF598C /* Request.swift */; };
+		CEB6D54B2B09F27000AF598C /* RestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D52F2B09F27000AF598C /* RestMethod.swift */; };
+		CEB6D54C2B09F27000AF598C /* AwesomeJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5302B09F27000AF598C /* AwesomeJSONDecoder.swift */; };
+		CEB6D54D2B09F27000AF598C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5312B09F27000AF598C /* NetworkError.swift */; };
+		CEB6D54E2B09F27000AF598C /* RequestDataEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5332B09F27000AF598C /* RequestDataEncoder.swift */; };
+		CEB6D54F2B09F27000AF598C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5342B09F27000AF598C /* BaseRequest.swift */; };
+		CEB6D5502B09F27000AF598C /* BaseRestResponseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5352B09F27000AF598C /* BaseRestResponseWrapper.swift */; };
+		CEB6D5512B09F27000AF598C /* ErrorRestResponseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5362B09F27000AF598C /* ErrorRestResponseWrapper.swift */; };
+		CEB6D5522B09F27000AF598C /* BaseRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5372B09F27000AF598C /* BaseRequestBuilder.swift */; };
+		CEB6D5532B09F27000AF598C /* BaseRefreshStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5382B09F27000AF598C /* BaseRefreshStrategy.swift */; };
+		CEB6D5542B09F27000AF598C /* BaseRestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5392B09F27000AF598C /* BaseRestProvider.swift */; };
+		CEB6D5552B09F27000AF598C /* BaseRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D53A2B09F27000AF598C /* BaseRefresher.swift */; };
+		CEB6D5562B09F27000AF598C /* RestProvider+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D53B2B09F27000AF598C /* RestProvider+Base.swift */; };
+		CEB6D5572B09F27000AF598C /* RestParameters+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D53C2B09F27000AF598C /* RestParameters+Base.swift */; };
+		CEB6D5582B09F27000AF598C /* BaseAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D53D2B09F27000AF598C /* BaseAuthenticator.swift */; };
+		CEB6D55A2B09F27E00AF598C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5592B09F27E00AF598C /* Store.swift */; };
+		CEB6D55C2B09F34000AF598C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D55B2B09F34000AF598C /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE45410F2B09F5E90031BC53 /* RegisterPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPayload.swift; sourceTree = "<group>"; };
+		CE4541112B09F5F90031BC53 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		CE4541132B09F6050031BC53 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		CE4541172B09FC3E0031BC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE8EE49C2B04953D00D00ABE /* School-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_iOSApp.swift; sourceTree = "<group>"; };
 		CE8EE4A32B04953E00D00ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +92,40 @@
 		CE8EE4E02B04ED2700D00ABE /* LoaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModifier.swift; sourceTree = "<group>"; };
 		CE8EE4E32B04FD0600D00ABE /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		CE8EE4E52B04FD1600D00ABE /* UserImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageModel.swift; sourceTree = "<group>"; };
+		CEB6D4D42B09EFCB00AF598C /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		CEB6D4D52B09EFCB00AF598C /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		CEB6D4D62B09EFCB00AF598C /* AuthPayload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPayload.swift; sourceTree = "<group>"; };
+		CEB6D5192B09F10500AF598C /* UserDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValue.swift; sourceTree = "<group>"; };
+		CEB6D51E2B09F25700AF598C /* CoreFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreFactory.swift; sourceTree = "<group>"; };
+		CEB6D5222B09F27000AF598C /* RestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestResult.swift; sourceTree = "<group>"; };
+		CEB6D5232B09F27000AF598C /* RestConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestConfiguration.swift; sourceTree = "<group>"; };
+		CEB6D5242B09F27000AF598C /* RestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestParameters.swift; sourceTree = "<group>"; };
+		CEB6D5252B09F27000AF598C /* RestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestProvider.swift; sourceTree = "<group>"; };
+		CEB6D5262B09F27000AF598C /* URLRequest+cURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+cURL.swift"; sourceTree = "<group>"; };
+		CEB6D5272B09F27000AF598C /* AnyDecodableWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDecodableWrapper.swift; sourceTree = "<group>"; };
+		CEB6D5282B09F27000AF598C /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		CEB6D5292B09F27000AF598C /* RefreshStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshStrategy.swift; sourceTree = "<group>"; };
+		CEB6D52A2B09F27000AF598C /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		CEB6D52B2B09F27000AF598C /* NetworkErrorKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorKind.swift; sourceTree = "<group>"; };
+		CEB6D52C2B09F27000AF598C /* VoidResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidResult.swift; sourceTree = "<group>"; };
+		CEB6D52D2B09F27000AF598C /* Refresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresher.swift; sourceTree = "<group>"; };
+		CEB6D52E2B09F27000AF598C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		CEB6D52F2B09F27000AF598C /* RestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestMethod.swift; sourceTree = "<group>"; };
+		CEB6D5302B09F27000AF598C /* AwesomeJSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeJSONDecoder.swift; sourceTree = "<group>"; };
+		CEB6D5312B09F27000AF598C /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CEB6D5332B09F27000AF598C /* RequestDataEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDataEncoder.swift; sourceTree = "<group>"; };
+		CEB6D5342B09F27000AF598C /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		CEB6D5352B09F27000AF598C /* BaseRestResponseWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRestResponseWrapper.swift; sourceTree = "<group>"; };
+		CEB6D5362B09F27000AF598C /* ErrorRestResponseWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRestResponseWrapper.swift; sourceTree = "<group>"; };
+		CEB6D5372B09F27000AF598C /* BaseRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestBuilder.swift; sourceTree = "<group>"; };
+		CEB6D5382B09F27000AF598C /* BaseRefreshStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRefreshStrategy.swift; sourceTree = "<group>"; };
+		CEB6D5392B09F27000AF598C /* BaseRestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRestProvider.swift; sourceTree = "<group>"; };
+		CEB6D53A2B09F27000AF598C /* BaseRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRefresher.swift; sourceTree = "<group>"; };
+		CEB6D53B2B09F27000AF598C /* RestProvider+Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestProvider+Base.swift"; sourceTree = "<group>"; };
+		CEB6D53C2B09F27000AF598C /* RestParameters+Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestParameters+Base.swift"; sourceTree = "<group>"; };
+		CEB6D53D2B09F27000AF598C /* BaseAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAuthenticator.swift; sourceTree = "<group>"; };
+		CEB6D5592B09F27E00AF598C /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		CEB6D55B2B09F34000AF598C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB6D4CE2B09EE0E00AF598C /* netfox in Frameworks */,
+				CEB6D4D12B09EE2900AF598C /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +160,7 @@
 		CE8EE49E2B04953D00D00ABE /* School-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CE4541172B09FC3E0031BC53 /* Info.plist */,
 				CE8EE4AD2B04992300D00ABE /* Classes */,
 				CE8EE4AE2B04992900D00ABE /* Resources */,
 				CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */,
@@ -100,6 +180,8 @@
 		CE8EE4AD2B04992300D00ABE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CEB6D51B2B09F1CD00AF598C /* Models */,
+				CEB6D4DA2B09F09300AF598C /* Business */,
 				CE8EE4B42B04999A00D00ABE /* Generated */,
 				CE8EE4B22B04997400D00ABE /* Modules */,
 				CE8EE4B12B04996F00D00ABE /* UI */,
@@ -148,6 +230,9 @@
 		CE8EE4BB2B04D64400D00ABE /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				CEB6D4D62B09EFCB00AF598C /* AuthPayload.swift */,
+				CEB6D4D42B09EFCB00AF598C /* AuthRequest.swift */,
+				CEB6D4D52B09EFCB00AF598C /* AuthResponse.swift */,
 				CE8EE4B52B0499F900D00ABE /* AuthScreen.swift */,
 				CE8EE4B92B049A1100D00ABE /* AuthVM.swift */,
 			);
@@ -159,6 +244,9 @@
 			children = (
 				CE8EE4BD2B04D66000D00ABE /* RegisterScreen.swift */,
 				CE8EE4BF2B04D66F00D00ABE /* RegisterVM.swift */,
+				CE45410F2B09F5E90031BC53 /* RegisterPayload.swift */,
+				CE4541112B09F5F90031BC53 /* RegisterRequest.swift */,
+				CE4541132B09F6050031BC53 /* RegisterResponse.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -200,6 +288,83 @@
 			path = UserImage;
 			sourceTree = "<group>";
 		};
+		CEB6D4DA2B09F09300AF598C /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				CEB6D4DB2B09F09C00AF598C /* Factory */,
+				CEB6D5202B09F27000AF598C /* Network */,
+				CEB6D5592B09F27E00AF598C /* Store.swift */,
+				CEB6D5192B09F10500AF598C /* UserDefaultValue.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		CEB6D4DB2B09F09C00AF598C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				CEB6D51E2B09F25700AF598C /* CoreFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		CEB6D51B2B09F1CD00AF598C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEB6D55B2B09F34000AF598C /* AppState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEB6D5202B09F27000AF598C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEB6D5212B09F27000AF598C /* Abstract */,
+				CEB6D5322B09F27000AF598C /* Implementation */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CEB6D5212B09F27000AF598C /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				CEB6D5222B09F27000AF598C /* RestResult.swift */,
+				CEB6D5232B09F27000AF598C /* RestConfiguration.swift */,
+				CEB6D5242B09F27000AF598C /* RestParameters.swift */,
+				CEB6D5252B09F27000AF598C /* RestProvider.swift */,
+				CEB6D5262B09F27000AF598C /* URLRequest+cURL.swift */,
+				CEB6D5272B09F27000AF598C /* AnyDecodableWrapper.swift */,
+				CEB6D5282B09F27000AF598C /* RequestBuilder.swift */,
+				CEB6D5292B09F27000AF598C /* RefreshStrategy.swift */,
+				CEB6D52A2B09F27000AF598C /* Authenticator.swift */,
+				CEB6D52B2B09F27000AF598C /* NetworkErrorKind.swift */,
+				CEB6D52C2B09F27000AF598C /* VoidResult.swift */,
+				CEB6D52D2B09F27000AF598C /* Refresher.swift */,
+				CEB6D52E2B09F27000AF598C /* Request.swift */,
+				CEB6D52F2B09F27000AF598C /* RestMethod.swift */,
+				CEB6D5302B09F27000AF598C /* AwesomeJSONDecoder.swift */,
+				CEB6D5312B09F27000AF598C /* NetworkError.swift */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		CEB6D5322B09F27000AF598C /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CEB6D5332B09F27000AF598C /* RequestDataEncoder.swift */,
+				CEB6D5342B09F27000AF598C /* BaseRequest.swift */,
+				CEB6D5352B09F27000AF598C /* BaseRestResponseWrapper.swift */,
+				CEB6D5362B09F27000AF598C /* ErrorRestResponseWrapper.swift */,
+				CEB6D5372B09F27000AF598C /* BaseRequestBuilder.swift */,
+				CEB6D5382B09F27000AF598C /* BaseRefreshStrategy.swift */,
+				CEB6D5392B09F27000AF598C /* BaseRestProvider.swift */,
+				CEB6D53A2B09F27000AF598C /* BaseRefresher.swift */,
+				CEB6D53B2B09F27000AF598C /* RestProvider+Base.swift */,
+				CEB6D53C2B09F27000AF598C /* RestParameters+Base.swift */,
+				CEB6D53D2B09F27000AF598C /* BaseAuthenticator.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +381,10 @@
 			dependencies = (
 			);
 			name = "School-iOS";
+			packageProductDependencies = (
+				CEB6D4CD2B09EE0E00AF598C /* netfox */,
+				CEB6D4D02B09EE2900AF598C /* Factory */,
+			);
 			productName = "School-iOS";
 			productReference = CE8EE49C2B04953D00D00ABE /* School-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -244,6 +413,10 @@
 				Base,
 			);
 			mainGroup = CE8EE4932B04953D00D00ABE;
+			packageReferences = (
+				CEB6D4CC2B09EE0E00AF598C /* XCRemoteSwiftPackageReference "netfox" */,
+				CEB6D4CF2B09EE2900AF598C /* XCRemoteSwiftPackageReference "Factory" */,
+			);
 			productRefGroup = CE8EE49D2B04953D00D00ABE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,22 +444,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB6D54F2B09F27000AF598C /* BaseRequest.swift in Sources */,
 				CE8EE4DA2B04EC6100D00ABE /* StyledButtonStyle.swift in Sources */,
+				CEB6D5582B09F27000AF598C /* BaseAuthenticator.swift in Sources */,
+				CEB6D54C2B09F27000AF598C /* AwesomeJSONDecoder.swift in Sources */,
+				CEB6D5552B09F27000AF598C /* BaseRefresher.swift in Sources */,
+				CEB6D55A2B09F27E00AF598C /* Store.swift in Sources */,
+				CE4541122B09F5F90031BC53 /* RegisterRequest.swift in Sources */,
 				CE8EE4BE2B04D66000D00ABE /* RegisterScreen.swift in Sources */,
+				CEB6D5462B09F27000AF598C /* Authenticator.swift in Sources */,
+				CEB6D5542B09F27000AF598C /* BaseRestProvider.swift in Sources */,
 				CE8EE4CB2B04E11E00D00ABE /* Strings.swift in Sources */,
 				CE8EE4E42B04FD0600D00ABE /* UserImage.swift in Sources */,
+				CEB6D5432B09F27000AF598C /* AnyDecodableWrapper.swift in Sources */,
+				CEB6D5412B09F27000AF598C /* RestProvider.swift in Sources */,
+				CEB6D54E2B09F27000AF598C /* RequestDataEncoder.swift in Sources */,
+				CEB6D4D82B09EFCB00AF598C /* AuthResponse.swift in Sources */,
+				CEB6D5522B09F27000AF598C /* BaseRequestBuilder.swift in Sources */,
+				CEB6D4D72B09EFCB00AF598C /* AuthRequest.swift in Sources */,
 				CE8EE4D82B04EC5100D00ABE /* StyledButton.swift in Sources */,
+				CEB6D5442B09F27000AF598C /* RequestBuilder.swift in Sources */,
+				CEB6D5472B09F27000AF598C /* NetworkErrorKind.swift in Sources */,
+				CEB6D5492B09F27000AF598C /* Refresher.swift in Sources */,
+				CEB6D5402B09F27000AF598C /* RestParameters.swift in Sources */,
+				CEB6D51F2B09F25700AF598C /* CoreFactory.swift in Sources */,
+				CEB6D5452B09F27000AF598C /* RefreshStrategy.swift in Sources */,
 				CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */,
 				CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */,
 				CE8EE4BA2B049A1100D00ABE /* AuthVM.swift in Sources */,
+				CE4541102B09F5E90031BC53 /* RegisterPayload.swift in Sources */,
 				CE8EE4CA2B04E11E00D00ABE /* Assets.swift in Sources */,
 				CE8EE4A02B04953D00D00ABE /* School_iOSApp.swift in Sources */,
 				CE8EE4C52B04DDDD00D00ABE /* InputFieldModel.swift in Sources */,
+				CEB6D54B2B09F27000AF598C /* RestMethod.swift in Sources */,
 				CE8EE4DF2B04ED1400D00ABE /* Loader.swift in Sources */,
 				CE8EE4E62B04FD1600D00ABE /* UserImageModel.swift in Sources */,
+				CEB6D53F2B09F27000AF598C /* RestConfiguration.swift in Sources */,
 				CE8EE4B62B0499F900D00ABE /* AuthScreen.swift in Sources */,
+				CEB6D5422B09F27000AF598C /* URLRequest+cURL.swift in Sources */,
+				CEB6D5502B09F27000AF598C /* BaseRestResponseWrapper.swift in Sources */,
+				CEB6D4D92B09EFCB00AF598C /* AuthPayload.swift in Sources */,
 				CE8EE4C02B04D66F00D00ABE /* RegisterVM.swift in Sources */,
+				CEB6D5562B09F27000AF598C /* RestProvider+Base.swift in Sources */,
+				CEB6D51A2B09F10500AF598C /* UserDefaultValue.swift in Sources */,
+				CEB6D55C2B09F34000AF598C /* AppState.swift in Sources */,
 				CE8EE4C32B04DDCF00D00ABE /* InputField.swift in Sources */,
+				CEB6D54A2B09F27000AF598C /* Request.swift in Sources */,
+				CEB6D53E2B09F27000AF598C /* RestResult.swift in Sources */,
+				CEB6D5512B09F27000AF598C /* ErrorRestResponseWrapper.swift in Sources */,
+				CEB6D5572B09F27000AF598C /* RestParameters+Base.swift in Sources */,
+				CEB6D5532B09F27000AF598C /* BaseRefreshStrategy.swift in Sources */,
+				CE4541142B09F6050031BC53 /* RegisterResponse.swift in Sources */,
+				CEB6D5482B09F27000AF598C /* VoidResult.swift in Sources */,
+				CEB6D54D2B09F27000AF598C /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +633,7 @@
 				DEVELOPMENT_TEAM = RJZ3DQ7A56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "School-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +663,7 @@
 				DEVELOPMENT_TEAM = RJZ3DQ7A56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "School-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,6 +704,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEB6D4CC2B09EE0E00AF598C /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
+		CEB6D4CF2B09EE2900AF598C /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEB6D4CD2B09EE0E00AF598C /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB6D4CC2B09EE0E00AF598C /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+		CEB6D4D02B09EE2900AF598C /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB6D4CF2B09EE2900AF598C /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE8EE4942B04953D00D00ABE /* Project object */;
 }

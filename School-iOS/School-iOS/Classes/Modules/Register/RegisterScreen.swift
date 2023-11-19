@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterScreen: View {
-    @StateObject var viewModel: RegisterVM
+    @StateObject var viewModel: RegisterVM = RegisterVM()
 
     var body: some View {
         VStack {
@@ -48,6 +48,6 @@ struct RegisterScreen: View {
 
 #Preview {
     NavigationStack {
-        RegisterScreen(viewModel: RegisterVM())
+        RegisterScreen()
     }
 }
