@@ -12,9 +12,9 @@ class AuthVM: ObservableObject {
     @Injected(\.restProvider) private var restProvider
     @Injected(\.appState) private var appState
     
-    @Published var emailModel: InputFieldModel = .init(text: "test@test123.xyz")
+    @Published var emailModel: InputFieldModel = .init(text: "")
 
-    @Published var passwordModel: InputFieldModel = .init(text: "string")
+    @Published var passwordModel: InputFieldModel = .init(text: "")
 
     @Published var isLoading: Bool = false
 
