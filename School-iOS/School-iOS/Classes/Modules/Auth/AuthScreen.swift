@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AuthScreen: View {
-    @StateObject var viewModel: AuthVM = AuthVM()
+    @StateObject var viewModel: AuthVM = .init()
 
     var body: some View {
         VStack {
