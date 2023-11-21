@@ -10,14 +10,12 @@ struct NetworkError: Error, Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        code = try container.decode(String.self, forKey: .code)
         message = try container.decodeIfPresent(String.self, forKey: .message)
         cause = try container.decodeIfPresent(String.self, forKey: .message)
         kind = .regularNetworkError
     }
 
     init(kind: NetworkErrorKind) {
-        code = ""
         message = nil
         cause = nil
         self.kind = kind
@@ -29,7 +27,7 @@ struct NetworkError: Error, Decodable {
         case unauthorized
         case noConnection
         case unknown
-        case regular(code: String, message: String)
+        case regular(message: String)
 
         // MARK: Internal
 
@@ -41,22 +39,20 @@ struct NetworkError: Error, Decodable {
                 return "Нет соединения"
             case .unknown:
                 return "Что-то пошло не так"
-            case let .regular(_, message):
+            case let .regular(message):
                 return message
             }
         }
     }
 
     enum CodingKeys: String, CodingKey {
-        case code, message, cause, data
+        case message, cause, data
     }
 
     static let expiredCode: String = "EXPIRED"
     static let unauthorizedCode: String = "UNAUTHORIZED_REQUEST"
 
     let kind: NetworkErrorKind
-
-    let code: String
     let message: String?
     let cause: String?
 
@@ -68,12 +64,13 @@ struct NetworkError: Error, Decodable {
             guard let message else {
                 return .unknown
             }
-            return .regular(code: code, message: message)
+            return .regular(message: message)
         case let .system(urlError):
             switch urlError {
             case URLError.notConnectedToInternet, URLError.networkConnectionLost:
                 return .noConnection
             default:
+                print("unknown")
                 return .unknown
             }
         default:

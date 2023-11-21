@@ -36,35 +36,35 @@ class RegisterVM: ObservableObject {
         
         if !emailPred.evaluate(with: emailModel.text) {
             isValid = false
-            emailModel.error = "Введите e-mail!"
+            emailModel.error = L10n.Register.emailError
         } else {
             emailModel.error = nil
         }
         
         if passwordModel.text.count < 6 {
             isValid = false
-            passwordModel.error = "Пароль должен содержать как минмум 6 символов"
+            passwordModel.error = L10n.Register.emailError
         } else {
             passwordModel.error = nil
         }
         
         if nameModel.text.isEmpty {
             isValid = false
-            nameModel.error = "Это поле должно быть заполнено"
+            nameModel.error = L10n.Register.requiredFieldError
         } else {
             nameModel.error = nil
         }
         
         if lastnameModel.text.isEmpty {
             isValid = false
-            lastnameModel.error = "Это поле должно быть заполнено"
+            lastnameModel.error = L10n.Register.requiredFieldError
         } else {
             lastnameModel.error = nil
         }
         
         if occupationModel.text.isEmpty {
             isValid = false
-            occupationModel.error = "Это поле должно быть заполнено"
+            occupationModel.error = L10n.Register.requiredFieldError
         } else {
             occupationModel.error = nil
         }
@@ -89,7 +89,7 @@ class RegisterVM: ObservableObject {
                 case let .success(response):
                     appState.state.accessToken = response.accessToken
                 case let .failure(reason):
-                    print(reason.detail.message)
+                    emailModel.error = reason.detail.message
                     isLoading = false
                 }
             }

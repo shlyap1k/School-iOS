@@ -25,16 +25,14 @@ class AuthVM: ObservableObject {
         
         if !emailPred.evaluate(with: emailModel.text) {
             isValid = false
-            emailModel.error = "Введите e-mail!"
-            print("email is invalid")
+            emailModel.error = L10n.Auth.emailError
         } else {
-            print("email is valid")
             emailModel.error = nil
         }
         
         if passwordModel.text.count < 6 {
             isValid = false
-            passwordModel.error = "Пароль должен содержать как минмум 6 символов"
+            passwordModel.error = L10n.Auth.passwordError
         } else {
             passwordModel.error = nil
         }
@@ -52,7 +50,8 @@ class AuthVM: ObservableObject {
                 case let .success(response):
                     appState.state.accessToken = response.accessToken
                 case let .failure(reason):
-                    print(reason.detail.message)
+                    emailModel.error = reason.detail.message
+                    isLoading = false
                 }
             }
         }
