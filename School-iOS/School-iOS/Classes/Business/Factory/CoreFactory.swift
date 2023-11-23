@@ -10,7 +10,6 @@ import Factory
 import Foundation
 
 extension Container {
-    
     var restProvider: Factory<RestProvider> {
         Factory(self) {
             let appState: Store<AppState> = Container.shared.appState.resolve()
@@ -21,7 +20,7 @@ extension Container {
                     appState[\.accessToken]
                 },
                 expirationCheck: {
-                    appState[\.accessToken].map { $0.isEmpty }
+                    appState[\.accessToken].map(\.isEmpty)
                 }
             )
             let requestBuilder: RequestBuilder = BaseRequestBuilder(
@@ -29,16 +28,15 @@ extension Container {
                 authenticator: authenticator
             )
             return BaseRestProvider(
-               requestBuilder: requestBuilder,
-               decoder: JSONDecoder(),
-               refresher: nil
-           )
+                requestBuilder: requestBuilder,
+                decoder: JSONDecoder(),
+                refresher: nil
+            )
         }
     }
-    
-    
+
     private static var appStateSubsciption: AnyCancellable?
-    
+
     var appState: Factory<Store<AppState>> {
         Factory(self) {
             var persistance = AppState.Persistance()
@@ -49,5 +47,4 @@ extension Container {
             return appState
         }.singleton
     }
-    
 }

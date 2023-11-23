@@ -11,6 +11,8 @@
 "auth.password" = "Пароль";
 "auth.action" = "Войти";
 "auth.register" = "Еще нет аккаунта?";
+"auth.emailError" = "Введите e-mail";
+"auth.passwordError" = "Пароль должен содержать как минимум 6 символов";
 
 "register.title" = "Регистрация";
 "register.name" = "Имя";
@@ -19,3 +21,6 @@
 "register.email" = "E-mail";
 "register.password" = "Пароль";
 "register.action" = "Зарегистрироваться";
+"register.emailError" = "Введите e-mail";
+"register.passwordError" = "Пароль должен содержать как минимум 6 символов";
+"register.requiredFieldError" = "Это поле должно быть заполнено";

@@ -9,7 +9,7 @@ import PhotosUI
 import SwiftUI
 
 struct EditableCircularUserImage: View {
-    @Binding var model: UserImageModel
+    @ObservedObject var model: UserImageModel = .init()
 
     var body: some View {
         CircularUserImage(imageState: model.imageState)
@@ -29,6 +29,6 @@ struct EditableCircularUserImage: View {
 }
 
 #Preview {
-    EditableCircularUserImage(model: .constant(.init()))
+    EditableCircularUserImage()
         .border(.red, width: 2)
 }

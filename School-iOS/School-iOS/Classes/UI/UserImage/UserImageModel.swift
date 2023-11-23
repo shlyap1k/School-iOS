@@ -61,6 +61,8 @@ class UserImageModel: ObservableObject {
         }
     }
 
+    // MARK: Private
+
     // MARK: - Private Methods
 
     private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {

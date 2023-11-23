@@ -8,7 +8,15 @@
 import Foundation
 
 enum RegisterRequest: Request {
-    case register(avatarUrl: String, name: String, surname: String, occupation: String, email: String, password: String)
+    case register(
+        avatarUrl: String,
+
+        name: String,
+        surname: String,
+        occupation: String,
+        email: String,
+        password: String
+    )
 
     // MARK: Internal
 

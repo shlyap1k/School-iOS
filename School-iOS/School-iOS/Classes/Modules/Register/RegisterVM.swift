@@ -27,48 +27,48 @@ class RegisterVM: ObservableObject {
     @Published var passwordModel: InputFieldModel = .init(text: "")
 
     @Published var isLoading: Bool = false
-    
+
     func validate() -> Bool {
         var isValid = true
-        
+
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+
         if !emailPred.evaluate(with: emailModel.text) {
             isValid = false
             emailModel.error = L10n.Register.emailError
         } else {
             emailModel.error = nil
         }
-        
+
         if passwordModel.text.count < 6 {
             isValid = false
             passwordModel.error = L10n.Register.emailError
         } else {
             passwordModel.error = nil
         }
-        
+
         if nameModel.text.isEmpty {
             isValid = false
             nameModel.error = L10n.Register.requiredFieldError
         } else {
             nameModel.error = nil
         }
-        
+
         if lastnameModel.text.isEmpty {
             isValid = false
             lastnameModel.error = L10n.Register.requiredFieldError
         } else {
             lastnameModel.error = nil
         }
-        
+
         if occupationModel.text.isEmpty {
             isValid = false
             occupationModel.error = L10n.Register.requiredFieldError
         } else {
             occupationModel.error = nil
         }
-        
+
         return isValid
     }
 

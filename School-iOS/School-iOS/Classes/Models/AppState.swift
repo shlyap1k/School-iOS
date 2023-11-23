@@ -20,6 +20,6 @@ struct AppState: Codable {
 
         private static let session = "hh-school.session"
     }
-    
+
     var accessToken: String?
 }

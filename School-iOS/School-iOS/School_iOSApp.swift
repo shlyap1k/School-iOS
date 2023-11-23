@@ -3,19 +3,22 @@
 // Copyright © 2023 Heads and Hands. All rights reserved.
 //
 
-import netfox
 import Factory
+import netfox
 import SwiftUI
 
 @main
 struct SchoolApp: App {
+    // MARK: Lifecycle
 
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses?.insert(NFXProtocol.self, at: 0)
         NFX.sharedInstance().start()
     }
-    
+
+    // MARK: Internal
+
     var body: some Scene {
         WindowGroup {
             ZStack {
@@ -47,6 +50,6 @@ struct SchoolApp: App {
     }
 
     @State private var viewState: ViewState = .auth
-    
+
     @Injected(\.appState) private var appState
 }

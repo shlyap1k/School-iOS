@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-// MARK: - Request
+// MARK: - MultipartRequest
 
 protocol MultipartRequest: Request {
     var boundary: String { get }

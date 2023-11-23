@@ -16,27 +16,27 @@ class AuthVM: ObservableObject {
     @Published var passwordModel: InputFieldModel = .init(text: "")
 
     @Published var isLoading: Bool = false
-    
+
     func validate() -> Bool {
         var isValid = true
-        
+
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+
         if !emailPred.evaluate(with: emailModel.text) {
             isValid = false
             emailModel.error = L10n.Auth.emailError
         } else {
             emailModel.error = nil
         }
-        
+
         if passwordModel.text.count < 6 {
             isValid = false
             passwordModel.error = L10n.Auth.passwordError
         } else {
             passwordModel.error = nil
         }
-        
+
         return isValid
     }
 

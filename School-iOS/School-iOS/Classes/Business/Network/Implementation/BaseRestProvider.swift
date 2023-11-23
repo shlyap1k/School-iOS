@@ -35,7 +35,6 @@ final class BaseRestProvider: RestProvider {
             return try await handle(data, from: urlResponse, parameters: parameters)
         } catch {
             if let requestError = error as? NetworkError {
-                
                 switch requestError.kind {
                 case .authExpired, .unauthorized:
                     if let refresher {
@@ -55,7 +54,6 @@ final class BaseRestProvider: RestProvider {
                 if let urlError = error as? URLError {
                     return .failure(NetworkError(kind: .system(urlError)))
                 } else {
-                    
                     return .failure(NetworkError(kind: .unknown))
                 }
             }
@@ -130,7 +128,6 @@ final class BaseRestProvider: RestProvider {
             }
         default:
             if let errorWrapper = parameters.errorWrapper {
-                
                 guard let errorResponse = try? decoder.decode(errorWrapper, from: data),
                       let error = errorResponse.wrapped as? NetworkError
                 else {
