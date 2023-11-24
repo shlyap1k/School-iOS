@@ -56,6 +56,20 @@ extension Request {
     var mockData: Data? {
         nil
     }
+    
+    func createBody(boundary: String, data: Data, mimeType: String, filename: String) -> Data {
+        let body = NSMutableData()
+        let boundaryPrefix = Data("--\(boundary)\r\n".utf8)
+        
+        body.append(boundaryPrefix)
+        body.append(Data("Content-Disposition: form-data; name=\"uploadedFile\"; filename=\"\(filename)\"\r\n".utf8))
+        body.append(Data("Content-Type: \(mimeType)\r\n\r\n".utf8))
+        body.append(data)
+        body.append(Data("\r\n".utf8))
+        body.append(Data("--".appending(boundary.appending("--")).utf8))
+        
+        return body as Data
+    }
 }
 
 private extension DateFormatter {

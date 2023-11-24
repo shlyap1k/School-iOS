@@ -84,13 +84,25 @@ class RegisterVM: ObservableObject {
                 password: passwordModel.text
             )
             Task {
-                let result: RestResult<AuthResponse> = await restProvider.make(request)
+                let result: RestResult<RegisterResponse> = await restProvider.make(request)
                 switch result {
                 case let .success(response):
                     appState.state.accessToken = response.accessToken
+                    Task {
+                        switch userImage.imageState {
+                        case .success(let image):
+                            guard let imageData = image.image.pngData() else { return }
+                            let imageRequest = UserRequest.uploadPhoto(photo: imageData, uuid: UUID().uuidString)
+                            let _: RestResult<AuthResponse> = await restProvider.make(imageRequest)
+                        default:
+                            print("")
+                        }
+                    }
                 case let .failure(reason):
                     emailModel.error = reason.detail.message
-                    isLoading = false
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                    }
                 }
             }
         }

@@ -68,7 +68,6 @@
 		CEC08D4D2B0B9825007EB762 /* CircularUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC08D4C2B0B9825007EB762 /* CircularUserImage.swift */; };
 		CEC08D4F2B0B983C007EB762 /* EditableCircularUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC08D4E2B0B983C007EB762 /* EditableCircularUserImage.swift */; };
 		CEC08D532B0BF3B9007EB762 /* UserImagePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC08D522B0BF3B9007EB762 /* UserImagePayload.swift */; };
-		CEC08D552B0BF653007EB762 /* MultipartRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC08D542B0BF653007EB762 /* MultipartRequest.swift */; };
 		CECA79332B0C91DD00526D52 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA79322B0C91DD00526D52 /* UserResponse.swift */; };
 		CECA79362B0C923A00526D52 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA79352B0C923A00526D52 /* UserRequest.swift */; };
 		CECA79382B0C974700526D52 /* UpdateUserPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA79372B0C974700526D52 /* UpdateUserPayload.swift */; };
@@ -145,7 +144,6 @@
 		CEC08D4C2B0B9825007EB762 /* CircularUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularUserImage.swift; sourceTree = "<group>"; };
 		CEC08D4E2B0B983C007EB762 /* EditableCircularUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableCircularUserImage.swift; sourceTree = "<group>"; };
 		CEC08D522B0BF3B9007EB762 /* UserImagePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImagePayload.swift; sourceTree = "<group>"; };
-		CEC08D542B0BF653007EB762 /* MultipartRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartRequest.swift; sourceTree = "<group>"; };
 		CECA79322B0C91DD00526D52 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		CECA79352B0C923A00526D52 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		CECA79372B0C974700526D52 /* UpdateUserPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPayload.swift; sourceTree = "<group>"; };
@@ -381,7 +379,6 @@
 				CEB6D52F2B09F27000AF598C /* RestMethod.swift */,
 				CEB6D5302B09F27000AF598C /* AwesomeJSONDecoder.swift */,
 				CEB6D5312B09F27000AF598C /* NetworkError.swift */,
-				CEC08D542B0BF653007EB762 /* MultipartRequest.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 				CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */,
 				CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */,
 				CE8EE4BA2B049A1100D00ABE /* AuthVM.swift in Sources */,
-				CEC08D552B0BF653007EB762 /* MultipartRequest.swift in Sources */,
 				CE4541102B09F5E90031BC53 /* RegisterPayload.swift in Sources */,
 				CE8EE4CA2B04E11E00D00ABE /* Assets.swift in Sources */,
 				CE8EE4A02B04953D00D00ABE /* School_iOSApp.swift in Sources */,

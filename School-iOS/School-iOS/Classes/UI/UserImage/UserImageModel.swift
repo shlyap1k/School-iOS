@@ -16,7 +16,7 @@ class UserImageModel: ObservableObject {
     enum ImageState {
         case empty
         case loading(Progress)
-        case success(Image)
+        case success(ProfileImage)
         case failure(Error)
     }
 
@@ -27,25 +27,18 @@ class UserImageModel: ObservableObject {
     struct ProfileImage: Transferable {
         static var transferRepresentation: some TransferRepresentation {
             DataRepresentation(importedContentType: .image) { data in
-                #if canImport(AppKit)
-                    guard let nsImage = NSImage(data: data) else {
-                        throw TransferError.importFailed
-                    }
-                    let image = Image(nsImage: nsImage)
-                    return ProfileImage(image: image)
-                #elseif canImport(UIKit)
-                    guard let uiImage = UIImage(data: data) else {
-                        throw TransferError.importFailed
-                    }
-                    let image = Image(uiImage: uiImage)
-                    return ProfileImage(image: image)
-                #else
+                guard let uiImage = UIImage(data: data) else {
                     throw TransferError.importFailed
-                #endif
+                }
+                return ProfileImage(image: uiImage)
             }
         }
+        
+        func getImage() -> Image {
+            return Image(uiImage: image)
+        }
 
-        let image: Image
+        let image: UIImage
     }
 
     @Published private(set) var imageState: ImageState = .empty
@@ -74,7 +67,7 @@ class UserImageModel: ObservableObject {
                 }
                 switch result {
                 case let .success(profileImage?):
-                    self.imageState = .success(profileImage.image)
+                    self.imageState = .success(profileImage)
                 case .success(nil):
                     self.imageState = .empty
                 case let .failure(error):

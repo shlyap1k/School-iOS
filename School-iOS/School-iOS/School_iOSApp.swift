@@ -25,10 +25,11 @@ struct SchoolApp: App {
                 switch viewState {
                 case .auth:
                     NavigationStack {
-                        AuthScreen()
+                        RegisterScreen()
                     }
                 case .list:
                     Color.red
+//                    UploadPhotoView()
                 }
             }
             .animation(.linear, value: viewState)

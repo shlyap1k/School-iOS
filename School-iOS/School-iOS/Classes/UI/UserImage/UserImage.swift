@@ -13,7 +13,7 @@ struct UserImage: View {
     var body: some View {
         switch imageState {
         case let .success(image):
-            image.resizable()
+            image.getImage().resizable()
         case .loading:
             ProgressView()
         case .empty:
