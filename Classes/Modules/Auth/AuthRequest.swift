@@ -27,7 +27,7 @@ enum AuthRequest: Request {
         case .auth:
             return "user/signin"
         case .register:
-            return "user/register"
+            return "user/registration"
         }
     }
 
@@ -49,7 +49,7 @@ enum AuthRequest: Request {
         case let .register(avatarUrl, name, surname, occupation, email, password):
             return RequestDataEncoder.encode(
                 RegisterPayload(
-                    avatarUrl: avatarUrl ?? "",
+                    avatarUrl: avatarUrl ?? "test",
                     name: name,
                     surname: surname,
                     occupation: occupation,

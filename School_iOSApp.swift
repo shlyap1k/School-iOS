@@ -25,7 +25,7 @@ struct SchoolApp: App {
                 switch viewState {
                 case .auth:
                     NavigationStack {
-                        AuthScreen()
+                        RegisterScreen()
                     }
                 case .list:
                     Text("\(appState.state.profile?.name ?? "name")\n\(appState.state.profile?.surname ?? "surname")")
