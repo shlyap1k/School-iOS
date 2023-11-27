@@ -1,4 +1,5 @@
 --swiftversion 5.8
+--header "\nHH School\nCreated by Shlyap1k.\n//"
 --maxwidth 140
 --varattributes same-line
 --wraparguments before-first

@@ -1,5 +1,5 @@
-input_dir: School-iOS/School-iOS/Resources
-output_dir: School-iOS/School-iOS/Classes/Generated
+input_dir: Resources
+output_dir: Classes/Generated
 xcassets:
     inputs: Assets.xcassets
     outputs:
