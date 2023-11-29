@@ -5,7 +5,8 @@
 
 import Foundation
 
-struct Product: Decodable, Encodable {
+struct Product: Decodable, Encodable, Identifiable {
+    var id: String
     var title: String
     var department: String
     var price: Double
@@ -15,4 +16,5 @@ struct Product: Decodable, Encodable {
     var sizes: [Size]
     var description: String
     var details: [String]
+    
 }
