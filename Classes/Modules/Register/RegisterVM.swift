@@ -86,18 +86,18 @@ class RegisterVM: ObservableObject {
             case let .success(response):
                 appState.state.accessToken = response.accessToken
                 appState.state.profile = response.profile
-                Task {
-                    switch userImage.imageState {
-                    case let .success(image):
-                        guard let imageData = image.image.pngData() else {
-                            return
-                        }
-                        let imageRequest = UserRequest.uploadPhoto(photo: imageData, uuid: UUID().uuidString)
-                        let _: RestResult<UploadPhotoResponse> = await restProvider.make(imageRequest)
-                    default:
+                
+                switch userImage.imageState {
+                case let .success(image):
+                    guard let imageData = image.image.pngData() else {
                         return
                     }
+                    let imageRequest = UserRequest.uploadPhoto(photo: imageData, uuid: UUID().uuidString)
+                    let _: RestResult<UploadPhotoResponse> = await restProvider.make(imageRequest)
+                default:
+                    return
                 }
+                
             case let .failure(reason):
                 emailModel.error = reason.detail.message
                 DispatchQueue.main.async {
@@ -105,6 +105,7 @@ class RegisterVM: ObservableObject {
                 }
             }
         }
+        
     }
 
     // MARK: Private
