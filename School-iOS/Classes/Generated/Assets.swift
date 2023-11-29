@@ -25,28 +25,14 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Assets {
   internal static let accentColor = ColorAsset(name: "AccentColor")
-  internal static let backgroundBlack = ColorAsset(name: "backgroundBlack")
+  internal static let black = ColorAsset(name: "Black")
   internal static let backgroundGray = ColorAsset(name: "backgroundGray")
-  internal static let backgroundSizeItem = ColorAsset(name: "backgroundSizeItem")
-  internal static let black = ColorAsset(name: "black")
-  internal static let blackSuccess = ColorAsset(name: "blackSuccess")
   internal static let blue = ColorAsset(name: "blue")
   internal static let green = ColorAsset(name: "green")
   internal static let placeholderText = ColorAsset(name: "placeholderText")
   internal static let red = ColorAsset(name: "red")
   internal static let white = ColorAsset(name: "white")
-  internal static let cart = ImageAsset(name: "cart")
-  internal static let cartPh = ImageAsset(name: "cart.ph")
-  internal static let catalog = ImageAsset(name: "catalog")
-  internal static let defaultUserpic = ImageAsset(name: "default.userpic")
-  internal static let delete = ImageAsset(name: "delete")
-  internal static let eyeClosed = ImageAsset(name: "eye.closed")
-  internal static let eyeOpened = ImageAsset(name: "eye.opened")
-  internal static let network = ImageAsset(name: "network")
-  internal static let pencil = ImageAsset(name: "pencil")
-  internal static let phImage = ImageAsset(name: "ph.image")
-  internal static let profile = ImageAsset(name: "profile")
-  internal static let rain = ImageAsset(name: "rain")
+  internal static let defaultUserpic = ImageAsset(name: "DefaultUserpic")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
