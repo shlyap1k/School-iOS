@@ -5,7 +5,9 @@
 
 import Foundation
 
-struct Badge: Decodable, Encodable {
+struct Badge: Decodable, Encodable, Identifiable {
+    var id: UUID? = UUID()
+    
     var value: String
     var color: String
 }

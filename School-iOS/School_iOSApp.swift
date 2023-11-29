@@ -28,7 +28,24 @@ struct SchoolApp: App {
                         RegisterScreen()
                     }
                 case .list:
-                    Text("\(appState.state.profile?.name ?? "name")\n\(appState.state.profile?.surname ?? "surname")")
+                    ProductsListScreen()
+                    TabView {
+                        NavigationStack {
+                            ProductsListScreen()
+                        }
+                        .tabItem {
+                            Label("Каталог", systemImage: "list.bullet")
+                        }
+                        Color.gray
+                            .tabItem {
+                                Label("Корзина", systemImage: "cart")
+                            }
+                        Text("Test")
+                            .tabItem {
+                                Label("Профиль", systemImage: "person")
+                            }
+                    }
+
                 }
             }
             .animation(.linear, value: viewState)
