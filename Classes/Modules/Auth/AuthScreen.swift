@@ -26,12 +26,11 @@ struct AuthScreen: View {
                 viewModel.auth()
             }
 
-            StyledButton(
-                title: L10n.Auth.register,
-                style: .plainText
-            ) {
-                viewModel.register()
+            NavigationLink(destination: RegisterScreen()) {
+                Text(L10n.Auth.register)
             }
+            .foregroundStyle(.black)
+            .fontWeight(.bold)
             .padding([.top, .bottom], 16)
         }
         .padding(.horizontal, 16)
