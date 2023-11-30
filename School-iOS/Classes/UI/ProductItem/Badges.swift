@@ -1,15 +1,15 @@
 //
-//  Badges.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 29.11.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import SwiftUI
 
+// MARK: - Badges
+
 struct Badges: View {
-    @Binding var badges: [Badge]
-    
+    var badges: [Badge]
+
     var body: some View {
         HStack(alignment: .top) {
             Grid(alignment: .leading) {
@@ -41,24 +41,44 @@ struct Badges: View {
 
 #Preview {
     VStack {
-        Badges(badges: .constant([
+        Badges(badges: [
             Badge(value: "Хит сезона", color: "#3C72BF"),
             Badge(value: "Hot", color: "#BF3C3C"),
-            Badge(value: "Скидка", color: "#3CBF49")
-        ])).border(.red)
-        Badges(badges: .constant([
-            Badge(value: "Хит сезона", color: "#3C72BF"),
-            Badge(value: "Скидка", color: "#3CBF49")
-        ])
+            Badge(value: "Скидка", color: "#3CBF49"),
+        ]).border(.red)
+        Badges(
+            badges: [
+                Badge(value: "Хит сезона", color: "#3C72BF"),
+                Badge(value: "Скидка", color: "#3CBF49"),
+            ]
         ).border(.red)
-        Badges(badges: .constant([
-            Badge(value: "Хит сезона", color: "#3C72BF"),
-            Badge(value: "Hot", color: "#BF3C3C")
-        ])
+        Badges(
+            badges: [
+                Badge(value: "Хит сезона", color: "#3C72BF"),
+                Badge(value: "Hot", color: "#BF3C3C"),
+            ]
         ).border(.red)
-        Badges(badges: .constant([
-            Badge(value: "Хит сезона", color: "#3C72BF"),
-        ])
+        Badges(
+            badges: [
+                Badge(value: "Хит сезона", color: "#3C72BF"),
+            ]
         ).border(.red)
+    }
+}
+
+private extension Color {
+    init(hex: String) {
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
+
+        var rgb: UInt64 = 0
+
+        Scanner(string: hexSanitized).scanHexInt64(&rgb)
+
+        let red = Double((rgb & 0xFF0000) >> 16) / 255.0
+        let green = Double((rgb & 0x00FF00) >> 8) / 255.0
+        let blue = Double(rgb & 0x0000FF) / 255.0
+
+        self.init(red: red, green: green, blue: blue)
     }
 }
