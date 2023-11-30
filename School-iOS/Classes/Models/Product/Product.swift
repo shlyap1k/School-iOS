@@ -16,5 +16,4 @@ struct Product: Decodable, Encodable, Identifiable {
     var sizes: [Size]
     var description: String
     var details: [String]
-    
 }
