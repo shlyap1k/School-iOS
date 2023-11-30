@@ -26,7 +26,6 @@ struct ProductItem: View {
                     .frame(width: 211, alignment: .leading)
                     .padding(.bottom, 26)
                     .padding(.trailing, 2)
-
                 Badges(badges: model.badge)
             }
         }
