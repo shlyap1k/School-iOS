@@ -45,7 +45,6 @@ struct SchoolApp: App {
                                 Label("Профиль", systemImage: "person")
                             }
                     }
-
                 }
             }
             .animation(.linear, value: viewState)

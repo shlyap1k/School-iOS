@@ -25,7 +25,9 @@ struct ProductsListScreen: View {
                                 }
                                 .onAppear {
                                     if product.id == viewModel.products.last?.id {
-                                        viewModel.nextPage()
+                                        Task {
+                                            viewModel.nextPage()
+                                        }
                                     }
                                 }
                         }

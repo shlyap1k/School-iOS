@@ -1,3 +1,8 @@
+//
+// HH School
+// Created by Shlyap1k.
+//
+
 import SwiftUI
 
 // MARK: - Typography
@@ -10,6 +15,8 @@ struct Typography {
         self.fontLineHeight = fontLineHeight ?? uiFont.lineHeight
         self.lineHeight = lineHeight
     }
+
+    // MARK: Internal
 
     let uiFont: UIFont
     let fontLineHeight: CGFloat
