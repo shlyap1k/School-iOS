@@ -62,6 +62,7 @@ class ProductsListVM: ObservableObject {
 
     func nextPage() {
         guard !lastPageReached else {
+            print("last page reached")
             return
         }
         page += 1
