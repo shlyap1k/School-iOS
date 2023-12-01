@@ -12,14 +12,12 @@ struct UserImage: View {
         switch imageState {
         case let .success(image):
             image.getImage().resizable()
+                .frame(width: 120, height: 120)
         case .loading:
             ProgressView()
-        case .empty:
-            Image(uiImage: Assets.defaultUserpic.image).resizable()
-        case .failure:
-            Image(systemName: "exclamationmark.triangle.fill")
-                .font(.system(size: 40))
-                .foregroundColor(.white)
+        default:
+            Image(.defaultUserpic).resizable()
+                .frame(width: 120, height: 120)
         }
     }
 }

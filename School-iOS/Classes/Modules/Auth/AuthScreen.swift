@@ -25,17 +25,27 @@ struct AuthScreen: View {
             ) {
                 viewModel.auth()
             }
-
-            NavigationLink(destination: RegisterScreen()) {
+            
+            NavigationLink(value: Routes.registration) {
                 Text(L10n.Auth.register)
+                    .foregroundStyle(.black)
+                    .fontWeight(.bold)
             }
-            .foregroundStyle(.black)
-            .fontWeight(.bold)
             .padding([.top, .bottom], 16)
         }
         .padding(.horizontal, 16)
         .navigationTitle(L10n.Auth.title)
+        .navigationDestination(for: Routes.self) { route in
+            switch route {
+            case .registration:
+                RegisterScreen()
+            }
+        }
     }
+}
+
+enum Routes {
+    case registration
 }
 
 #Preview {

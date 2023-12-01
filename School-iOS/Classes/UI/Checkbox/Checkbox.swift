@@ -10,11 +10,9 @@ struct Checkbox: View {
 
     init(
         style: CheckboxStyle,
-        isOn: Binding<Bool> = .constant(true),
-        label: String?
+        isOn: Binding<Bool> = .constant(true)
     ) {
         self.style = style
-        self.label = label ?? ""
         _isOn = isOn
     }
 
@@ -27,12 +25,11 @@ struct Checkbox: View {
             isOn.toggle()
         }, label: {
             HStack {
-                Image(systemName: isOn ? style.iconOn : style.iconOff)
-                    .font(style.font)
-                    .foregroundColor(style.textColor)
-                Text(label)
-                    .font(style.font)
-                    .foregroundStyle(style.textColor)
+                if isOn {
+                    style.iconOn
+                } else {
+                    style.iconOff
+                }
             }
         })
     }
@@ -40,9 +37,8 @@ struct Checkbox: View {
     // MARK: Private
 
     private var style: CheckboxStyle
-    private var label: String
 }
 
 #Preview {
-    Checkbox(style: .eyeCheckbox, isOn: .constant(true), label: "test")
+    Checkbox(style: .eyeCheckbox, isOn: .constant(true))
 }

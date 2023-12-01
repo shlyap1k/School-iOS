@@ -12,7 +12,6 @@ struct CircularUserImage: View {
         UserImage(imageState: imageState)
             .scaledToFill()
             .clipShape(Circle())
-            .frame(width: 120, height: 120)
     }
 }
 

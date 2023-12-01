@@ -57,8 +57,6 @@ class AuthVM: ObservableObject {
         }
     }
 
-    func register() {}
-
     // MARK: Private
 
     @Injected(\.restProvider) private var restProvider

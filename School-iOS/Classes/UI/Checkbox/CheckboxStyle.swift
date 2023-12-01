@@ -12,8 +12,8 @@ struct CheckboxStyle {
     init(
         textColor: Color,
         font: Font,
-        iconOn: String,
-        iconOff: String
+        iconOn: Image,
+        iconOff: Image
     ) {
         self.textColor = textColor
         self.font = font
@@ -25,6 +25,6 @@ struct CheckboxStyle {
 
     var textColor: Color
     var font: Font
-    var iconOn: String
-    var iconOff: String
+    var iconOn: Image
+    var iconOff: Image
 }
