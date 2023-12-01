@@ -17,10 +17,18 @@ struct EditableCircularUserImage: View {
                     matching: .images,
                     photoLibrary: .shared()
                 ) {
-                    Image(systemName: "pencil.circle.fill")
+                    Image(.pencil)
+                        .resizable()
                         .symbolRenderingMode(.multicolor)
-                        .font(.system(size: 30))
-                        .foregroundColor(.accentColor)
+                        .frame(width: 16, height: 22)
+                        .foregroundColor(.black)
+                        .background(
+                            Circle()
+                                .foregroundColor(.black)
+                                .frame(width: 30, height: 30)
+                                
+                        )
+                        .padding(4)
                 }
             }
     }

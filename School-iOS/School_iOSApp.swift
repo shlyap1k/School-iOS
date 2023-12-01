@@ -25,7 +25,7 @@ struct SchoolApp: App {
                 switch viewState {
                 case .auth:
                     NavigationStack {
-                        RegisterScreen()
+                        AuthScreen()
                     }
                 case .list:
                     Text("\(appState.state.profile?.name ?? "name")\n\(appState.state.profile?.surname ?? "surname")")
@@ -52,4 +52,13 @@ struct SchoolApp: App {
     @State private var viewState: ViewState = .auth
 
     @Injected(\.appState) private var appState
+}
+
+extension UINavigationController {
+    
+    open override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        navigationBar.topItem?.backButtonDisplayMode = .minimal
+    }
+    
 }

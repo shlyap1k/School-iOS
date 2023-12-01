@@ -4,12 +4,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension CheckboxStyle {
     static let eyeCheckbox = CheckboxStyle(
         textColor: .gray,
         font: .title,
-        iconOn: "eye",
-        iconOff: "eye.slash"
+        iconOn: Image(.eyeClosed),
+        iconOff: Image(.eyeOpened)
     )
 }

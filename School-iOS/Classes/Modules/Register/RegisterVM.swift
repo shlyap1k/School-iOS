@@ -3,7 +3,6 @@
 // Created by Shlyap1k.
 //
 
-import _PhotosUI_SwiftUI
 import CoreTransferable
 import Factory
 import Foundation
@@ -93,7 +92,7 @@ class RegisterVM: ObservableObject {
                         return
                     }
                     let imageRequest = UserRequest.uploadPhoto(photo: imageData, uuid: UUID().uuidString)
-                    let _: RestResult<UploadPhotoResponse> = await restProvider.make(imageRequest)
+                    let _: RestResult<VoidResult> = await restProvider.make(imageRequest)
                 default:
                     return
                 }

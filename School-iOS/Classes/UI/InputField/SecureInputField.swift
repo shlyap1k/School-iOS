@@ -28,8 +28,9 @@ struct SecureInputField: View {
                     .frame(height: 56)
             }
             .overlay {
-                Checkbox(style: .eyeCheckbox, isOn: $isSecured, label: nil)
+                Checkbox(style: .eyeCheckbox, isOn: $isSecured)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing, 16)
             }
             if let error = model.error {
                 Text(error)
