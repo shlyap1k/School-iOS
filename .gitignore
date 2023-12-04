@@ -56,7 +56,6 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 
-*.xcodeproj
 *.xcworkspace
 
 timeline.xctimeline
