@@ -16,7 +16,9 @@ class ProductsListVM: ObservableObject {
 
     @Published var error: String = ""
 
-    @Published var lastPageReached: Bool = false
+    var lastPageReached: Bool = false
+
+    var page: Int = 0
 
     func fetchProducts() {
         isLoading = true
@@ -53,7 +55,6 @@ class ProductsListVM: ObservableObject {
 
     // MARK: Private
 
-    private var page: Int = 1
     @Injected(\.restProvider) private var restProvider
     @Injected(\.appState) private var appState
 }

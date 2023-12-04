@@ -34,15 +34,21 @@ struct SchoolApp: App {
                             ProductsListScreen()
                         }
                         .tabItem {
-                            Label("Каталог", systemImage: "list.bullet")
+                            Image(.catalog)
+                                .renderingMode(.template)
+                            Text(L10n.TabView.productsScreen)
                         }
                         Color.gray
                             .tabItem {
-                                Label("Корзина", systemImage: "cart")
+                                Image(.cart)
+                                    .renderingMode(.template)
+                                Text(L10n.TabView.cartScreen)
                             }
                         Text("Test")
                             .tabItem {
-                                Label("Профиль", systemImage: "person")
+                                Image(.profile)
+                                    .renderingMode(.template)
+                                Text(L10n.TabView.profileScreen)
                             }
                     }
                 }
