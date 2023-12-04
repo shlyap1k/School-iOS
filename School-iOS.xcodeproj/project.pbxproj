@@ -16,6 +16,7 @@
 		CE1769A02B1E29F50064DA32 /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17699E2B1E29F50064DA32 /* Badges.swift */; };
 		CE4541102B09F5E90031BC53 /* RegisterPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45410F2B09F5E90031BC53 /* RegisterPayload.swift */; };
 		CE4541142B09F6050031BC53 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4541132B09F6050031BC53 /* RegisterResponse.swift */; };
+		CE8C9DBC2B1E3F3B00A825FE /* NextPageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DBB2B1E3F3B00A825FE /* NextPageLoader.swift */; };
 		CE8EE4A02B04953D00D00ABE /* School_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */; };
 		CE8EE4A42B04953E00D00ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE4A32B04953E00D00ABE /* Assets.xcassets */; };
 		CE8EE4A72B04953E00D00ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8EE4A62B04953E00D00ABE /* Preview Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		CE45410F2B09F5E90031BC53 /* RegisterPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPayload.swift; sourceTree = "<group>"; };
 		CE4541132B09F6050031BC53 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		CE4541172B09FC3E0031BC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8C9DBB2B1E3F3B00A825FE /* NextPageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPageLoader.swift; sourceTree = "<group>"; };
 		CE8EE49C2B04953D00D00ABE /* School-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8EE49F2B04953D00D00ABE /* School_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_iOSApp.swift; sourceTree = "<group>"; };
 		CE8EE4A32B04953E00D00ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				CE1769912B1E285C0064DA32 /* ProductsListVM.swift */,
 				CE1769922B1E285C0064DA32 /* ProductsListScreen.swift */,
+				CE8C9DBB2B1E3F3B00A825FE /* NextPageLoader.swift */,
 			);
 			path = ProductsList;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				CEC08D4D2B0B9825007EB762 /* CircularUserImage.swift in Sources */,
 				CEB6D51F2B09F25700AF598C /* CoreFactory.swift in Sources */,
 				CEB6D5452B09F27000AF598C /* RefreshStrategy.swift in Sources */,
+				CE8C9DBC2B1E3F3B00A825FE /* NextPageLoader.swift in Sources */,
 				CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */,
 				CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */,
 				CE8EE4BA2B049A1100D00ABE /* AuthVM.swift in Sources */,

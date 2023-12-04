@@ -26,3 +26,7 @@
 "register.requiredFieldError" = "Это поле должно быть заполнено";
 
 "productsList.title" = "Список товаров";
+
+"tabView.productsScreen" = "Каталог";
+"tabView.profileScreen" = "Профиль";
+"tabView.cartScreen" = "Корзина";

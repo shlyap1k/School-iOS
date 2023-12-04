@@ -10,7 +10,7 @@ struct ProductsListScreen: View {
 
     var body: some View {
         VStack {
-            if viewModel.isLoading, viewModel.products.isEmpty {
+            if viewModel.isLoading, viewModel.page == 1 {
                 LoaderView()
             } else {
                 ScrollView {
@@ -23,24 +23,14 @@ struct ProductsListScreen: View {
                                             .frame(width: 343)
                                     }
                                 }
-                                .onAppear {
-                                    if product.id == viewModel.products.last?.id {
-                                        Task {
-                                            viewModel.nextPage()
-                                        }
-                                    }
-                                }
                         }
-                        if viewModel.isLoading {
-                            LoaderView()
+                        if !viewModel.lastPageReached {
+                            NextPageLoader(viewModel: viewModel)
                         }
                     }
-                    .padding(.bottom, 83)
                 }
+                .scrollIndicators(.hidden)
             }
-
-        }.onAppear {
-            viewModel.fetchProducts()
         }
         .navigationTitle(L10n.ProductsList.title)
     }
