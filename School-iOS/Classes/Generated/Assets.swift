@@ -32,7 +32,13 @@ internal enum Assets {
   internal static let placeholderText = ColorAsset(name: "placeholderText")
   internal static let red = ColorAsset(name: "red")
   internal static let white = ColorAsset(name: "white")
-  internal static let defaultUserpic = ImageAsset(name: "DefaultUserpic")
+  internal static let cart = ImageAsset(name: "cart")
+  internal static let catalog = ImageAsset(name: "catalog")
+  internal static let defaultUserpic = ImageAsset(name: "default.userpic")
+  internal static let eyeClosed = ImageAsset(name: "eye.closed")
+  internal static let eyeOpened = ImageAsset(name: "eye.opened")
+  internal static let pencil = ImageAsset(name: "pencil")
+  internal static let profile = ImageAsset(name: "profile")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
