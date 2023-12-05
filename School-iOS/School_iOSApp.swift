@@ -28,29 +28,7 @@ struct SchoolApp: App {
                         AuthScreen()
                     }
                 case .list:
-                    ProductsListScreen()
-                    TabView {
-                        NavigationStack {
-                            ProductsListScreen()
-                        }
-                        .tabItem {
-                            Image(.catalog)
-                                .renderingMode(.template)
-                            Text(L10n.TabView.productsScreen)
-                        }
-                        Color.gray
-                            .tabItem {
-                                Image(.cart)
-                                    .renderingMode(.template)
-                                Text(L10n.TabView.cartScreen)
-                            }
-                        Text("Test")
-                            .tabItem {
-                                Image(.profile)
-                                    .renderingMode(.template)
-                                Text(L10n.TabView.profileScreen)
-                            }
-                    }
+                    TabBar()
                 }
             }
             .animation(.linear, value: viewState)

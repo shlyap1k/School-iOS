@@ -79,6 +79,11 @@
 		CEB6D5582B09F27000AF598C /* BaseAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D53D2B09F27000AF598C /* BaseAuthenticator.swift */; };
 		CEB6D55A2B09F27E00AF598C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D5592B09F27E00AF598C /* Store.swift */; };
 		CEB6D55C2B09F34000AF598C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB6D55B2B09F34000AF598C /* AppState.swift */; };
+		CEBF8B772B1EFB2300B4191F /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8B762B1EFB2300B4191F /* PlaceholderView.swift */; };
+		CEBF8B792B1EFB3900B4191F /* PlaceholderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8B782B1EFB3900B4191F /* PlaceholderViewModifier.swift */; };
+		CEBF8B7B2B1EFB4300B4191F /* PlaceholderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8B7A2B1EFB4300B4191F /* PlaceholderModel.swift */; };
+		CEBF8B7D2B1F084300B4191F /* ProductsListRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8B7C2B1F084300B4191F /* ProductsListRoutes.swift */; };
+		CEBF8B802B1F0AEC00B4191F /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF8B7F2B1F0AEC00B4191F /* TabBar.swift */; };
 		CEC08D4D2B0B9825007EB762 /* CircularUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC08D4C2B0B9825007EB762 /* CircularUserImage.swift */; };
 		CEC08D4F2B0B983C007EB762 /* EditableCircularUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC08D4E2B0B983C007EB762 /* EditableCircularUserImage.swift */; };
 		CECA79332B0C91DD00526D52 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA79322B0C91DD00526D52 /* Profile.swift */; };
@@ -167,6 +172,11 @@
 		CEB6D53D2B09F27000AF598C /* BaseAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAuthenticator.swift; sourceTree = "<group>"; };
 		CEB6D5592B09F27E00AF598C /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		CEB6D55B2B09F34000AF598C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		CEBF8B762B1EFB2300B4191F /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		CEBF8B782B1EFB3900B4191F /* PlaceholderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewModifier.swift; sourceTree = "<group>"; };
+		CEBF8B7A2B1EFB4300B4191F /* PlaceholderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderModel.swift; sourceTree = "<group>"; };
+		CEBF8B7C2B1F084300B4191F /* ProductsListRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListRoutes.swift; sourceTree = "<group>"; };
+		CEBF8B7F2B1F0AEC00B4191F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		CEC08D4C2B0B9825007EB762 /* CircularUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularUserImage.swift; sourceTree = "<group>"; };
 		CEC08D4E2B0B983C007EB762 /* EditableCircularUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableCircularUserImage.swift; sourceTree = "<group>"; };
 		CECA79322B0C91DD00526D52 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -201,6 +211,7 @@
 				CE1769912B1E285C0064DA32 /* ProductsListVM.swift */,
 				CE1769922B1E285C0064DA32 /* ProductsListScreen.swift */,
 				CE8C9DBB2B1E3F3B00A825FE /* NextPageLoader.swift */,
+				CEBF8B7C2B1F084300B4191F /* ProductsListRoutes.swift */,
 			);
 			path = ProductsList;
 			sourceTree = "<group>";
@@ -273,6 +284,8 @@
 		CE8EE4B12B04996F00D00ABE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF8B7E2B1F0AD100B4191F /* TabBar */,
+				CEBF8B752B1EFB0F00B4191F /* Placeholder */,
 				CE17699C2B1E29F50064DA32 /* ProductItem */,
 				CE1769952B1E29E70064DA32 /* Typography */,
 				CE91ED372B14A7540067E324 /* Checkbox */,
@@ -477,6 +490,24 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		CEBF8B752B1EFB0F00B4191F /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF8B762B1EFB2300B4191F /* PlaceholderView.swift */,
+				CEBF8B782B1EFB3900B4191F /* PlaceholderViewModifier.swift */,
+				CEBF8B7A2B1EFB4300B4191F /* PlaceholderModel.swift */,
+			);
+			path = Placeholder;
+			sourceTree = "<group>";
+		};
+		CEBF8B7E2B1F0AD100B4191F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF8B7F2B1F0AEC00B4191F /* TabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		CECA79342B0C921B00526D52 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +643,8 @@
 				CEB6D4D82B09EFCB00AF598C /* AuthResponse.swift in Sources */,
 				CEB6D5522B09F27000AF598C /* BaseRequestBuilder.swift in Sources */,
 				CEB6D4D72B09EFCB00AF598C /* AuthRequest.swift in Sources */,
+				CEBF8B7B2B1EFB4300B4191F /* PlaceholderModel.swift in Sources */,
+				CEBF8B802B1F0AEC00B4191F /* TabBar.swift in Sources */,
 				CE8EE4D82B04EC5100D00ABE /* StyledButton.swift in Sources */,
 				CE91ED442B14B95C0067E324 /* Validators.swift in Sources */,
 				CECA79332B0C91DD00526D52 /* Profile.swift in Sources */,
@@ -649,10 +682,13 @@
 				CEB6D5562B09F27000AF598C /* RestProvider+Base.swift in Sources */,
 				CEB6D51A2B09F10500AF598C /* UserDefaultValue.swift in Sources */,
 				CE1769992B1E29E70064DA32 /* Typography.swift in Sources */,
+				CEBF8B7D2B1F084300B4191F /* ProductsListRoutes.swift in Sources */,
 				CEB6D55C2B09F34000AF598C /* AppState.swift in Sources */,
 				CE91ED3F2B14AB280067E324 /* CheckboxStyle+Default.swift in Sources */,
+				CEBF8B772B1EFB2300B4191F /* PlaceholderView.swift in Sources */,
 				CEF2A1FE2B0F82BA000A7227 /* Product.swift in Sources */,
 				CE8EE4C32B04DDCF00D00ABE /* InputField.swift in Sources */,
+				CEBF8B792B1EFB3900B4191F /* PlaceholderViewModifier.swift in Sources */,
 				CEB6D54A2B09F27000AF598C /* Request.swift in Sources */,
 				CEB6D53E2B09F27000AF598C /* RestResult.swift in Sources */,
 				CEB6D5512B09F27000AF598C /* ErrorRestResponseWrapper.swift in Sources */,
