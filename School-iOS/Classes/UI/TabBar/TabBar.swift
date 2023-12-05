@@ -28,7 +28,9 @@ struct TabBar: View {
                 Text(L10n.TabView.cartScreen)
             }
             .tag(TabBarRoutes.cart)
-            Text("Test")
+            NavigationStack {
+                ProfileScreen()
+            }
                 .tabItem {
                     Image(.profile)
                         .renderingMode(.template)
