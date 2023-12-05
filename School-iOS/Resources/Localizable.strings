@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  School-iOS
+
+  Created by Shlyap1k on 15.11.2023.
+  
+*/
+
+"auth.title" = "Авторизация";
+"auth.email" = "E-mail";
+"auth.password" = "Пароль";
+"auth.action" = "Войти";
+"auth.register" = "Еще нет аккаунта?";
+"auth.emailError" = "Введите e-mail";
+"auth.passwordError" = "Пароль должен содержать как минимум 6 символов";
+
+"register.title" = "Регистрация";
+"register.name" = "Имя";
+"register.last_name" = "Фамилия";
+"register.occupation" = "Род занятий";
+"register.email" = "E-mail";
+"register.password" = "Пароль";
+"register.action" = "Зарегистрироваться";
+"register.emailError" = "Введите e-mail";
+"register.passwordError" = "Пароль должен содержать как минимум 6 символов";
+"register.requiredFieldError" = "Это поле должно быть заполнено";

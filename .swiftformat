@@ -1,0 +1,10 @@
+--swiftversion 5.8
+--header "\nHH School\nCreated by Shlyap1k.\n//"
+--maxwidth 140
+--varattributes same-line
+--wraparguments before-first
+--wrapcollections before-first
+--wrapternary before-operators
+--enable isEmpty,organizeDeclarations,markTypes,blankLinesAroundMark,anyObjectProtocol,wrapConditionalBodies
+--exclude School-iOS/Classes/Generated
+--marktypes always
