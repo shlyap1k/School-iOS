@@ -30,3 +30,9 @@
 "tabView.productsScreen" = "Каталог";
 "tabView.profileScreen" = "Профиль";
 "tabView.cartScreen" = "Корзина";
+
+"placeholder.emptyCatalog" = "Пока здесь нет ни одного товара.";
+"placeholder.emptyCart" = "Корзина пуста";
+"placeholder.noConnection" = "Нет соединения";
+"placeholder.unknown" = "Что-то пошло не так";
+"placeholder.refresh" = "Обновить";
