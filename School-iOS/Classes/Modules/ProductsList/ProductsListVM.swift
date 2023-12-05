@@ -14,7 +14,16 @@ class ProductsListVM: ObservableObject {
 
     @Published var isLoading: Bool = false
 
-    @Published var error: String = ""
+    @Published var placeholder: PlaceholderModel?
+    
+    private var isLoadingBinding: Binding<Bool> {
+        Binding<Bool>.init { [unowned self] in
+            self.isLoading
+        } set: { [unowned self] new in
+            self.isLoading = new
+        }
+
+    }
 
     var lastPageReached: Bool = false
 
@@ -32,12 +41,26 @@ class ProductsListVM: ObservableObject {
                     if response.isEmpty {
                         self.lastPageReached = true
                     }
+                    
                     self.products += response
+                    
+                    self.placeholder = self.products.count == 0 ? .emptyCatalog : nil
+                    
+                    
                     self.isLoading = false
                 }
             case let .failure(reason):
                 DispatchQueue.main.async {
-                    self.error = reason.detail.message
+                    switch reason.detail {
+                    case .noConnection:
+                        self.placeholder = .noConnection(isLoading: self.isLoadingBinding, action: { [weak self] in
+                            self?.fetchProducts()
+                        })
+                    default:
+                        self.placeholder = .unknown(isLoading: self.isLoadingBinding, action: { [weak self] in
+                            self?.fetchProducts()
+                        })
+                    }
                     self.isLoading = false
                 }
             }
