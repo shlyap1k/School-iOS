@@ -15,14 +15,19 @@ struct ProductsListScreen: View {
             } else {
                 ScrollView {
                     LazyVStack {
-                        ForEach(viewModel.products) { product in
-                            ProductItem(model: product)
-                                .overlay(alignment: .bottom) {
-                                    if product.id != viewModel.products.last?.id {
-                                        Divider()
-                                            .frame(width: 343)
+                        ForEach(viewModel.products, id: \.self) { product in
+                            NavigationLink(value: ProductsListRoutes.product(product)) {
+                                ProductItem(model: product)
+                                    .overlay(alignment: .bottom) {
+                                        if product.id != viewModel.products.last?.id {
+                                            Divider()
+                                                .frame(width: 343)
+                                        }
                                     }
-                                }
+                                    .applyStyle(.bold16)
+                                    .foregroundStyle(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
                         }
                         if !viewModel.lastPageReached {
                             NextPageLoader(viewModel: viewModel)
@@ -32,7 +37,14 @@ struct ProductsListScreen: View {
                 .scrollIndicators(.hidden)
             }
         }
+        .placeholder(viewModel.placeholder)
         .navigationTitle(L10n.ProductsList.title)
+        .navigationDestination(for: ProductsListRoutes.self, destination: { route in
+            switch route {
+            case let .product(product):
+                Text("get rid of force unwrapping in your project\n"+product!.title)
+            }
+        })
     }
 }
 
