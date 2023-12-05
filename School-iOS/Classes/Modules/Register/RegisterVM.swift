@@ -85,7 +85,7 @@ class RegisterVM: ObservableObject {
             case let .success(response):
                 appState.state.accessToken = response.accessToken
                 appState.state.profile = response.profile
-
+                
                 switch userImage.imageState {
                 case let .success(image):
                     guard let imageData = image.image.pngData() else {
@@ -96,7 +96,6 @@ class RegisterVM: ObservableObject {
                 default:
                     return
                 }
-
             case let .failure(reason):
                 emailModel.error = reason.detail.message
                 DispatchQueue.main.async {
