@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Product: Decodable, Encodable, Identifiable {
+struct Product: Decodable, Encodable, Identifiable, Hashable {
     var id: String
     var title: String
     var department: String
