@@ -15,18 +15,8 @@ class ProductsListVM: ObservableObject {
     @Published var isLoading: Bool = false
 
     @Published var placeholder: PlaceholderModel?
-    
-    private var isLoadingBinding: Binding<Bool> {
-        Binding<Bool>.init { [unowned self] in
-            self.isLoading
-        } set: { [unowned self] new in
-            self.isLoading = new
-        }
-
-    }
 
     var lastPageReached: Bool = false
-
     var page: Int = 0
 
     func fetchProducts() {
@@ -41,12 +31,11 @@ class ProductsListVM: ObservableObject {
                     if response.isEmpty {
                         self.lastPageReached = true
                     }
-                    
+
                     self.products += response
-                    
+
                     self.placeholder = self.products.count == 0 ? .emptyCatalog : nil
-                    
-                    
+
                     self.isLoading = false
                 }
             case let .failure(reason):
@@ -69,7 +58,6 @@ class ProductsListVM: ObservableObject {
 
     func nextPage() {
         guard !lastPageReached else {
-            print("last page reached")
             return
         }
         page += 1
@@ -80,4 +68,12 @@ class ProductsListVM: ObservableObject {
 
     @Injected(\.restProvider) private var restProvider
     @Injected(\.appState) private var appState
+
+    private var isLoadingBinding: Binding<Bool> {
+        Binding<Bool>.init { [unowned self] in
+            isLoading
+        } set: { [unowned self] new in
+            isLoading = new
+        }
+    }
 }

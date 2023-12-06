@@ -1,8 +1,6 @@
 //
-//  TabBar.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 05.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import SwiftUI
@@ -30,7 +28,8 @@ struct TabBar: View {
                         .renderingMode(.template)
                     Text(L10n.TabView.profileScreen)
                 }
-        }    }
+        }
+    }
 }
 
 #Preview {
