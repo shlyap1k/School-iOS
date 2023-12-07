@@ -42,7 +42,9 @@ struct ProductsListScreen: View {
         .navigationDestination(for: ProductsListRoutes.self, destination: { route in
             switch route {
             case let .product(product):
-                Text("get rid of force unwrapping in your project\n" + product!.title)
+                if let product = product {
+                    Text(product.title)
+                }
             }
         })
     }
