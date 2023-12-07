@@ -42,8 +42,8 @@ struct ProductsListScreen: View {
         .navigationDestination(for: ProductsListRoutes.self, destination: { route in
             switch route {
             case let .product(product):
-                if let product = product {
-                    Text(product.title)
+                if let product {
+                    SizeSelector(sizes: product.sizes)
                 }
             }
         })
