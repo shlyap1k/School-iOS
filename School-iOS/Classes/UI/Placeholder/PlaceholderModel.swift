@@ -7,16 +7,25 @@ struct PlaceholderModel {
     let text: String
     var isLoading: Binding<Bool> = .constant(false)
     var action: (() -> Void)?
+
     
-    static let emptyCatalog: PlaceholderModel = PlaceholderModel(
-        image: Image(.ph),
-        text: L10n.Placeholder.emptyCatalog
-    )
+    static func emptyCatalog(isLoading: Binding<Bool> = .constant(false), action: (() -> Void)?) -> PlaceholderModel {
+        PlaceholderModel(
+            image: Image(.ph),
+            text: L10n.Placeholder.emptyCatalog,
+            isLoading: isLoading,
+            action: action
+        )
+    }
     
-    static let emptyCart: PlaceholderModel = PlaceholderModel(
-        image: Image(.cartPh),
-        text: L10n.Placeholder.emptyCart
-    )
+    static func emptyCart(isLoading: Binding<Bool> = .constant(false), action: (() -> Void)?) -> PlaceholderModel {
+        PlaceholderModel(
+            image: Image(.cartPh),
+            text: L10n.Placeholder.emptyCart,
+            isLoading: isLoading,
+            action: action
+        )
+    }
     
     static func noConnection(isLoading: Binding<Bool> = .constant(false), action: (() -> Void)?) -> PlaceholderModel {
         PlaceholderModel(
