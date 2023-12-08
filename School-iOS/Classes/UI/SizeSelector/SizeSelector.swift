@@ -7,7 +7,7 @@ import SwiftUI
 
 struct SizeSelector: View {
     @ObservedObject var selectorModel: SizeSelectorModel
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 7) {
             Text(L10n.ProductDetails.size)
