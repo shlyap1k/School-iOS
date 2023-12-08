@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct SizeItem: View {
-//    @StateObject var viewModel: SizeItemModel
-    
-    let size: Size
+//    @ObservedObject var viewModel: SizeItemModel
     @Binding var selectedSize: Size?
+    
+    var size: Size
+    
     var body: some View {
         Button(action: {
             selectedSize = size
-            print(selectedSize?.value ?? "string")
         }) {
             ZStack {
                 Rectangle()
@@ -43,9 +43,6 @@ struct SizeItem: View {
 
 #Preview {
     SizeItem(
-//        viewModel: SizeItemModel(
-            size: Size(value: "M", isAvailable: true),
-            selectedSize: .constant(nil)
-//        )
+        selectedSize: .constant(nil), size: Size(value: "M", isAvailable: true)
     )
 }

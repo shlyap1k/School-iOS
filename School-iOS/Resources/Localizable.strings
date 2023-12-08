@@ -36,3 +36,6 @@
 "placeholder.noConnection" = "Нет соединения";
 "placeholder.unknown" = "Что-то пошло не так";
 "placeholder.refresh" = "Обновить";
+
+"productDetails.size" = "Размер";
+"productDetails.specs" = "Характеристики";

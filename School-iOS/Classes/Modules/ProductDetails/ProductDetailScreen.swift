@@ -8,74 +8,49 @@
 import SwiftUI
 
 struct ProductDetailScreen: View {
-    var viewModel: Product?
+    @StateObject var viewModel: ProductDetailVM
+    
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                if let imageUrl = viewModel?.images[0] {
-                    AsyncImage(url: URL(string: imageUrl)) { image in
-                        image.resizable()
-                            .frame(width: 200, height: 197)
-                            .padding(.bottom, 51)
-                    } placeholder: {
-                        LoaderView()
-                    }
-                }
-                Text("Размер")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 16)
-                    .padding(.bottom, 7)
-                    .applyStyle(.bold14)
-                HStack(spacing: 8) {
-                    if let sizes = viewModel?.sizes {
-                        ForEach(sizes, id: \.self) { size in
-                            Text(size.value)
-                                .padding()
-                                .background(
-                                    Rectangle()
-                                        .foregroundColor(.backgroundGray)
-                                        .cornerRadius(8)
-                                        .frame(width: 44, height: 44)
-                                )
-                        }
-                    }
-                }
-                .applyStyle(.bold14)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading, .bottom], 16)
-                
-                if let title = viewModel?.title {
-                    Text(title)
+        ZStack(alignment: .bottom) {
+            ScrollView {
+                VStack(spacing: 0) {
+                    ImagesSlider(viewModel: viewModel.imagesSliderModel)
+                    
+                    SizeSelector(selectorModel: viewModel.sizeSelectorModel)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.leading, .bottom], 16)
+                    
+                    Text(viewModel.product.title)
                         .padding(.bottom, 16)
                         .applyStyle(.bold16)
-                }
-                if let description = viewModel?.description {
-                    Text(description)
+                    
+                    Text(viewModel.product.description)
                         .padding([.leading, .trailing], 16)
-                }
-                
-                if let details = viewModel?.details {
-                    Text("Характеристики")
+                    
+                    Text(L10n.ProductDetails.specs)
                         .applyStyle(.bold16)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding([.top, .leading], 16)
                         .padding(.bottom, 6)
                     VStack(spacing: 8) {
-                        ForEach(details, id: \.self) { detail in
+                        ForEach(viewModel.product.details, id: \.self) { detail in
                             Text(detail)
                                 .multilineTextAlignment(.leading)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.leading, 16)
                         }
                     }
-                }
+                }.padding(.bottom, 32 + 56)
             }
+            
+            StyledButton(title: "Купить", style: .blue, action: {})
+                .padding(16)
         }
     }
 }
 
 #Preview {
-    ProductDetailScreen(viewModel: Product(
+    ProductDetailScreen(viewModel: ProductDetailVM(product: Product(
         id: "aboba",
         title: "Men's Nike J.J. Watt Black Arizona Cardinals Legend Jersey",
         department: "Джерси",
@@ -88,6 +63,7 @@ struct ProductDetailScreen: View {
         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
         images: [
             "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
+            "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
         ],
         sizes: [
             Size(value: "M", isAvailable: true),
@@ -109,5 +85,5 @@ struct ProductDetailScreen: View {
         ]
 
 //                id: "061f02a0-8d12-4828-ab33-6b319a367e66"
-    ))
+    )))
 }

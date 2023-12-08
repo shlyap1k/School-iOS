@@ -6,7 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
 
-//class ProductDetailVM: ObservableObject {
-//    let product: Product?
-//}
+class ProductDetailVM: ObservableObject {
+    @Published var imagesSliderModel: ImagesSliderModel
+    
+    @Published var sizeSelectorModel: SizeSelectorModel
+    
+    let product: Product
+    
+    init(product: Product) {
+        self.product = product
+        self.imagesSliderModel = .init(images: product.images)
+        self.sizeSelectorModel = .init(sizes: product.sizes)
+    }
+}

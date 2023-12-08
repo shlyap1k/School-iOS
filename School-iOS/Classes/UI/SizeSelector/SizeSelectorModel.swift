@@ -9,11 +9,10 @@ import Foundation
 import SwiftUI
 
 class SizeSelectorModel: ObservableObject {
-    let sizes: [Size]
-    @State var selected: Size?
+    var sizes: [Size] = []
+    @Published var selectedSize: Size?
     
-    init(sizes: [Size], selected: Size? = nil) {
+    init(sizes: [Size]) {
         self.sizes = sizes
-        self.selected = selected
     }
 }
