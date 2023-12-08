@@ -97,6 +97,7 @@
 		CEF2A2112B0F927C000A7227 /* OrderProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2A2102B0F927C000A7227 /* OrderProduct.swift */; };
 		CEF2A2132B0F9385000A7227 /* OrderCheckout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2A2122B0F9385000A7227 /* OrderCheckout.swift */; };
 		CEF2A2152B0F988B000A7227 /* PhotoPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2A2142B0F988B000A7227 /* PhotoPayload.swift */; };
+		CEF5F0072B239EEA008A8B14 /* TabBarRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5F0062B239EEA008A8B14 /* TabBarRoutes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,7 @@
 		CEF2A2102B0F927C000A7227 /* OrderProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProduct.swift; sourceTree = "<group>"; };
 		CEF2A2122B0F9385000A7227 /* OrderCheckout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckout.swift; sourceTree = "<group>"; };
 		CEF2A2142B0F988B000A7227 /* PhotoPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPayload.swift; sourceTree = "<group>"; };
+		CEF5F0062B239EEA008A8B14 /* TabBarRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRoutes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -504,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBF8B7F2B1F0AEC00B4191F /* TabBar.swift */,
+				CEF5F0062B239EEA008A8B14 /* TabBarRoutes.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				CE1769932B1E285C0064DA32 /* ProductsListVM.swift in Sources */,
 				CE8EE4BE2B04D66000D00ABE /* RegisterScreen.swift in Sources */,
 				CEB6D5462B09F27000AF598C /* Authenticator.swift in Sources */,
+				CEF5F0072B239EEA008A8B14 /* TabBarRoutes.swift in Sources */,
 				CEB6D5542B09F27000AF598C /* BaseRestProvider.swift in Sources */,
 				CE8EE4CB2B04E11E00D00ABE /* Strings.swift in Sources */,
 				CE91ED422B14B91D0067E324 /* FieldType.swift in Sources */,
