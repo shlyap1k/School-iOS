@@ -96,6 +96,10 @@
 		CECA79332B0C91DD00526D52 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA79322B0C91DD00526D52 /* Profile.swift */; };
 		CECA79362B0C923A00526D52 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA79352B0C923A00526D52 /* UserRequest.swift */; };
 		CECA79382B0C974700526D52 /* UpdateUserPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA79372B0C974700526D52 /* UpdateUserPayload.swift */; };
+		CEEAA6BD2B2594A300B7FD97 /* CountSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAA6BC2B2594A300B7FD97 /* CountSelector.swift */; };
+		CEEAA6BF2B2594AD00B7FD97 /* CountSelectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAA6BE2B2594AD00B7FD97 /* CountSelectorModel.swift */; };
+		CEEAA6C12B259B9F00B7FD97 /* CountSelectorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAA6C02B259B9F00B7FD97 /* CountSelectorStyle.swift */; };
+		CEEAA6C32B259BD600B7FD97 /* CountSelectorStyle+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAA6C22B259BD600B7FD97 /* CountSelectorStyle+Default.swift */; };
 		CEF2A1FE2B0F82BA000A7227 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2A1FD2B0F82BA000A7227 /* Product.swift */; };
 		CEF2A2002B0F835C000A7227 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2A1FF2B0F835C000A7227 /* Badge.swift */; };
 		CEF2A2022B0F83C1000A7227 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2A2012B0F83C1000A7227 /* Size.swift */; };
@@ -196,6 +200,10 @@
 		CECA79322B0C91DD00526D52 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CECA79352B0C923A00526D52 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		CECA79372B0C974700526D52 /* UpdateUserPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPayload.swift; sourceTree = "<group>"; };
+		CEEAA6BC2B2594A300B7FD97 /* CountSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSelector.swift; sourceTree = "<group>"; };
+		CEEAA6BE2B2594AD00B7FD97 /* CountSelectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSelectorModel.swift; sourceTree = "<group>"; };
+		CEEAA6C02B259B9F00B7FD97 /* CountSelectorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSelectorStyle.swift; sourceTree = "<group>"; };
+		CEEAA6C22B259BD600B7FD97 /* CountSelectorStyle+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountSelectorStyle+Default.swift"; sourceTree = "<group>"; };
 		CEF2A1FD2B0F82BA000A7227 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CEF2A1FF2B0F835C000A7227 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		CEF2A2012B0F83C1000A7227 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
@@ -326,6 +334,7 @@
 		CE8EE4B12B04996F00D00ABE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CEEAA6BB2B25948E00B7FD97 /* CountSelector */,
 				CE50ABBB2B2240BC00498FB2 /* ImagesSlider */,
 				CE50ABAE2B21D87D00498FB2 /* SizeSelector */,
 				CEBF8B7E2B1F0AD100B4191F /* TabBar */,
@@ -564,6 +573,17 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		CEEAA6BB2B25948E00B7FD97 /* CountSelector */ = {
+			isa = PBXGroup;
+			children = (
+				CEEAA6BC2B2594A300B7FD97 /* CountSelector.swift */,
+				CEEAA6BE2B2594AD00B7FD97 /* CountSelectorModel.swift */,
+				CEEAA6C02B259B9F00B7FD97 /* CountSelectorStyle.swift */,
+				CEEAA6C22B259BD600B7FD97 /* CountSelectorStyle+Default.swift */,
+			);
+			path = CountSelector;
+			sourceTree = "<group>";
+		};
 		CEF2A1FC2B0F8252000A7227 /* Product */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,6 +699,7 @@
 				CE8EE4BE2B04D66000D00ABE /* RegisterScreen.swift in Sources */,
 				CEB6D5462B09F27000AF598C /* Authenticator.swift in Sources */,
 				CEB6D5542B09F27000AF598C /* BaseRestProvider.swift in Sources */,
+				CEEAA6BD2B2594A300B7FD97 /* CountSelector.swift in Sources */,
 				CE8EE4CB2B04E11E00D00ABE /* Strings.swift in Sources */,
 				CE91ED422B14B91D0067E324 /* FieldType.swift in Sources */,
 				CE8EE4E42B04FD0600D00ABE /* UserImage.swift in Sources */,
@@ -700,6 +721,7 @@
 				CEB6D5442B09F27000AF598C /* RequestBuilder.swift in Sources */,
 				CEF2A2022B0F83C1000A7227 /* Size.swift in Sources */,
 				CEB6D5472B09F27000AF598C /* NetworkErrorKind.swift in Sources */,
+				CEEAA6C12B259B9F00B7FD97 /* CountSelectorStyle.swift in Sources */,
 				CEB6D5492B09F27000AF598C /* Refresher.swift in Sources */,
 				CEB6D5402B09F27000AF598C /* RestParameters.swift in Sources */,
 				CEC08D4D2B0B9825007EB762 /* CircularUserImage.swift in Sources */,
@@ -707,6 +729,7 @@
 				CEB6D5452B09F27000AF598C /* RefreshStrategy.swift in Sources */,
 				CE8C9DBC2B1E3F3B00A825FE /* NextPageLoader.swift in Sources */,
 				CE8EE4DC2B04EC6C00D00ABE /* StyledButtonStyle+Default.swift in Sources */,
+				CEEAA6C32B259BD600B7FD97 /* CountSelectorStyle+Default.swift in Sources */,
 				CE8EE4E12B04ED2700D00ABE /* LoaderModifier.swift in Sources */,
 				CE8EE4BA2B049A1100D00ABE /* AuthVM.swift in Sources */,
 				CE4541102B09F5E90031BC53 /* RegisterPayload.swift in Sources */,
@@ -748,6 +771,7 @@
 				CEB6D5572B09F27000AF598C /* RestParameters+Base.swift in Sources */,
 				CEB6D5532B09F27000AF598C /* BaseRefreshStrategy.swift in Sources */,
 				CE4541142B09F6050031BC53 /* RegisterResponse.swift in Sources */,
+				CEEAA6BF2B2594AD00B7FD97 /* CountSelectorModel.swift in Sources */,
 				CE50ABBD2B2240D500498FB2 /* ImagesSlider.swift in Sources */,
 				CE17699A2B1E29E70064DA32 /* Typography+Styles.swift in Sources */,
 				CE91ED3B2B14A9EB0067E324 /* Checkbox.swift in Sources */,
