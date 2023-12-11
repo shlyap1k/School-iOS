@@ -1,4 +1,11 @@
+//
+// HH School
+// Created by Shlyap1k.
+//
+
 import SwiftUI
+
+// MARK: - PlaceholderViewModifier
 
 struct PlaceholderViewModifier: ViewModifier {
     var model: PlaceholderModel?

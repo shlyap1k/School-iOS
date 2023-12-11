@@ -1,17 +1,19 @@
 //
-//  SizeSelectorModel.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 07.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import Foundation
 
 class SizeSelectorModel: ObservableObject {
-    var sizes: [Size] = []
-    @Published var selectedSize: Size?
-    
+    // MARK: Lifecycle
+
     init(sizes: [Size]) {
         self.sizes = sizes
     }
+
+    // MARK: Internal
+
+    var sizes: [Size] = []
+    @Published var selectedSize: Size?
 }

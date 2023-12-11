@@ -1,32 +1,30 @@
 //
-//  ProductDetailScreen.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 07.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import SwiftUI
 
 struct ProductDetailScreen: View {
     @StateObject var viewModel: ProductDetailVM
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
                 VStack(spacing: 0) {
                     ImagesSlider(viewModel: viewModel.imagesSliderModel)
-                    
+
                     SizeSelector(selectorModel: viewModel.sizeSelectorModel)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding([.leading, .bottom], 16)
-                    
+
                     Text(viewModel.product.title)
                         .padding(.bottom, 16)
                         .applyStyle(.bold16)
-                    
+
                     Text(viewModel.product.description)
                         .padding([.leading, .trailing], 16)
-                    
+
                     Text(L10n.ProductDetails.specs)
                         .applyStyle(.bold16)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,7 +40,7 @@ struct ProductDetailScreen: View {
                     }
                 }.padding(.bottom, 32 + 56)
             }
-            
+
             if !viewModel.addToCart {
                 StyledButton(title: "Купить", style: .blue, action: {
                     if viewModel.sizeSelectorModel.selectedSize != nil {
@@ -53,7 +51,7 @@ struct ProductDetailScreen: View {
             } else {
                 HStack(spacing: 8) {
                     StyledButton(title: "В корзину", style: .green, action: {})
-                    
+
                     CountSelector(viewModel: viewModel.countSelectorModel, style: .big)
                 }
                 .padding(16)
@@ -76,7 +74,7 @@ struct ProductDetailScreen: View {
         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
         images: [
             "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
-            "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+            "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
         ],
         sizes: [
             Size(value: "M", isAvailable: true),

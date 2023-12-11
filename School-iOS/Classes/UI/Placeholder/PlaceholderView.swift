@@ -1,15 +1,13 @@
 //
-//  PlaceholderView.swift
-//  School
-//
-//  Created by Heads and Handhs on 30.11.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import SwiftUI
 
 struct PlaceholderView: View {
     let model: PlaceholderModel
-    
+
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             model.image
@@ -29,8 +27,10 @@ struct PlaceholderView: View {
 }
 
 #Preview {
-    PlaceholderView(model: .init(
-        image: Image(systemName: "network"),
-        text: "Title") {}
+    PlaceholderView(
+        model: .init(
+            image: Image(systemName: "network"),
+            text: "Title"
+        ) {}
     )
 }

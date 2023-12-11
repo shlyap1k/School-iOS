@@ -26,7 +26,6 @@ struct EditableCircularUserImage: View {
                             Circle()
                                 .foregroundColor(.black)
                                 .frame(width: 30, height: 30)
-                                
                         )
                         .padding(4)
                 }

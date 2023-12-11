@@ -1,8 +1,6 @@
 //
-//  CountSelectorStyle+Default.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 10.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import Foundation
@@ -12,9 +10,9 @@ extension CountSelectorStyle {
         height: 56,
         backgroundColor: Assets.backgroundBlack.swiftUIColor
     )
-    
+
     static let small = CountSelectorStyle(
         height: 44,
-        backgroundColor: .backgroundBlack
+        backgroundColor: Assets.backgroundBlack.swiftUIColor
     )
 }

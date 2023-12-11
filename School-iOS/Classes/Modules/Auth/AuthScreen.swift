@@ -5,6 +5,8 @@
 
 import SwiftUI
 
+// MARK: - AuthScreen
+
 struct AuthScreen: View {
     @StateObject var viewModel: AuthVM = .init()
 
@@ -25,7 +27,7 @@ struct AuthScreen: View {
             ) {
                 viewModel.auth()
             }
-            
+
             NavigationLink(value: Routes.registration) {
                 Text(L10n.Auth.register)
                     .foregroundStyle(.black)
@@ -43,6 +45,8 @@ struct AuthScreen: View {
         }
     }
 }
+
+// MARK: - Routes
 
 enum Routes {
     case registration

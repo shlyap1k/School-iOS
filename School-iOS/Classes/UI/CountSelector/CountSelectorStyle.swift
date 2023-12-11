@@ -1,8 +1,6 @@
 //
-//  CountSelectorStyle.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 10.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import Foundation
@@ -20,6 +18,7 @@ struct CountSelectorStyle {
     }
 
     // MARK: Internal
+
     var height: CGFloat
     var backgroundColor: Color
 }

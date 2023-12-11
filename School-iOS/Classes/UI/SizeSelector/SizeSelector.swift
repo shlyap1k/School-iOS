@@ -1,15 +1,13 @@
 //
-//  SizeSelector.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 07.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import SwiftUI
 
 struct SizeSelector: View {
     @ObservedObject var selectorModel: SizeSelectorModel
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 7) {
             Text(L10n.ProductDetails.size)
@@ -29,7 +27,7 @@ struct SizeSelector: View {
             sizes: [
                 Size(value: "M", isAvailable: true),
                 Size(value: "L", isAvailable: false),
-                Size(value: "X", isAvailable: true)
+                Size(value: "X", isAvailable: true),
             ]
         )
     )

@@ -1,8 +1,6 @@
 //
-//  SizeItem.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 07.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import SwiftUI
@@ -10,9 +8,9 @@ import SwiftUI
 struct SizeItem: View {
 //    @ObservedObject var viewModel: SizeItemModel
     @Binding var selectedSize: Size?
-    
+
     var size: Size
-    
+
     var body: some View {
         Button(action: {
             selectedSize = size
@@ -21,7 +19,7 @@ struct SizeItem: View {
                 Rectangle()
                     .frame(width: 44, height: 44)
                     .foregroundStyle(
-                        .backgroundSizeItem
+                        Assets.backgroundSizeItem.swiftUIColor
                             .opacity(size.isAvailable ? 1.0 : 0.5)
                     )
                     .cornerRadius(8)

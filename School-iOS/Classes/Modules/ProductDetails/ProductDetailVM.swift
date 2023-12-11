@@ -1,27 +1,29 @@
 //
-//  ProductDetailVM.swift
-//  School-iOS
-//
-//  Created by Shlyap1k on 07.12.2023.
+// HH School
+// Created by Shlyap1k.
 //
 
 import Foundation
 import SwiftUI
 
 class ProductDetailVM: ObservableObject {
-    @Published var imagesSliderModel: ImagesSliderModel
-    
-    @Published var sizeSelectorModel: SizeSelectorModel
-    
-    @Published var countSelectorModel: CountSelectorModel = .init()
-    
-    @Published var addToCart: Bool = false
-    
-    let product: Product
-    
+    // MARK: Lifecycle
+
     init(product: Product) {
         self.product = product
-        self.imagesSliderModel = .init(images: product.images)
-        self.sizeSelectorModel = .init(sizes: product.sizes)
+        imagesSliderModel = .init(images: product.images)
+        sizeSelectorModel = .init(sizes: product.sizes)
     }
+
+    // MARK: Internal
+
+    @Published var imagesSliderModel: ImagesSliderModel
+
+    @Published var sizeSelectorModel: SizeSelectorModel
+
+    @Published var countSelectorModel: CountSelectorModel = .init()
+
+    @Published var addToCart: Bool = false
+
+    let product: Product
 }
