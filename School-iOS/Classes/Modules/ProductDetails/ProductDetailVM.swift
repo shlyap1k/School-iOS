@@ -13,6 +13,10 @@ class ProductDetailVM: ObservableObject {
     
     @Published var sizeSelectorModel: SizeSelectorModel
     
+    @Published var countSelectorModel: CountSelectorModel = .init()
+    
+    @Published var addToCart: Bool = false
+    
     let product: Product
     
     init(product: Product) {

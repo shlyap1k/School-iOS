@@ -43,8 +43,21 @@ struct ProductDetailScreen: View {
                 }.padding(.bottom, 32 + 56)
             }
             
-            StyledButton(title: "Купить", style: .blue, action: {})
+            if !viewModel.addToCart {
+                StyledButton(title: "Купить", style: .blue, action: {
+                    if viewModel.sizeSelectorModel.selectedSize != nil {
+                        viewModel.addToCart.toggle()
+                    }
+                })
                 .padding(16)
+            } else {
+                HStack(spacing: 8) {
+                    StyledButton(title: "В корзину", style: .green, action: {})
+                    
+                    CountSelector(viewModel: viewModel.countSelectorModel, style: .big)
+                }
+                .padding(16)
+            }
         }
     }
 }

@@ -19,6 +19,13 @@ extension StyledButtonStyle {
         height: 34,
         cornerRadius: 8
     )
+    
+    static let green = StyledButtonStyle(
+        backgroundColor: Assets.green.swiftUIColor,
+        textColor: Assets.white.swiftUIColor,
+        height: 56,
+        cornerRadius: 8
+    )
 
     static let plainText = StyledButtonStyle(
         backgroundColor: .clear,

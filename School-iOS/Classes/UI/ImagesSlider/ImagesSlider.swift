@@ -18,11 +18,9 @@ struct ImagesSlider: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
-                        .border(.red)
                 }
             }
             .frame(maxHeight: .infinity, alignment: .top)
-            .border(.blue)
         }
         .tabViewStyle(.page)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
@@ -30,8 +28,7 @@ struct ImagesSlider: View {
         .onAppear {
             setupAppearance()
         }
-        .frame(height: 232)
-        .border(.red)
+        .frame(height: 244)
     }
     
     func setupAppearance() {
