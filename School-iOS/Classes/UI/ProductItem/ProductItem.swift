@@ -23,9 +23,10 @@ struct ProductItem: View {
                 Text(model.title)
                     .lineLimit(3)
                     .applyStyle(.bold16)
-                    .frame(width: 200, alignment: .leading)
+                    .frame(width: 211, alignment: .leading)
                     .padding(.bottom, 26)
                     .padding(.trailing, 2)
+                
                 Badges(badges: model.badge)
             }
         }
