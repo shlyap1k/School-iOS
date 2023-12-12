@@ -6,6 +6,7 @@
 import Foundation
 
 struct OrderProduct: Codable {
+    var id: UUID? = UUID()
     var productId: String
     var preview: String?
     var title: String?

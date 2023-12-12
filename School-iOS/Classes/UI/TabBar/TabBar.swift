@@ -16,12 +16,14 @@ struct TabBar: View {
                     .renderingMode(.template)
                 Text(L10n.TabView.productsScreen)
             }
-            Color.gray
-                .tabItem {
-                    Image(.cart)
-                        .renderingMode(.template)
-                    Text(L10n.TabView.cartScreen)
-                }
+            NavigationStack {
+                CartScreen()
+            }
+            .tabItem {
+                Image(.cart)
+                    .renderingMode(.template)
+                Text(L10n.TabView.cartScreen)
+            }
             Text("Test")
                 .tabItem {
                     Image(.profile)
@@ -32,6 +34,6 @@ struct TabBar: View {
     }
 }
 
-#Preview {
-    TabBar()
-}
+// #Preview {
+//    TabBar()
+// }
