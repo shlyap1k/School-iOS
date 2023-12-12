@@ -13,6 +13,8 @@ class ProductsListVM: ObservableObject {
     @Published var products: [Product] = []
 
     @Published var isLoading: Bool = false
+    
+    @Published var isEmpty: Bool = true
 
     @Published var placeholder: PlaceholderModel?
 
@@ -30,6 +32,8 @@ class ProductsListVM: ObservableObject {
                 DispatchQueue.main.async {
                     if response.isEmpty {
                         self.lastPageReached = true
+                    } else {
+                        self.isEmpty = false
                     }
 
                     self.products += response
@@ -37,6 +41,7 @@ class ProductsListVM: ObservableObject {
                     self.placeholder = self.products.count == 0 ? .emptyCatalog(isLoading: .constant(false), action: {}) : nil
 
                     self.isLoading = false
+                    
                 }
             case let .failure(reason):
                 DispatchQueue.main.async {

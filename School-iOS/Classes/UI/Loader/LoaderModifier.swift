@@ -9,11 +9,11 @@ import SwiftUI
 
 struct LoadingModifier: ViewModifier {
     @Binding var isLoading: Bool
-
+    @Binding var isEmpty: Bool
+    
     func body(content: Content) -> some View {
         content
-            .opacity(isLoading ? 0 : 1)
-            .overlay {
+            .overlay(alignment: isEmpty ? .center : .bottom) {
                 if isLoading {
                     LoaderView()
                 }
@@ -21,8 +21,9 @@ struct LoadingModifier: ViewModifier {
     }
 }
 
+
 extension View {
-    func isLoading(_ isLoading: Binding<Bool>) -> some View {
-        modifier(LoadingModifier(isLoading: isLoading))
+    func isLoading(_ isLoading: Binding<Bool>, _ isEmpty: Binding<Bool>) -> some View {
+        modifier(LoadingModifier(isLoading: isLoading, isEmpty: isEmpty))
     }
 }
