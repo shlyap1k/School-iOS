@@ -22,17 +22,8 @@ class CartVM: ObservableObject {
     @Published var isCompleted: Bool = false
 
     func unsetCheckoutCompleted() {
-        if (appState.state.checkoutCompleted) != nil {
-            appState.state.checkoutCompleted? = false
-        }
+        appState.state.checkoutCompleted? = false
     }
-
-//    func checkoutCompleted() -> Bool? {
-//        if let isCompleted = appState.state.checkoutCompleted {
-//            return isCompleted
-//        }
-//        return nil
-//    }
 
     func unsetCheckoutCompleted() {
         appState.state.checkoutCompleted? = false
