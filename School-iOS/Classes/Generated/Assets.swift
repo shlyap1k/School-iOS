@@ -38,6 +38,7 @@ internal enum Assets {
   internal static let cartPh = ImageAsset(name: "cart.ph")
   internal static let catalog = ImageAsset(name: "catalog")
   internal static let defaultUserpic = ImageAsset(name: "default.userpic")
+  internal static let delete = ImageAsset(name: "delete")
   internal static let eyeClosed = ImageAsset(name: "eye.closed")
   internal static let eyeOpened = ImageAsset(name: "eye.opened")
   internal static let network = ImageAsset(name: "network")
