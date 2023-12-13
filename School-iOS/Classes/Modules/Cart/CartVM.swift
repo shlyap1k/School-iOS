@@ -9,7 +9,7 @@ import Foundation
 class CartVM: ObservableObject {
     // MARK: Internal
 
-    @Published var cart: OrderCheckout = .init(house: "", apartment: "", date: .now, products: [])
+    @Published var cart: OrderCheckout = .init(house: "", apartment: "", dateDelivery: .now, products: [])
 
     @Published var productModels: [ProductDetailVM] = []
 
@@ -19,7 +19,22 @@ class CartVM: ObservableObject {
 
     @Published var deliveryDate: Date = .now
 
+    @Published var isCompleted: Bool?
+
 //    @Published var placeholder: PlaceholderModel? = .emptyCart()
+
+//    func checkoutCompleted() -> Bool? {
+//        if let isCompleted = appState.state.checkoutCompleted {
+//            return isCompleted
+//        }
+//        return nil
+//    }
+
+    func unsetCheckoutCompleted() {
+        if (appState.state.checkoutCompleted) != nil {
+            appState.state.checkoutCompleted? = false
+        }
+    }
 
     func clearCart() {
         cart.products = []
@@ -27,12 +42,15 @@ class CartVM: ObservableObject {
 //        placeholder = .emptyCart()
     }
 
+    func loadIsComplited() {
+        if let isCompleted = appState.state.checkoutCompleted {
+            self.isCompleted = isCompleted
+        }
+    }
+
     func loadCart() {
         if let cart = appState.state.cart {
             self.cart = cart
-//            if !cart.products.isEmpty {
-//                placeholder = nil
-//            }
         }
     }
 

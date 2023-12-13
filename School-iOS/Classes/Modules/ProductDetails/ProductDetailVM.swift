@@ -49,7 +49,7 @@ class ProductDetailVM: ObservableObject {
             appState.state.cart = .init(
                 house: "",
                 apartment: "",
-                date: .now,
+                dateDelivery: .now,
                 products: []
             )
             addToCart()

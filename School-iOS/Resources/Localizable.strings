@@ -45,3 +45,13 @@
 "cart.title" = "Корзина";
 "cart.checkout" = "Оформить";
 "cart.success" = "Заказ успешно оформлен!";
+
+"cartCheckout.title" = "Оформление заказа";
+"cartCheckout.products" = "Товары в заказе";
+"cartCheckout.deliveryDetails" = "Данные для доставки";
+"cartCheckout.address" = "Улица, дом";
+"cartCheckout.apartment" = "Квартира";
+"cartCheckout.deliveryDate" = "Дата доставки";
+"cartCheckout.size" = "Размер";
+"cartCheckout.count" = "шт.";
+"cartCheckout.checkout" = "Оформить";
