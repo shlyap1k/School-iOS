@@ -29,6 +29,14 @@ internal enum L10n {
     ///   Created by Shlyap1k on 15.11.2023.
     internal static let title = L10n.tr("Localizable", "auth.title", fallback: "Авторизация")
   }
+  internal enum Cart {
+    /// Оформить
+    internal static let checkout = L10n.tr("Localizable", "cart.checkout", fallback: "Оформить")
+    /// Заказ успешно оформлен!
+    internal static let success = L10n.tr("Localizable", "cart.success", fallback: "Заказ успешно оформлен!")
+    /// Корзина
+    internal static let title = L10n.tr("Localizable", "cart.title", fallback: "Корзина")
+  }
   internal enum Placeholder {
     /// Корзина пуста
     internal static let emptyCart = L10n.tr("Localizable", "placeholder.emptyCart", fallback: "Корзина пуста")
@@ -42,6 +50,10 @@ internal enum L10n {
     internal static let unknown = L10n.tr("Localizable", "placeholder.unknown", fallback: "Что-то пошло не так")
   }
   internal enum ProductDetails {
+    /// В корзину
+    internal static let addToCart = L10n.tr("Localizable", "productDetails.addToCart", fallback: "В корзину")
+    /// Купить
+    internal static let buy = L10n.tr("Localizable", "productDetails.buy", fallback: "Купить")
     /// Размер
     internal static let size = L10n.tr("Localizable", "productDetails.size", fallback: "Размер")
     /// Характеристики

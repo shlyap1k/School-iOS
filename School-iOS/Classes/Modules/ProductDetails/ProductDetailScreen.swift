@@ -42,7 +42,7 @@ struct ProductDetailScreen: View {
             }
 
             if !viewModel.showAddToCart {
-                StyledButton(title: "Купить", style: .blue, action: {
+                StyledButton(title: L10n.ProductDetails.buy, style: .blue, action: {
                     if viewModel.sizeSelectorModel.selectedSize != nil {
                         viewModel.showAddToCart.toggle()
                     }
@@ -50,7 +50,7 @@ struct ProductDetailScreen: View {
                 .padding(16)
             } else {
                 HStack(spacing: 8) {
-                    StyledButton(title: "В корзину", style: .green, action: {
+                    StyledButton(title: L10n.ProductDetails.addToCart, style: .green, action: {
                         viewModel.addToCart()
                     })
 

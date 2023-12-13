@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct OrderProduct: Codable {
+struct OrderProduct: Codable, Identifiable {
     var id: UUID? = UUID()
     var productId: String
     var preview: String?

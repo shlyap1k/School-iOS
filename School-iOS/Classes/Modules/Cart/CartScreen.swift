@@ -4,30 +4,23 @@
 //
 
 import Combine
-// import Factory
 import SwiftUI
 
 struct CartScreen: View {
-    @StateObject var viewModel: CartVM = .init()
-
-    @State var cart: OrderCheckout = .init(house: "", apartment: "", date: .now, products: [])
+    @ObservedObject var viewModel: CartVM = .init()
 
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
-                ForEach($cart.products, id: \.id) { $product in
-                    CartItem(product: $product)
-                        .swipeActions {
-                            Button("Burn") {
-                                print("Right on!")
-                            }
-                            .tint(.red)
-                        }
+                ForEach($viewModel.cart.products, id: \.id) { $product in
+                    CartItem(product: $product, removal: viewModel.removeProduct)
                         .onReceive(Just(product), perform: { product in
-                            print(product.quantity) // TODO: save changes
+                            print(product.quantity)
+                            viewModel.saveChanges(product: product) // TODO: save changes
+
                         })
                         .overlay(alignment: .bottom) {
-                            if product.id != cart.products.last?.id {
+                            if product.id != viewModel.cart.products.last?.id {
                                 Divider()
                                     .padding([.leading, .trailing], 16)
                             }
@@ -35,19 +28,21 @@ struct CartScreen: View {
                 }
             }
         }
+        .placeholder(viewModel.cart.products.isEmpty ? .emptyCart() : nil)
         .onAppear {
             viewModel.loadCart()
-            if let cart = viewModel.cart {
-                self.cart = cart
-            }
         }
-        .placeholder(viewModel.placeholder)
-        .navigationTitle("Корзина")
+
+        .navigationTitle(L10n.Cart.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button(action: { viewModel.clearCart() }) {
-                    Image(.delete)
+                if !viewModel.cart.products.isEmpty {
+                    Button(action: {
+                        viewModel.clearCart()
+                    }) {
+                        Image(.delete)
+                    }
                 }
             }
         }

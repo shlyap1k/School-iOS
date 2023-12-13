@@ -16,13 +16,15 @@ struct StyledButton: View {
     init(
         isActive: Binding<Bool> = .constant(true),
         isLoading: Binding<Bool> = .constant(false),
-        title: String,
+        title: String? = nil,
+        icon: Image? = nil,
         style: StyledButtonStyle,
         action: @escaping () -> Void
     ) {
         _isActive = isActive
         _isLoading = isLoading
         self.title = title
+        self.icon = icon
         self.style = style
         self.action = action
     }
@@ -45,14 +47,23 @@ struct StyledButton: View {
                         LoaderView(color: style.textColor, lineWidth: 1.5, size: 18)
                     }
                 } else {
-                    Text(title)
-//                        .applyStyle(style.typography)
-                        .padding(.horizontal, 6)
-                        .foregroundColor(style.textColor)
-                        .frame(width: reader.size.width, height: style.height)
-                        .background(style.backgroundColor)
-                        .cornerRadius(style.cornerRadius)
-                        .opacity(isActive ? 1 : 0.5)
+                    HStack {
+                        if let title {
+                            Text(title)
+                                .padding(.horizontal, 6)
+                                .foregroundColor(style.textColor)
+                                .frame(width: reader.size.width, height: style.height)
+                        }
+                        if let icon {
+                            icon
+                                .renderingMode(.template)
+                                .foregroundColor(style.textColor)
+                                .frame(width: reader.size.width, height: style.height)
+                        }
+                    }
+                    .background(style.backgroundColor)
+                    .cornerRadius(style.cornerRadius)
+                    .opacity(isActive ? 1 : 0.5)
                 }
             }
             .disabled(!isActive || isLoading)
@@ -62,7 +73,8 @@ struct StyledButton: View {
 
     // MARK: Private
 
-    private var title: String
+    private var title: String?
+    private var icon: Image?
     private var style: StyledButtonStyle
     private var action: () -> Void
 }
@@ -72,7 +84,8 @@ struct StyledButton: View {
 struct StyledButtonPreview_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            StyledButton(title: "Text", style: .blue) {}
+            StyledButton(icon: Image(.delete), style: .redBig) {}
+            StyledButton(title: "test", style: .blue) {}
         }.padding(.horizontal, 16)
     }
 }

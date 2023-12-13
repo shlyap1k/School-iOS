@@ -13,9 +13,13 @@ struct PlaceholderView: View {
             model.image
                 .resizable()
                 .frame(width: 110, height: 100)
-            Text(model.text)
-                .applyStyle(.semibold18)
-                .foregroundStyle(.black)
+            Text("")
+                .frame(maxWidth: .infinity)
+                .overlay(alignment: .center) {
+                    Text(model.text)
+                        .fixedSize(horizontal: true, vertical: false)
+                        .applyStyle(.semibold18)
+                }
             if let action = model.action {
                 StyledButton(isLoading: model.isLoading, title: L10n.Placeholder.refresh, style: .blueSmall) {
                     action()
@@ -29,8 +33,8 @@ struct PlaceholderView: View {
 #Preview {
     PlaceholderView(
         model: .init(
-            image: Image(systemName: "network"),
-            text: "Title"
-        ) {}
+            image: Image(.cartPh),
+            text: "Корзина пуста"
+        )
     )
 }
