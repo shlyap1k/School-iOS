@@ -18,6 +18,7 @@ struct ProductsInCart: View {
                                 .frame(width: 64, height: 64)
                         } placeholder: {
                             LoaderView()
+                                .frame(width: 64, height: 64, alignment: .center)
                         }
                     }
                     VStack(alignment: .leading, spacing: 8) {

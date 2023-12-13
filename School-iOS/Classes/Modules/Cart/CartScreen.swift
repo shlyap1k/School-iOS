@@ -40,7 +40,6 @@ struct CartScreen: View {
         .onAppear {
             viewModel.loadIsComplited()
             viewModel.loadCart()
-//            setupAppearance()
         }
         .onDisappear {
             viewModel.unsetCheckoutCompleted()
@@ -53,7 +52,13 @@ struct CartScreen: View {
                 CartScreen()
             }
         })
-        .navigationTitle((viewModel.isCompleted ?? false) ? L10n.Cart.success : L10n.Cart.title)
+        .navigationTitle(
+            viewModel.isCompleted ? L10n.Cart.success : L10n.Cart.title
+        )
+        .navigationBarBackground(
+            background: viewModel.isCompleted ? Assets.blackSuccess.swiftUIColor : Assets.white.swiftUIColor,
+            fontColor: viewModel.isCompleted ? ColorScheme.dark : ColorScheme.light
+        )
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -67,26 +72,37 @@ struct CartScreen: View {
             }
         }
     }
+}
 
-//    func setupAppearance() {
-//        guard let isCompleted = viewModel.isCompleted else {
-//            return
-//        }
-//        var color = UIColor(asset: Assets.white)
-//        if isCompleted {
-//            color = UIColor(asset: Assets.blackSuccess)
-//        }
-//
-//        let coloredAppearance = UINavigationBarAppearance()
-//        coloredAppearance.configureWithOpaqueBackground()
-//        coloredAppearance.backgroundColor = color
-//        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-//        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-//
-//        UINavigationBar.appearance().standardAppearance = coloredAppearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-//        viewModel.cart.apartment = "a"
-//    }
+extension View {
+    func navigationBarBackground(
+        background: Color = .orange,
+        fontColor: ColorScheme = .light
+    ) -> some View {
+        modifier(
+            ColoredNavigationBar(
+                background: background,
+                colorScheme: fontColor
+            )
+        )
+    }
+}
+
+// MARK: - ColoredNavigationBar
+
+struct ColoredNavigationBar: ViewModifier {
+    var background: Color
+    var colorScheme: ColorScheme
+
+    func body(content: Content) -> some View {
+        content
+            .toolbarBackground(
+                background,
+                for: .navigationBar
+            )
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(colorScheme, for: .navigationBar)
+    }
 }
 
 #Preview {

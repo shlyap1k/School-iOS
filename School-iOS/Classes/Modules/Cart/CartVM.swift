@@ -19,16 +19,7 @@ class CartVM: ObservableObject {
 
     @Published var deliveryDate: Date = .now
 
-    @Published var isCompleted: Bool?
-
-//    @Published var placeholder: PlaceholderModel? = .emptyCart()
-
-//    func checkoutCompleted() -> Bool? {
-//        if let isCompleted = appState.state.checkoutCompleted {
-//            return isCompleted
-//        }
-//        return nil
-//    }
+    @Published var isCompleted: Bool = false
 
     func unsetCheckoutCompleted() {
         if (appState.state.checkoutCompleted) != nil {
@@ -39,7 +30,6 @@ class CartVM: ObservableObject {
     func clearCart() {
         cart.products = []
         appState.state.cart = cart
-//        placeholder = .emptyCart()
     }
 
     func loadIsComplited() {
