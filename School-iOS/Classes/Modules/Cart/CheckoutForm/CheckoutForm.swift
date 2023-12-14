@@ -5,7 +5,17 @@
 
 import SwiftUI
 
+// MARK: - FocusedField
+
+enum FocusedField: Hashable {
+    case address, apartment
+}
+
+// MARK: - CheckoutForm
+
 struct CheckoutForm: View {
+    // MARK: Internal
+
     @StateObject var viewModel: CheckoutFormVM = .init()
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -23,9 +33,11 @@ struct CheckoutForm: View {
 
                     Text(L10n.CartCheckout.address)
                     InputField(title: "", model: $viewModel.houseModel)
+                        .focused($isFocused, equals: .address)
 
                     Text(L10n.CartCheckout.apartment)
                     InputField(title: "", model: $viewModel.apartmentModel)
+                        .focused($isFocused, equals: .apartment)
 
                     Text(L10n.CartCheckout.deliveryDate)
                     DatePicker(
@@ -38,6 +50,9 @@ struct CheckoutForm: View {
                     .datePickerStyle(.graphical)
                 }
                 .padding(.bottom, 56 + 16)
+            }
+            .onTapGesture {
+                isFocused = nil
             }
             .scrollIndicators(.hidden)
             StyledButton(isLoading: $viewModel.isLoading, title: L10n.CartCheckout.checkout, style: .blue) {
@@ -53,6 +68,10 @@ struct CheckoutForm: View {
         .navigationTitle(L10n.CartCheckout.title)
         .navigationBarTitleDisplayMode(.inline)
     }
+
+    // MARK: Private
+
+    @FocusState private var isFocused: FocusedField?
 }
 
 #Preview {
