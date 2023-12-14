@@ -9,7 +9,7 @@ struct AppState: Codable {
     struct Persistance {
         // MARK: Internal
 
-        @UserDefaultValue(key: session) var accessToken: String?
+        @KeychainValue(key: session) var accessToken: String?
         @UserDefaultValue(key: profileKey) var profile: Profile?
         @UserDefaultValue(key: cart) var cart: OrderCheckout?
 
