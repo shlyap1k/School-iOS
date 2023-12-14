@@ -15,12 +15,8 @@ internal enum L10n {
     internal static let action = L10n.tr("Localizable", "auth.action", fallback: "Войти")
     /// E-mail
     internal static let email = L10n.tr("Localizable", "auth.email", fallback: "E-mail")
-    /// Введите e-mail
-    internal static let emailError = L10n.tr("Localizable", "auth.emailError", fallback: "Введите e-mail")
     /// Пароль
     internal static let password = L10n.tr("Localizable", "auth.password", fallback: "Пароль")
-    /// Пароль должен содержать как минимум 6 символов
-    internal static let passwordError = L10n.tr("Localizable", "auth.passwordError", fallback: "Пароль должен содержать как минимум 6 символов")
     /// Еще нет аккаунта?
     internal static let register = L10n.tr("Localizable", "auth.register", fallback: "Еще нет аккаунта?")
     /// Localizable.strings
@@ -88,8 +84,6 @@ internal enum L10n {
     internal static let action = L10n.tr("Localizable", "register.action", fallback: "Зарегистрироваться")
     /// E-mail
     internal static let email = L10n.tr("Localizable", "register.email", fallback: "E-mail")
-    /// Введите e-mail
-    internal static let emailError = L10n.tr("Localizable", "register.emailError", fallback: "Введите e-mail")
     /// Фамилия
     internal static let lastName = L10n.tr("Localizable", "register.last_name", fallback: "Фамилия")
     /// Имя
@@ -98,10 +92,6 @@ internal enum L10n {
     internal static let occupation = L10n.tr("Localizable", "register.occupation", fallback: "Род занятий")
     /// Пароль
     internal static let password = L10n.tr("Localizable", "register.password", fallback: "Пароль")
-    /// Пароль должен содержать как минимум 6 символов
-    internal static let passwordError = L10n.tr("Localizable", "register.passwordError", fallback: "Пароль должен содержать как минимум 6 символов")
-    /// Это поле должно быть заполнено
-    internal static let requiredFieldError = L10n.tr("Localizable", "register.requiredFieldError", fallback: "Это поле должно быть заполнено")
     /// Регистрация
     internal static let title = L10n.tr("Localizable", "register.title", fallback: "Регистрация")
   }
@@ -112,6 +102,14 @@ internal enum L10n {
     internal static let productsScreen = L10n.tr("Localizable", "tabView.productsScreen", fallback: "Каталог")
     /// Профиль
     internal static let profileScreen = L10n.tr("Localizable", "tabView.profileScreen", fallback: "Профиль")
+  }
+  internal enum Validation {
+    /// Введите e-mail
+    internal static let emailError = L10n.tr("Localizable", "validation.emailError", fallback: "Введите e-mail")
+    /// Пароль должен содержать как минимум 6 символов
+    internal static let passwordError = L10n.tr("Localizable", "validation.passwordError", fallback: "Пароль должен содержать как минимум 6 символов")
+    /// Это поле должно быть заполнено
+    internal static let requiredFieldError = L10n.tr("Localizable", "validation.requiredFieldError", fallback: "Это поле должно быть заполнено")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
