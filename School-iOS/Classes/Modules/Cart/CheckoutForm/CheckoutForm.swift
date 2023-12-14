@@ -22,13 +22,16 @@ struct CheckoutForm: View {
                         .applyStyle(.bold16)
 
                     Text(L10n.CartCheckout.address)
-                    InputField(title: "", model: $viewModel.house)
+                    InputField(title: "", model: $viewModel.houseModel)
 
                     Text(L10n.CartCheckout.apartment)
-                    InputField(title: "", model: $viewModel.apartment)
+                    InputField(title: "", model: $viewModel.apartmentModel)
 
                     Text(L10n.CartCheckout.deliveryDate)
-                    DatePicker(selection: $viewModel.deliveryDate) {
+                    DatePicker(
+                        selection: $viewModel.deliveryDate,
+                        in: Date.now...
+                    ) {
                         Color.red
                     }
                     .accentColor(.red)
