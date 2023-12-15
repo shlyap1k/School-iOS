@@ -6,6 +6,12 @@
 import Foundation
 import os.log
 
+// MARK: - DateError
+
+enum DateError: String, Error {
+    case invalidDate
+}
+
 // MARK: - BaseRestProvider
 
 final class BaseRestProvider: RestProvider {
@@ -105,9 +111,16 @@ final class BaseRestProvider: RestProvider {
         _ data: Data, from urlResponse: HTTPURLResponse, parameters: RestParameters
     ) async throws -> RestResult<T> {
         decoder.keyDecodingStrategy = parameters.keyDecoding
+        decoder.dateDecodingStrategy = parameters.dateDecoding
+
         switch urlResponse.statusCode {
         case 200 ... 299:
             if let wrapper = parameters.wrapper {
+//                do {
+//                    let _ = try decoder.decode(wrapper, from: data)
+//                } catch {
+//                    print(error)
+//                }
                 guard let decodedResponse = try? decoder.decode(wrapper, from: data),
                       let wrapped = decodedResponse.wrapped as? T
                 else {
@@ -121,10 +134,11 @@ final class BaseRestProvider: RestProvider {
                 }
                 return .success(wrapped)
             } else {
-                guard let decodedResponse: T = try? decoder.decode(T.self, from: data) else {
-                    return .failure(NetworkError(kind: .decode))
-                }
-                return .success(decodedResponse)
+//                guard let decodedResponse: T = try? decoder.decode(T.self, from: data) else {
+//                    return .failure(NetworkError(kind: .decode))
+//                }
+//                return .success(decodedResponse)
+                return .success(data as! T)
             }
         default:
             if let errorWrapper = parameters.errorWrapper {

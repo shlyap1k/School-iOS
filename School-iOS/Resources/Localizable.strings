@@ -55,3 +55,24 @@
 "validation.emailError" = "Введите e-mail";
 "validation.passwordError" = "Пароль должен содержать как минимум 6 символов";
 "validation.requiredFieldError" = "Это поле должно быть заполнено";
+
+"profile.Logout.action" = "Выйти";
+"profile.Logout.cancel" = "Отмена";
+"profile.Logout.title" = "Выйти из профиля?";
+"profile.Menu.ordersList" = "Мои заказы";
+"profile.Menu.logout" = "Выйти";
+
+"ordersList.title" = "Мои заказы";
+"ordersList.order" = "Заказ";
+"ordersList.delivery" = "Доставим";
+"ordersList.cancelDelivery" = "Отмена";
+"ordersList.cancelled" = "Заказ отменён";
+"ordersList.cancelConfirm" = "Вы действительно желаете отменить заказ";
+"ordersList.cancelYes" = "Да, отменить заказ";
+"ordersList.cancelNo" = "Оставить заказ";
+
+"profile.edit.name" = "Имя";
+"profile.edit.surname" = "Фамилия";
+"profile.edit.occupation" = "Род занятий";
+"profile.edit.action" = "Сохранить";
+"profile.edit.title" = "Редактирование профиля";

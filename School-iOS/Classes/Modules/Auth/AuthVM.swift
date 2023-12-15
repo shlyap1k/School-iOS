@@ -49,8 +49,8 @@ class AuthVM: ObservableObject {
                 appState.state.accessToken = response.accessToken
                 appState.state.profile = response.profile
             case let .failure(reason):
-                emailModel.error = reason.detail.message
                 DispatchQueue.main.async {
+                    self.emailModel.error = reason.detail.message
                     self.isLoading = false
                 }
             }

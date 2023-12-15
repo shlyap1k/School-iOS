@@ -20,6 +20,13 @@ extension StyledButtonStyle {
         cornerRadius: 8
     )
 
+    static let redSmall = StyledButtonStyle(
+        backgroundColor: Assets.red.swiftUIColor,
+        textColor: Assets.white.swiftUIColor,
+        height: 34,
+        cornerRadius: 8
+    )
+
     static let redBig = StyledButtonStyle(
         backgroundColor: Assets.red.swiftUIColor,
         textColor: Assets.white.swiftUIColor,

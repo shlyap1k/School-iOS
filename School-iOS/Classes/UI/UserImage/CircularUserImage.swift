@@ -10,7 +10,6 @@ struct CircularUserImage: View {
 
     var body: some View {
         UserImage(imageState: imageState)
-            .scaledToFill()
             .clipShape(Circle())
     }
 }

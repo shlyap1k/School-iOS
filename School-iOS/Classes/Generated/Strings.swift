@@ -53,6 +53,24 @@ internal enum L10n {
     /// Оформление заказа
     internal static let title = L10n.tr("Localizable", "cartCheckout.title", fallback: "Оформление заказа")
   }
+  internal enum OrdersList {
+    /// Вы действительно желаете отменить заказ
+    internal static let cancelConfirm = L10n.tr("Localizable", "ordersList.cancelConfirm", fallback: "Вы действительно желаете отменить заказ")
+    /// Отмена
+    internal static let cancelDelivery = L10n.tr("Localizable", "ordersList.cancelDelivery", fallback: "Отмена")
+    /// Заказ отменён
+    internal static let cancelled = L10n.tr("Localizable", "ordersList.cancelled", fallback: "Заказ отменён")
+    /// Оставить заказ
+    internal static let cancelNo = L10n.tr("Localizable", "ordersList.cancelNo", fallback: "Оставить заказ")
+    /// Да, отменить заказ
+    internal static let cancelYes = L10n.tr("Localizable", "ordersList.cancelYes", fallback: "Да, отменить заказ")
+    /// Доставим
+    internal static let delivery = L10n.tr("Localizable", "ordersList.delivery", fallback: "Доставим")
+    /// Заказ
+    internal static let order = L10n.tr("Localizable", "ordersList.order", fallback: "Заказ")
+    /// Мои заказы
+    internal static let title = L10n.tr("Localizable", "ordersList.title", fallback: "Мои заказы")
+  }
   internal enum Placeholder {
     /// Корзина пуста
     internal static let emptyCart = L10n.tr("Localizable", "placeholder.emptyCart", fallback: "Корзина пуста")
@@ -78,6 +96,34 @@ internal enum L10n {
   internal enum ProductsList {
     /// Список товаров
     internal static let title = L10n.tr("Localizable", "productsList.title", fallback: "Список товаров")
+  }
+  internal enum Profile {
+    internal enum Logout {
+      /// Выйти
+      internal static let action = L10n.tr("Localizable", "profile.Logout.action", fallback: "Выйти")
+      /// Отмена
+      internal static let cancel = L10n.tr("Localizable", "profile.Logout.cancel", fallback: "Отмена")
+      /// Выйти из профиля?
+      internal static let title = L10n.tr("Localizable", "profile.Logout.title", fallback: "Выйти из профиля?")
+    }
+    internal enum Menu {
+      /// Выйти
+      internal static let logout = L10n.tr("Localizable", "profile.Menu.logout", fallback: "Выйти")
+      /// Мои заказы
+      internal static let ordersList = L10n.tr("Localizable", "profile.Menu.ordersList", fallback: "Мои заказы")
+    }
+    internal enum Edit {
+      /// Сохранить
+      internal static let action = L10n.tr("Localizable", "profile.edit.action", fallback: "Сохранить")
+      /// Имя
+      internal static let name = L10n.tr("Localizable", "profile.edit.name", fallback: "Имя")
+      /// Род занятий
+      internal static let occupation = L10n.tr("Localizable", "profile.edit.occupation", fallback: "Род занятий")
+      /// Фамилия
+      internal static let surname = L10n.tr("Localizable", "profile.edit.surname", fallback: "Фамилия")
+      /// Редактирование профиля
+      internal static let title = L10n.tr("Localizable", "profile.edit.title", fallback: "Редактирование профиля")
+    }
   }
   internal enum Register {
     /// Зарегистрироваться
