@@ -5,6 +5,6 @@
 
 import Foundation
 
-struct Products: Decodable {
-    var products: [Product]
+enum ProductsListRoutes: Hashable {
+    case product(Product?)
 }

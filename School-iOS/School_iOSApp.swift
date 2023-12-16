@@ -7,6 +7,8 @@ import Factory
 import netfox
 import SwiftUI
 
+// MARK: - SchoolApp
+
 @main
 struct SchoolApp: App {
     // MARK: Lifecycle
@@ -28,7 +30,7 @@ struct SchoolApp: App {
                         AuthScreen()
                     }
                 case .list:
-                    Text("\(appState.state.profile?.name ?? "name")\n\(appState.state.profile?.surname ?? "surname")")
+                    TabBar()
                 }
             }
             .animation(.linear, value: viewState)
@@ -55,10 +57,8 @@ struct SchoolApp: App {
 }
 
 extension UINavigationController {
-    
-    open override func viewWillLayoutSubviews() {
+    override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         navigationBar.topItem?.backButtonDisplayMode = .minimal
     }
-    
 }
