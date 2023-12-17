@@ -12,6 +12,7 @@ struct UserImage: View {
         switch imageState {
         case let .success(image):
             image.getImage().resizable()
+                .scaledToFill()
                 .frame(width: 120, height: 120)
         case .loading:
             ProgressView()

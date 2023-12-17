@@ -6,7 +6,9 @@
 import SwiftUI
 
 struct CountSelector: View {
-    @ObservedObject var viewModel: CountSelectorModel
+//    @ObservedObject var viewModel: CountSelectorModel
+
+    @Binding var count: Int
 
     let style: CountSelectorStyle
 
@@ -18,20 +20,20 @@ struct CountSelector: View {
                 .frame(height: style.height)
 
             HStack(spacing: 0) {
-                Button(action: { viewModel.decrease() }) {
+                Button(action: { count -= 1 }) {
                     Text("-")
                         .applyStyle(.regular18)
                         .frame(width: 44, height: style.height)
                         .padding(.leading, 5)
-                }.disabled(!viewModel.desreaseEnabled)
+                }.disabled(count == 1)
 
-                Text("\(viewModel.count)")
+                Text("\(count)")
                     .applyStyle(.regular18)
                     .lineLimit(1)
                     .layoutPriority(100)
                     .frame(width: 52)
 
-                Button(action: { viewModel.increase() }) {
+                Button(action: { count += 1 }) {
                     Text("+")
                         .applyStyle(.regular18)
                         .frame(width: 44, height: style.height)
@@ -46,7 +48,7 @@ struct CountSelector: View {
 
 #Preview {
     HStack {
-        CountSelector(viewModel: CountSelectorModel(), style: .big)
-        CountSelector(viewModel: CountSelectorModel(), style: .small)
+        CountSelector(count: .constant(1), style: .big)
+        CountSelector(count: .constant(1), style: .small)
     }
 }

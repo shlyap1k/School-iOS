@@ -11,8 +11,6 @@
 "auth.password" = "Пароль";
 "auth.action" = "Войти";
 "auth.register" = "Еще нет аккаунта?";
-"auth.emailError" = "Введите e-mail";
-"auth.passwordError" = "Пароль должен содержать как минимум 6 символов";
 
 "register.title" = "Регистрация";
 "register.name" = "Имя";
@@ -21,9 +19,6 @@
 "register.email" = "E-mail";
 "register.password" = "Пароль";
 "register.action" = "Зарегистрироваться";
-"register.emailError" = "Введите e-mail";
-"register.passwordError" = "Пароль должен содержать как минимум 6 символов";
-"register.requiredFieldError" = "Это поле должно быть заполнено";
 
 "productsList.title" = "Список товаров";
 
@@ -32,6 +27,7 @@
 "tabView.cartScreen" = "Корзина";
 
 "placeholder.emptyCatalog" = "Пока здесь нет ни одного товара.";
+"placeholder.emptyOrders" = "Пока здесь нет ни одного заказа";
 "placeholder.emptyCart" = "Корзина пуста";
 "placeholder.noConnection" = "Нет соединения";
 "placeholder.unknown" = "Что-то пошло не так";
@@ -41,3 +37,43 @@
 "productDetails.specs" = "Характеристики";
 "productDetails.buy" = "Купить";
 "productDetails.cart" = "В корзину";
+
+"cart.title" = "Корзина";
+"cart.checkout" = "Оформить";
+"cart.success" = "Заказ успешно оформлен!";
+
+"cartCheckout.title" = "Оформление заказа";
+"cartCheckout.products" = "Товары в заказе";
+"cartCheckout.deliveryDetails" = "Данные для доставки";
+"cartCheckout.address" = "Улица, дом";
+"cartCheckout.apartment" = "Квартира";
+"cartCheckout.deliveryDate" = "Дата доставки";
+"cartCheckout.size" = "Размер";
+"cartCheckout.count" = "шт.";
+"cartCheckout.checkout" = "Оформить";
+
+"validation.requiredFieldError" = "Это поле должно быть заполнено";
+"validation.emailError" = "Введите e-mail";
+"validation.passwordError" = "Пароль должен содержать как минимум 6 символов";
+"validation.requiredFieldError" = "Это поле должно быть заполнено";
+
+"profile.Logout.action" = "Выйти";
+"profile.Logout.cancel" = "Отмена";
+"profile.Logout.title" = "Выйти из профиля?";
+"profile.Menu.ordersList" = "Мои заказы";
+"profile.Menu.logout" = "Выйти";
+"profile.edit.name" = "Имя";
+"profile.edit.surname" = "Фамилия";
+"profile.edit.occupation" = "Род занятий";
+"profile.edit.action" = "Сохранить";
+"profile.edit.title" = "Редактирование профиля";
+"profile.edit.imageError" = "Не удалось загрузить картинку";
+
+"ordersList.title" = "Мои заказы";
+"ordersList.order" = "Заказ";
+"ordersList.delivery" = "Доставим";
+"ordersList.cancelDelivery" = "Отмена";
+"ordersList.cancelled" = "Заказ отменён";
+"ordersList.cancelConfirm" = "Вы действительно желаете отменить заказ";
+"ordersList.cancelYes" = "Да, отменить заказ";
+"ordersList.cancelNo" = "Оставить заказ";

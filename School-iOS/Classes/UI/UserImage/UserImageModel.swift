@@ -39,7 +39,7 @@ class UserImageModel: ObservableObject {
         }
     }
 
-    @Published private(set) var imageState: ImageState = .empty
+    @Published var imageState: ImageState = .empty
 
     @Published var imageSelection: PhotosPickerItem? = nil {
         didSet {
@@ -60,7 +60,6 @@ class UserImageModel: ObservableObject {
         imageSelection.loadTransferable(type: ProfileImage.self) { result in
             DispatchQueue.main.async {
                 guard imageSelection == self.imageSelection else {
-                    print("Failed to get the selected item.")
                     return
                 }
                 switch result {

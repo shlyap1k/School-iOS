@@ -18,7 +18,7 @@ struct Badges: View {
                 generateContent(in: geometry)
             }
         }
-        .frame(width: 211, height: totalHeight)
+        .frame(height: totalHeight)
     }
 
     // MARK: Private
@@ -88,7 +88,8 @@ struct Badges: View {
             Badge(value: "Хит сезона", color: "#3C72BF"),
             Badge(value: "Hot", color: "#BF3C3C"),
             Badge(value: "Скидка", color: "#3CBF49"),
-        ]).border(.red)
+        ])
+        .border(.red)
         Badges(
             badges: [
                 Badge(value: "Хит сезона", color: "#3C72BF"),

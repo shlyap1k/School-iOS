@@ -19,20 +19,26 @@ struct TabBar: View {
                 Text(L10n.TabView.productsScreen)
             }
             .tag(TabBarRoutes.catalog)
-            Color.gray
-                .tabItem {
-                    Image(.cart)
-                        .renderingMode(.template)
-                    Text(L10n.TabView.cartScreen)
-                }
-                .tag(TabBarRoutes.cart)
-            Text("Test")
-                .tabItem {
-                    Image(.profile)
-                        .renderingMode(.template)
-                    Text(L10n.TabView.profileScreen)
-                }
-                .tag(TabBarRoutes.profile)
+
+            NavigationStack {
+                CartScreen()
+            }
+            .tabItem {
+                Image(.cart)
+                    .renderingMode(.template)
+                Text(L10n.TabView.cartScreen)
+            }
+            .tag(TabBarRoutes.cart)
+
+            NavigationStack {
+                ProfileScreen()
+            }
+            .tabItem {
+                Image(.profile)
+                    .renderingMode(.template)
+                Text(L10n.TabView.profileScreen)
+            }
+            .tag(TabBarRoutes.profile)
         }
     }
 
@@ -41,6 +47,6 @@ struct TabBar: View {
     @State private var selectedTab: TabBarRoutes = .catalog
 }
 
-#Preview {
-    TabBar()
-}
+// #Preview {
+//    TabBar()
+// }

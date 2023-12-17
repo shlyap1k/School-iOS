@@ -7,20 +7,31 @@ import Foundation
 import SwiftUI
 
 struct PlaceholderModel {
-    static let emptyCatalog: PlaceholderModel = .init(
-        image: Image(.ph),
-        text: L10n.Placeholder.emptyCatalog
-    )
-
-    static let emptyCart: PlaceholderModel = .init(
-        image: Image(.cartPh),
-        text: L10n.Placeholder.emptyCart
-    )
-
     let image: Image
     let text: String
     var isLoading: Binding<Bool> = .constant(false)
     var action: (() -> Void)?
+
+    static func emptyOrders() -> PlaceholderModel {
+        PlaceholderModel(
+            image: Image(.ph),
+            text: L10n.Placeholder.emptyOrders
+        )
+    }
+
+    static func emptyCatalog() -> PlaceholderModel {
+        PlaceholderModel(
+            image: Image(.ph),
+            text: L10n.Placeholder.emptyCatalog
+        )
+    }
+
+    static func emptyCart() -> PlaceholderModel {
+        PlaceholderModel(
+            image: Image(.cartPh),
+            text: L10n.Placeholder.emptyCart
+        )
+    }
 
     static func noConnection(isLoading: Binding<Bool> = .constant(false), action: (() -> Void)?) -> PlaceholderModel {
         PlaceholderModel(

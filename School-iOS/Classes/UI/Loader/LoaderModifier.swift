@@ -8,6 +8,15 @@ import SwiftUI
 // MARK: - LoadingModifier
 
 struct LoadingModifier: ViewModifier {
+    // MARK: Lifecycle
+
+    init(isLoading: Binding<Bool>, isEmpty: Binding<Bool> = .constant(false)) {
+        _isLoading = isLoading
+        _isEmpty = isEmpty
+    }
+
+    // MARK: Internal
+
     @Binding var isLoading: Bool
     @Binding var isEmpty: Bool
 

@@ -70,7 +70,6 @@ struct NetworkError: Error, Decodable {
             case URLError.notConnectedToInternet, URLError.networkConnectionLost:
                 return .noConnection
             default:
-                print("unknown")
                 return .unknown
             }
         default:

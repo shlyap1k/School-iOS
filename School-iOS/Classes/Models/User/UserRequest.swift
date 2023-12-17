@@ -7,7 +7,7 @@ import Foundation
 
 enum UserRequest: Request {
     case fetchUser
-    case updateUser(updateUserPayload: UpdateUserPayload)
+    case updateUser(updateUserPayload: [UpdateUserPayload])
     case uploadPhoto(photo: Data, uuid: String)
     case getPhoto(fileId: String)
 

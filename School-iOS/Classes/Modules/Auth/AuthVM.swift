@@ -21,14 +21,14 @@ class AuthVM: ObservableObject {
 
         if !Validator.validate(.email, value: emailModel.text) {
             isValid = false
-            emailModel.error = L10n.Auth.emailError
+            emailModel.error = L10n.Validation.emailError
         } else {
             emailModel.error = nil
         }
 
         if !Validator.validate(.password(minLength: 6), value: passwordModel.text) {
             isValid = false
-            passwordModel.error = L10n.Auth.passwordError
+            passwordModel.error = L10n.Validation.passwordError
         } else {
             passwordModel.error = nil
         }
@@ -49,8 +49,8 @@ class AuthVM: ObservableObject {
                 appState.state.accessToken = response.accessToken
                 appState.state.profile = response.profile
             case let .failure(reason):
-                emailModel.error = reason.detail.message
                 DispatchQueue.main.async {
+                    self.emailModel.error = reason.detail.message
                     self.isLoading = false
                 }
             }
