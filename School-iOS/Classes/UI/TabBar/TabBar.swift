@@ -19,7 +19,7 @@ struct TabBar: View {
                 Text(L10n.TabView.productsScreen)
             }
             .tag(TabBarRoutes.catalog)
-            
+
             NavigationStack {
                 CartScreen()
             }
@@ -29,16 +29,16 @@ struct TabBar: View {
                 Text(L10n.TabView.cartScreen)
             }
             .tag(TabBarRoutes.cart)
-            
+
             NavigationStack {
                 ProfileScreen()
             }
-                .tabItem {
-                    Image(.profile)
-                        .renderingMode(.template)
-                    Text(L10n.TabView.profileScreen)
-                }
-                .tag(TabBarRoutes.profile)
+            .tabItem {
+                Image(.profile)
+                    .renderingMode(.template)
+                Text(L10n.TabView.profileScreen)
+            }
+            .tag(TabBarRoutes.profile)
         }
     }
 

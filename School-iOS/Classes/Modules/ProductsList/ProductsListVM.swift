@@ -38,7 +38,7 @@ class ProductsListVM: ObservableObject {
 
                     self.products += response
 
-                    self.placeholder = self.products.count == 0 ? .emptyCatalog : nil
+                    self.placeholder = self.products.count == 0 ? .emptyCatalog() : nil
 
                     self.isLoading = false
                 }

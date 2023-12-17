@@ -14,7 +14,7 @@ struct ProfileScreen: View {
         VStack {
             VStack(spacing: 0) {
                 CircularUserImage(imageState: viewModel.userImage.imageState)
-                    .isLoading($viewModel.isLoading)
+                    .isLoading($viewModel.isLoading, .constant(false))
                     .padding(.top, 4)
                     .padding(.bottom, 26)
 

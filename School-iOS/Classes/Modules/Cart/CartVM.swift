@@ -25,19 +25,9 @@ class CartVM: ObservableObject {
         appState.state.checkoutCompleted? = false
     }
 
-    func unsetCheckoutCompleted() {
-        appState.state.checkoutCompleted? = false
-    }
-
     func clearCart() {
         cart.products = []
         appState.state.cart = cart
-    }
-
-    func loadIsComplited() {
-        if let isCompleted = appState.state.checkoutCompleted {
-            self.isCompleted = isCompleted
-        }
     }
 
     func loadIsComplited() {

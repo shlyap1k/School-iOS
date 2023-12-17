@@ -7,12 +7,11 @@ import Foundation
 import SwiftUI
 
 struct PlaceholderModel {
-
     let image: Image
     let text: String
     var isLoading: Binding<Bool> = .constant(false)
     var action: (() -> Void)?
-    
+
     static func emptyCatalog() -> PlaceholderModel {
         PlaceholderModel(
             image: Image(.ph),

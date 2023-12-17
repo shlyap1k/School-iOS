@@ -6,23 +6,19 @@
 import SwiftUI
 
 struct NextPageLoader: View {
-    @ObservedObject var viewModel: ProductsListVM
+    var nextPage: () -> Void
 
     var body: some View {
         ZStack(alignment: .center) {
-            if viewModel.isLoading {
-                LoaderView()
-            } else {
-                EmptyView()
-            }
+            EmptyView()
         }
         .frame(height: 50)
         .onAppear {
-            viewModel.nextPage()
+            nextPage()
         }
     }
 }
 
 #Preview {
-    NextPageLoader(viewModel: ProductsListVM())
+    NextPageLoader(nextPage: {})
 }

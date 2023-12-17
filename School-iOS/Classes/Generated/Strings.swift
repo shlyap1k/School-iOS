@@ -84,10 +84,10 @@ internal enum L10n {
     internal static let unknown = L10n.tr("Localizable", "placeholder.unknown", fallback: "Что-то пошло не так")
   }
   internal enum ProductDetails {
-    /// В корзину
-    internal static let addToCart = L10n.tr("Localizable", "productDetails.addToCart", fallback: "В корзину")
     /// Купить
     internal static let buy = L10n.tr("Localizable", "productDetails.buy", fallback: "Купить")
+    /// В корзину
+    internal static let cart = L10n.tr("Localizable", "productDetails.cart", fallback: "В корзину")
     /// Размер
     internal static let size = L10n.tr("Localizable", "productDetails.size", fallback: "Размер")
     /// Характеристики

@@ -23,7 +23,6 @@ struct OrdersListItem: View {
             switch order.status {
             case "in_work":
                 if let dateDelivery = order.dateDelivery {
-//                    dateDelivery
                     Text("\(L10n.OrdersList.delivery) \(dateFormat(dateDelivery))")
                 }
             case "cancelled":
