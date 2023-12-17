@@ -41,3 +41,22 @@
 "productDetails.specs" = "Характеристики";
 "productDetails.buy" = "Купить";
 "productDetails.cart" = "В корзину";
+
+"cart.title" = "Корзина";
+"cart.checkout" = "Оформить";
+"cart.success" = "Заказ успешно оформлен!";
+
+"cartCheckout.title" = "Оформление заказа";
+"cartCheckout.products" = "Товары в заказе";
+"cartCheckout.deliveryDetails" = "Данные для доставки";
+"cartCheckout.address" = "Улица, дом";
+"cartCheckout.apartment" = "Квартира";
+"cartCheckout.deliveryDate" = "Дата доставки";
+"cartCheckout.size" = "Размер";
+"cartCheckout.count" = "шт.";
+"cartCheckout.checkout" = "Оформить";
+
+"validation.requiredFieldError" = "Это поле должно быть заполнено";
+"validation.emailError" = "Введите e-mail";
+"validation.passwordError" = "Пароль должен содержать как минимум 6 символов";
+"validation.requiredFieldError" = "Это поле должно быть заполнено";

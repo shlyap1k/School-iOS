@@ -13,7 +13,7 @@ class ProductsListVM: ObservableObject {
     @Published var products: [Product] = []
 
     @Published var isLoading: Bool = false
-    
+
     @Published var isEmpty: Bool = true
 
     @Published var placeholder: PlaceholderModel?
@@ -41,7 +41,6 @@ class ProductsListVM: ObservableObject {
                     self.placeholder = self.products.count == 0 ? .emptyCatalog : nil
 
                     self.isLoading = false
-                    
                 }
             case let .failure(reason):
                 DispatchQueue.main.async {

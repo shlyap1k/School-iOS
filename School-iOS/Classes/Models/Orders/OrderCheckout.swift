@@ -5,9 +5,9 @@
 
 import Foundation
 
-struct OrderCheckout: Encodable {
+struct OrderCheckout: Encodable, Decodable {
     var house: String
     var apartment: String
-    var date: Date
+    var dateDelivery: Date
     var products: [OrderProduct]
 }

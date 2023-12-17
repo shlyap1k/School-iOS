@@ -29,6 +29,34 @@ internal enum L10n {
     ///   Created by Shlyap1k on 15.11.2023.
     internal static let title = L10n.tr("Localizable", "auth.title", fallback: "Авторизация")
   }
+  internal enum Cart {
+    /// Оформить
+    internal static let checkout = L10n.tr("Localizable", "cart.checkout", fallback: "Оформить")
+    /// Заказ успешно оформлен!
+    internal static let success = L10n.tr("Localizable", "cart.success", fallback: "Заказ успешно оформлен!")
+    /// Корзина
+    internal static let title = L10n.tr("Localizable", "cart.title", fallback: "Корзина")
+  }
+  internal enum CartCheckout {
+    /// Улица, дом
+    internal static let address = L10n.tr("Localizable", "cartCheckout.address", fallback: "Улица, дом")
+    /// Квартира
+    internal static let apartment = L10n.tr("Localizable", "cartCheckout.apartment", fallback: "Квартира")
+    /// Оформить
+    internal static let checkout = L10n.tr("Localizable", "cartCheckout.checkout", fallback: "Оформить")
+    /// шт.
+    internal static let count = L10n.tr("Localizable", "cartCheckout.count", fallback: "шт.")
+    /// Дата доставки
+    internal static let deliveryDate = L10n.tr("Localizable", "cartCheckout.deliveryDate", fallback: "Дата доставки")
+    /// Данные для доставки
+    internal static let deliveryDetails = L10n.tr("Localizable", "cartCheckout.deliveryDetails", fallback: "Данные для доставки")
+    /// Товары в заказе
+    internal static let products = L10n.tr("Localizable", "cartCheckout.products", fallback: "Товары в заказе")
+    /// Размер
+    internal static let size = L10n.tr("Localizable", "cartCheckout.size", fallback: "Размер")
+    /// Оформление заказа
+    internal static let title = L10n.tr("Localizable", "cartCheckout.title", fallback: "Оформление заказа")
+  }
   internal enum Placeholder {
     /// Корзина пуста
     internal static let emptyCart = L10n.tr("Localizable", "placeholder.emptyCart", fallback: "Корзина пуста")
@@ -84,6 +112,14 @@ internal enum L10n {
     internal static let productsScreen = L10n.tr("Localizable", "tabView.productsScreen", fallback: "Каталог")
     /// Профиль
     internal static let profileScreen = L10n.tr("Localizable", "tabView.profileScreen", fallback: "Профиль")
+  }
+  internal enum Validation {
+    /// Введите e-mail
+    internal static let emailError = L10n.tr("Localizable", "validation.emailError", fallback: "Введите e-mail")
+    /// Пароль должен содержать как минимум 6 символов
+    internal static let passwordError = L10n.tr("Localizable", "validation.passwordError", fallback: "Пароль должен содержать как минимум 6 символов")
+    /// Это поле должно быть заполнено
+    internal static let requiredFieldError = L10n.tr("Localizable", "validation.requiredFieldError", fallback: "Это поле должно быть заполнено")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

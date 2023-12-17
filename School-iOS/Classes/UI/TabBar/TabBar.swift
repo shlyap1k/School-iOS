@@ -19,13 +19,15 @@ struct TabBar: View {
                 Text(L10n.TabView.productsScreen)
             }
             .tag(TabBarRoutes.catalog)
-            Color.gray
-                .tabItem {
-                    Image(.cart)
-                        .renderingMode(.template)
-                    Text(L10n.TabView.cartScreen)
-                }
-                .tag(TabBarRoutes.cart)
+            NavigationStack {
+                CartScreen()
+            }
+            .tabItem {
+                Image(.cart)
+                    .renderingMode(.template)
+                Text(L10n.TabView.cartScreen)
+            }
+            .tag(TabBarRoutes.cart)
             Text("Test")
                 .tabItem {
                     Image(.profile)

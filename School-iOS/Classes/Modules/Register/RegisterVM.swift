@@ -30,35 +30,35 @@ class RegisterVM: ObservableObject {
 
         if !Validator.validate(.email, value: emailModel.text) {
             isValid = false
-            emailModel.error = L10n.Register.emailError
+            emailModel.error = L10n.Validation.emailError
         } else {
             emailModel.error = nil
         }
 
         if !Validator.validate(.password(minLength: 6), value: passwordModel.text) {
             isValid = false
-            passwordModel.error = L10n.Register.passwordError
+            passwordModel.error = L10n.Validation.passwordError
         } else {
             passwordModel.error = nil
         }
 
         if !Validator.validate(.requiredField, value: nameModel.text) {
             isValid = false
-            nameModel.error = L10n.Register.requiredFieldError
+            nameModel.error = L10n.Validation.requiredFieldError
         } else {
             nameModel.error = nil
         }
 
         if !Validator.validate(.requiredField, value: lastnameModel.text) {
             isValid = false
-            lastnameModel.error = L10n.Register.requiredFieldError
+            lastnameModel.error = L10n.Validation.requiredFieldError
         } else {
             lastnameModel.error = nil
         }
 
         if !Validator.validate(.requiredField, value: occupationModel.text) {
             isValid = false
-            occupationModel.error = L10n.Register.requiredFieldError
+            occupationModel.error = L10n.Validation.requiredFieldError
         } else {
             occupationModel.error = nil
         }
