@@ -10,7 +10,7 @@ import SwiftUI
 struct LoadingModifier: ViewModifier {
     @Binding var isLoading: Bool
     @Binding var isEmpty: Bool
-    
+
     func body(content: Content) -> some View {
         content
             .overlay(alignment: isEmpty ? .center : .bottom) {
@@ -20,7 +20,6 @@ struct LoadingModifier: ViewModifier {
             }
     }
 }
-
 
 extension View {
     func isLoading(_ isLoading: Binding<Bool>, _ isEmpty: Binding<Bool>) -> some View {

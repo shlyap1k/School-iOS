@@ -40,7 +40,9 @@ struct ProductsListScreen: View {
             switch route {
             case let .product(product):
                 if let product {
-                    Text(product.title)
+                    ProductDetailScreen(viewModel: ProductDetailVM(product: product))
+                        .navigationTitle(product.title)
+                        .navigationBarTitleDisplayMode(.inline)
                 }
             }
         })

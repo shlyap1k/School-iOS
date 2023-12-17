@@ -1,0 +1,24 @@
+//
+// HH School
+// Created by Shlyap1k.
+//
+
+import Foundation
+import SwiftUI
+
+struct CountSelectorStyle {
+    // MARK: Lifecycle
+
+    init(
+        height: CGFloat,
+        backgroundColor: Color
+    ) {
+        self.height = height
+        self.backgroundColor = backgroundColor
+    }
+
+    // MARK: Internal
+
+    var height: CGFloat
+    var backgroundColor: Color
+}

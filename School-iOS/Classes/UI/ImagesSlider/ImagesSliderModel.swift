@@ -5,6 +5,6 @@
 
 import Foundation
 
-enum TabBarRoutes {
-    case catalog, cart, profile
+struct ImagesSliderModel {
+    var images: [ImageModel] = []
 }

@@ -6,8 +6,8 @@
 import SwiftUI
 
 struct TabBar: View {
-    @State private var selectedTab: TabBarRoutes = .catalog
-    
+    // MARK: Internal
+
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack {
@@ -35,6 +35,10 @@ struct TabBar: View {
                 .tag(TabBarRoutes.profile)
         }
     }
+
+    // MARK: Private
+
+    @State private var selectedTab: TabBarRoutes = .catalog
 }
 
 #Preview {
