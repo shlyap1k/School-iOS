@@ -98,8 +98,8 @@ class RegisterVM: ObservableObject {
                 }
 
             case let .failure(reason):
-                emailModel.error = reason.detail.message
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { 
+                    self.emailModel.error = reason.detail.message
                     self.isLoading = false
                 }
             }
