@@ -55,26 +55,26 @@ struct CartItem: View {
             .background(.white)
             .offset(x: offset.width, y: 0)
             .gesture(
-                TapGesture()
-                    .onEnded {
-                        offset = .zero
-                    }
-            )
-            .gesture(
                 DragGesture()
                     .onChanged { gesture in
-                        if gesture.translation.width > -80, gesture.translation.width < 0 {
+                        if (-80 ... 0).contains(gesture.translation.width) {
                             offset = gesture.translation
                         }
                     }
                     .onEnded { _ in
-                        if abs(offset.width) >= 80 {
+                        if offset.width <= -65 {
                             removal(product)
                         } else if abs(offset.width) >= 40 {
                             offset.width = -80
                         } else {
                             offset.width = 0
                         }
+                    }
+            )
+            .gesture(
+                TapGesture()
+                    .onEnded {
+                        offset = .zero
                     }
             )
         }
@@ -90,5 +90,7 @@ struct CartItem: View {
         title: "Preview product",
         size: "M",
         quantity: 3
-    )), removal: { _ in })
+    )), removal: { _ in
+
+    })
 }
