@@ -37,6 +37,7 @@
 "productDetails.specs" = "Характеристики";
 "productDetails.buy" = "Купить";
 "productDetails.cart" = "В корзину";
+"productDetails.buyError" = "Выберите размер!";
 
 "cart.title" = "Корзина";
 "cart.checkout" = "Оформить";

@@ -8,6 +8,8 @@ import SwiftUI
 struct ProductsListScreen: View {
     @StateObject var viewModel: ProductsListVM = .init()
 
+    @Binding var tabSelection: TabBarRoutes
+
     var body: some View {
         VStack {
             ScrollView {
@@ -41,10 +43,9 @@ struct ProductsListScreen: View {
             case let .product(product):
                 if let product {
                     ProductDetailScreen(
+                        tabSelection: $tabSelection,
                         viewModel: ProductDetailVM(product: product)
                     )
-                    .navigationTitle(product.title)
-                    .navigationBarTitleDisplayMode(.inline)
                 }
             }
         })
@@ -53,6 +54,6 @@ struct ProductsListScreen: View {
 
 #Preview {
     NavigationStack {
-        ProductsListScreen()
+        ProductsListScreen(tabSelection: .constant(TabBarRoutes.catalog))
     }
 }

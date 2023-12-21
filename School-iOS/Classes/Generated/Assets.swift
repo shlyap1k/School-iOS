@@ -35,6 +35,8 @@ internal enum Assets {
   internal static let placeholderText = ColorAsset(name: "placeholderText")
   internal static let red = ColorAsset(name: "red")
   internal static let white = ColorAsset(name: "white")
+  internal static let appLogo = ImageAsset(name: "app.logo")
+  internal static let appName = ImageAsset(name: "app.name")
   internal static let arrowRight = ImageAsset(name: "arrow.right")
   internal static let cart = ImageAsset(name: "cart")
   internal static let cartPh = ImageAsset(name: "cart.ph")

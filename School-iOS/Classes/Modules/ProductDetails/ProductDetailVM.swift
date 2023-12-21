@@ -25,21 +25,30 @@ class ProductDetailVM: ObservableObject {
 //    @Published var countSelectorModel: CountSelectorModel = .init()
     @Published var count: Int = 1
 
-    @Published var showAddToCart: Bool = false
+    @Published var showGoToCart: Bool = false
+
+    @Published var showError: Bool = false
 
     let product: Product
+
+    let order_id: UUID = .init()
 
     var orderItem: OrderProduct? {
         guard let size = sizeSelectorModel.selectedSize?.value else {
             return nil
         }
         return OrderProduct(
+            id: order_id,
             productId: product.id,
             preview: product.preview,
             title: product.title,
             size: size,
             quantity: count
         )
+    }
+
+    func goToCart(tabSelection: inout TabBarRoutes) {
+        tabSelection = .cart
     }
 
     func addToCart() {
@@ -54,6 +63,15 @@ class ProductDetailVM: ObservableObject {
                 products: []
             )
             addToCart()
+        }
+    }
+
+    func saveCount() {
+        if var cart = appState.state.cart, let orderItem, let index = cart.products.firstIndex(
+            where: { $0.id == orderItem.id }
+        ) {
+            cart.products[index] = orderItem
+            appState.state.cart = cart
         }
     }
 

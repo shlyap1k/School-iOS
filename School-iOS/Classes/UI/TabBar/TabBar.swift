@@ -11,7 +11,7 @@ struct TabBar: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack {
-                ProductsListScreen()
+                ProductsListScreen(tabSelection: $selectedTab)
             }
             .tabItem {
                 Image(.catalog)

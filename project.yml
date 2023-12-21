@@ -65,7 +65,7 @@ targets:
               if [ "${CONFIGURATION}" == "Debug" ]; then
                 export PATH="$PATH:/opt/homebrew/bin"
                 if which mint >/dev/null; then
-                  mint run swiftformat swiftformat School-iOS --quiet --conflictmarkers ignore
+                mint run swiftformat swiftformat School-iOS --quiet --conflictmarkers ignore
                 fi
               fi
             fi

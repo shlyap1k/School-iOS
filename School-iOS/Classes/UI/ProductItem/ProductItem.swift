@@ -36,8 +36,7 @@ struct ProductItem: View {
 
 #Preview {
     ProductItem(
-        model:
-        Product(
+        model: Product(
             id: "aboba",
             title: "Men's Nike J.J. Watt Black Arizona Cardinals Legend Jersey",
             department: "Джерси",
