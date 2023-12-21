@@ -7,13 +7,14 @@ import SwiftUI
 
 struct InputField: View {
     let title: String
+    var capitalize: Bool = true
     @Binding var model: InputFieldModel
 
     var body: some View {
         VStack {
             TextField(title, text: $model.text)
-                .padding([.leading, .bottom], 16)
-                .padding(.top, 18)
+                .textInputAutocapitalization(capitalize ? .sentences : .never)
+                .padding([.leading, .bottom, .top], 16)
                 .padding(.trailing, 52)
                 .background {
                     RoundedRectangle(cornerRadius: 8)
@@ -23,9 +24,10 @@ struct InputField: View {
 
             if let error = model.error {
                 Text(error)
+                    .applyStyle(.regular12)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.red)
-                    .padding(.leading, 24)
+                    .foregroundColor(Assets.red.swiftUIColor)
+                    .padding(.leading, 8)
             }
         }
     }

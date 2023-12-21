@@ -22,7 +22,7 @@ struct RegisterScreen: View {
             InputField(title: L10n.Register.occupation, model: $viewModel.occupationModel)
                 .padding(.top, 16)
 
-            InputField(title: L10n.Register.email, model: $viewModel.emailModel)
+            InputField(title: L10n.Register.email, capitalize: false, model: $viewModel.emailModel)
                 .padding(.top, 16)
 
             SecureInputField(title: L10n.Register.password, model: $viewModel.passwordModel)

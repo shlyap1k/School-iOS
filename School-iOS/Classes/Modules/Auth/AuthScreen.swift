@@ -12,7 +12,7 @@ struct AuthScreen: View {
 
     var body: some View {
         VStack {
-            InputField(title: L10n.Auth.email, model: $viewModel.emailModel)
+            InputField(title: L10n.Auth.email, capitalize: false, model: $viewModel.emailModel)
                 .padding(.top, 35)
 
             SecureInputField(title: L10n.Auth.password, model: $viewModel.passwordModel)
