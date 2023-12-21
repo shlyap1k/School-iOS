@@ -14,6 +14,7 @@ struct ProductItem: View {
         HStack(alignment: .top, spacing: 0) {
             AsyncImage(url: URL(string: model.preview)) { image in
                 image.resizable()
+                    .scaledToFit()
             } placeholder: {
                 LoaderView()
             }

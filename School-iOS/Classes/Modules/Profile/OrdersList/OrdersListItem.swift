@@ -35,16 +35,23 @@ struct OrdersListItem: View {
 
             HStack {
                 HStack(spacing: -22) {
-                    ForEach(order.products[0 ... min(3, order.products.count - 1)]) { product in
-                        if let preview = product.preview {
-                            AsyncImage(url: URL(string: preview)) { image in
-                                image.resizable()
-                                    .frame(width: 44, height: 44)
-                                    .clipShape(Circle())
-                                    .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
-                            } placeholder: {
-                                LoaderView()
-                                    .frame(width: 44, height: 44, alignment: .center)
+                    if !order.products.isEmpty {
+                        ForEach(order.products[0 ... min(3, order.products.count - 1)]) { product in
+                            if let preview = product.preview {
+                                AsyncImage(url: URL(string: preview)) { image in
+                                    image.resizable()
+                                        .scaledToFit()
+                                        .frame(width: 44, height: 44)
+                                        .clipShape(Circle())
+                                        .background(
+                                            Circle()
+                                                .foregroundStyle(.white)
+                                                .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+                                        )
+                                } placeholder: {
+                                    LoaderView()
+                                        .frame(width: 44, height: 44, alignment: .center)
+                                }
                             }
                         }
                     }

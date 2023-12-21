@@ -24,6 +24,7 @@ struct CartItem: View {
                     AsyncImage(url: URL(string: preview)) {
                         image in
                         image.resizable()
+                            .scaledToFit()
                     } placeholder: {
                         LoaderView()
                     }

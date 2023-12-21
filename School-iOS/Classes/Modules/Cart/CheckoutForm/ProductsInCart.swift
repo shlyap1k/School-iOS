@@ -15,6 +15,7 @@ struct ProductsInCart: View {
                     if let preview = product.preview {
                         AsyncImage(url: URL(string: preview)) { image in
                             image.resizable()
+                                .scaledToFit()
                                 .frame(width: 64, height: 64)
                         } placeholder: {
                             LoaderView()

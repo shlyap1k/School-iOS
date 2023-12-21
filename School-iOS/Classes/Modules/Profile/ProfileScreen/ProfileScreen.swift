@@ -59,6 +59,7 @@ struct ProfileScreen: View {
             NavigationLink(value: ProfileRoutes.profileEdit) {
                 Button(action: {}) {
                     Image(.pencil).resizable()
+                        .scaledToFit()
                         .frame(width: 22, height: 22)
                 }
                 .allowsHitTesting(false)
