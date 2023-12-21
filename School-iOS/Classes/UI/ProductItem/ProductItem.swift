@@ -12,14 +12,9 @@ struct ProductItem: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            AsyncImage(url: URL(string: model.preview)) { image in
-                image.resizable()
-                    .scaledToFit()
-            } placeholder: {
-                LoaderView()
-            }
-            .frame(width: 116, height: 116)
-            .padding(.trailing, 18)
+            LoadImage(imageUrl: model.preview)
+                .frame(width: 116, height: 116)
+                .padding(.trailing, 18)
             VStack(alignment: .leading, spacing: 0) {
                 Text(model.title)
                     .lineLimit(3)

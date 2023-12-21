@@ -13,14 +13,8 @@ struct ProductsInCart: View {
             ForEach(products.products, id: \.id) { product in
                 HStack(alignment: .top, spacing: 16) {
                     if let preview = product.preview {
-                        AsyncImage(url: URL(string: preview)) { image in
-                            image.resizable()
-                                .scaledToFit()
-                                .frame(width: 64, height: 64)
-                        } placeholder: {
-                            LoaderView()
-                                .frame(width: 64, height: 64, alignment: .center)
-                        }
+                        LoadImage(imageUrl: preview)
+                            .frame(width: 64, height: 64)
                     }
                     VStack(alignment: .leading, spacing: 8) {
                         if let title = product.title {

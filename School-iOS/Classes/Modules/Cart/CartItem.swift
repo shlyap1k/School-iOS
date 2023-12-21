@@ -21,15 +21,9 @@ struct CartItem: View {
 
             HStack(alignment: .top, spacing: 0) {
                 if let preview = product.preview {
-                    AsyncImage(url: URL(string: preview)) {
-                        image in
-                        image.resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        LoaderView()
-                    }
-                    .frame(width: 116, height: 116)
-                    .padding(.trailing, 18)
+                    LoadImage(imageUrl: preview)
+                        .frame(width: 116, height: 116)
+                        .padding(.trailing, 18)
                 }
 
                 VStack(alignment: .leading, spacing: 0) {
