@@ -5,10 +5,14 @@
 
 import SwiftUI
 
+// MARK: - ProductDetailScreen
+
 struct ProductDetailScreen: View {
     @Binding var tabSelection: TabBarRoutes
 
     @StateObject var viewModel: ProductDetailVM
+
+    @State var title: String = ""
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -39,6 +43,17 @@ struct ProductDetailScreen: View {
                         }
                     }
                 }.padding(.bottom, 32 + 56)
+                    .background(GeometryReader { geometry in
+                        Color.clear
+                            .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scroll")).origin)
+                    })
+                    .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
+                        if value.y <= -1 {
+                            title = viewModel.product.title
+                        } else {
+                            title = ""
+                        }
+                    }
             }
             .scrollIndicators(.hidden)
 
@@ -60,6 +75,7 @@ struct ProductDetailScreen: View {
                     StyledButton(title: L10n.ProductDetails.cart, style: .green, action: {
                         viewModel.goToCart(tabSelection: &tabSelection)
                         viewModel.saveCount()
+                        viewModel.reset()
                     })
 
                     CountSelector(count: $viewModel.count, style: .big)
@@ -67,13 +83,24 @@ struct ProductDetailScreen: View {
                 .padding(16)
             }
         }
-        .navigationTitle(viewModel.showError ? L10n.ProductDetails.buyError : viewModel.product.title)
+        .coordinateSpace(name: "scroll")
+        .navigationTitle(
+            viewModel.showError ? L10n.ProductDetails.buyError : title
+        )
         .navigationBarBackground(
             background: viewModel.showError ? Assets.red.swiftUIColor : Assets.white.swiftUIColor,
             fontColor: viewModel.showError ? ColorScheme.dark : ColorScheme.light
         )
         .navigationBarTitleDisplayMode(.inline)
     }
+}
+
+// MARK: - ScrollOffsetPreferenceKey
+
+private struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGPoint = .zero
+
+    static func reduce(value _: inout CGPoint, nextValue _: () -> CGPoint) {}
 }
 
 #Preview {

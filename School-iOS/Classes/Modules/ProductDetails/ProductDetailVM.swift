@@ -30,7 +30,7 @@ class ProductDetailVM: ObservableObject {
 
     let product: Product
 
-    let orderId: UUID = .init()
+    var orderId: UUID = .init()
 
     var orderItem: OrderProduct? {
         guard let size = sizeSelectorModel.selectedSize?.value else {
@@ -72,6 +72,12 @@ class ProductDetailVM: ObservableObject {
             cart.products[index] = orderItem
             appState.state.cart = cart
         }
+    }
+
+    func reset() {
+        showGoToCart = false
+        sizeSelectorModel = .init(sizes: product.sizes)
+        orderId = .init()
     }
 
     // MARK: Private

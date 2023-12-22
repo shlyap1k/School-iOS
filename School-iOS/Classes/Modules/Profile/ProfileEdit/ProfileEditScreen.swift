@@ -39,6 +39,7 @@ struct ProfileEditScreen: View {
 
             StyledButton(isLoading: $viewModel.isLoading, title: L10n.Profile.Edit.action, style: .blue, action: {
                 viewModel.saveProfileChanges()
+//                viewModel.saveImageChange()
                 presentationMode.wrappedValue.dismiss()
             })
         }
