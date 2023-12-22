@@ -43,22 +43,21 @@ class ProductsListVM: ObservableObject {
                     self?.isLoading = false
                 }
             case let .failure(reason):
-                DispatchQueue.main.async { [weak self] in
+                DispatchQueue.main.async { [weak weakSelf = self] in
+                    guard let self = weakSelf else {
+                        return
+                    }
                     switch reason.detail {
                     case .noConnection:
-                        if let self {
-                            placeholder = .noConnection(isLoading: isLoadingBinding, action: { [weak self] in
-                                self?.fetchProducts()
-                            })
-                        }
+                        weakSelf?.placeholder = .noConnection(isLoading: self.isLoadingBinding, action: {
+                            weakSelf?.fetchProducts()
+                        })
                     default:
-                        if let self {
-                            placeholder = .unknown(isLoading: isLoadingBinding, action: { [weak self] in
-                                self?.fetchProducts()
-                            })
-                        }
+                        weakSelf?.placeholder = .unknown(isLoading: self.isLoadingBinding, action: {
+                            weakSelf?.fetchProducts()
+                        })
                     }
-                    self?.isLoading = false
+                    weakSelf?.isLoading = false
                 }
             }
         }
