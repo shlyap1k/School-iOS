@@ -10,6 +10,8 @@ import SwiftUI
 class OrdersListVM: ObservableObject {
     // MARK: Internal
 
+    static let dateFormatter = DateFormatter()
+
     @Published var orders: [Order] = []
 
     @Published var isLoading: Bool = false
@@ -47,13 +49,13 @@ class OrdersListVM: ObservableObject {
                     switch reason.detail {
                     case .noConnection:
                         if let self {
-                            self.placeholder = .noConnection(isLoading: self.isLoadingBinding, action: { [weak self] in
+                            placeholder = .noConnection(isLoading: isLoadingBinding, action: { [weak self] in
                                 self?.fetchOrders()
                             })
                         }
                     default:
                         if let self {
-                            self.placeholder = .unknown(isLoading: self.isLoadingBinding, action: { [weak self] in
+                            placeholder = .unknown(isLoading: isLoadingBinding, action: { [weak self] in
                                 self?.fetchOrders()
                             })
                         }
@@ -73,13 +75,9 @@ class OrdersListVM: ObservableObject {
     }
 
     func dateFormat(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .short
-
-        let formattedDate = dateFormatter.string(from: date)
-
+        OrdersListVM.dateFormatter.dateStyle = .long
+        OrdersListVM.dateFormatter.timeStyle = .short
+        let formattedDate = OrdersListVM.dateFormatter.string(from: date)
         return formattedDate
     }
 

@@ -47,13 +47,13 @@ class ProductsListVM: ObservableObject {
                     switch reason.detail {
                     case .noConnection:
                         if let self {
-                            self.placeholder = .noConnection(isLoading: self.isLoadingBinding, action: { [weak self] in
+                            placeholder = .noConnection(isLoading: isLoadingBinding, action: { [weak self] in
                                 self?.fetchProducts()
                             })
                         }
                     default:
                         if let self {
-                            self.placeholder = .unknown(isLoading: self.isLoadingBinding, action: { [weak self] in
+                            placeholder = .unknown(isLoading: isLoadingBinding, action: { [weak self] in
                                 self?.fetchProducts()
                             })
                         }
