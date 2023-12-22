@@ -46,7 +46,3 @@ struct TabBar: View {
 
     @State private var selectedTab: TabBarRoutes = .catalog
 }
-
-// #Preview {
-//    TabBar()
-// }

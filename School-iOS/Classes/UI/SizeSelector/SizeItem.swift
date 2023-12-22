@@ -6,7 +6,6 @@
 import SwiftUI
 
 struct SizeItem: View {
-//    @ObservedObject var viewModel: SizeItemModel
     @Binding var selectedSize: Size?
 
     var size: Size

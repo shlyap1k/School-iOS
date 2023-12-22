@@ -6,8 +6,6 @@
 import SwiftUI
 
 struct CountSelector: View {
-//    @ObservedObject var viewModel: CountSelectorModel
-
     @Binding var count: Int
 
     let style: CountSelectorStyle

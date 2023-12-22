@@ -22,7 +22,6 @@ struct ProductsListScreen: View {
                                         Divider()
                                             .padding(.leading, 19)
                                             .padding(.trailing, 13)
-//                                            .padding([.leading, .trailing], 16)
                                     }
                                 }
                                 .applyStyle(.bold16)

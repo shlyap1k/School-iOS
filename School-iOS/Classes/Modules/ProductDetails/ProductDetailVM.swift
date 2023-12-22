@@ -22,7 +22,6 @@ class ProductDetailVM: ObservableObject {
 
     @Published var sizeSelectorModel: SizeSelectorModel
 
-//    @Published var countSelectorModel: CountSelectorModel = .init()
     @Published var count: Int = 1
 
     @Published var showGoToCart: Bool = false

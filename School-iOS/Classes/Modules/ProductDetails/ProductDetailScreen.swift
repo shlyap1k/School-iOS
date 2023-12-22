@@ -112,8 +112,6 @@ struct ProductDetailScreen: View {
                     "Imported",
                     "Brand: Nike",
                 ]
-
-                //                id: "061f02a0-8d12-4828-ab33-6b319a367e66"
             )
         )
     )
