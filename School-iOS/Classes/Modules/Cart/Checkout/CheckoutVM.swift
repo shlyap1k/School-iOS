@@ -6,7 +6,7 @@
 import Factory
 import Foundation
 
-class CheckoutFormVM: ObservableObject {
+class CheckoutVM: ObservableObject {
     // MARK: Internal
 
     @Published var houseModel: InputFieldModel = .init(text: "")

@@ -11,12 +11,12 @@ enum FocusedField: Hashable {
     case address, apartment
 }
 
-// MARK: - CheckoutForm
+// MARK: - CheckoutScreen
 
-struct CheckoutForm: View {
+struct CheckoutScreen: View {
     // MARK: Internal
 
-    @StateObject var viewModel: CheckoutFormVM = .init()
+    @StateObject var viewModel: CheckoutVM = .init()
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -79,6 +79,6 @@ struct CheckoutForm: View {
 
 #Preview {
     NavigationStack {
-        CheckoutForm()
+        CheckoutScreen()
     }
 }

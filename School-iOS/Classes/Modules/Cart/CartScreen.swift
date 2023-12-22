@@ -48,7 +48,7 @@ struct CartScreen: View {
         .navigationDestination(for: CartRoutes.self, destination: { route in
             switch route {
             case .checkout:
-                CheckoutForm()
+                CheckoutScreen()
             case .cart:
                 CartScreen()
             }
