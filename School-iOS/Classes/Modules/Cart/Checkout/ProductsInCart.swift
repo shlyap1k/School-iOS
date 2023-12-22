@@ -45,28 +45,25 @@ struct ProductsInCart: View {
             dateDelivery: .now,
             products: [
                 OrderProduct(
-                    id: UUID(),
                     productId: "aboba",
                     preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                     title: "one product with long title and this title is too big to be displayed fully",
                     size: "M",
-                    quantity: 5
+                    quantity: 5, price: 5000
                 ),
                 OrderProduct(
-                    id: UUID(),
                     productId: "aboba",
                     preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                     title: "second product with long title and this title is too big to be displayed fully",
                     size: "M",
-                    quantity: 15
+                    quantity: 15, price: 100
                 ),
                 OrderProduct(
-                    id: UUID(),
                     productId: "aboba",
                     preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                     title: "third",
                     size: "M",
-                    quantity: 3
+                    quantity: 3, price: 3000
                 ),
             ]
         )

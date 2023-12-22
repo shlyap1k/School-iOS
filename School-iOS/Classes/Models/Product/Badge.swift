@@ -6,8 +6,8 @@
 import Foundation
 
 struct Badge: Decodable, Encodable, Identifiable, Hashable {
-    var id: UUID? = UUID()
+    let id: UUID? = UUID()
 
-    var value: String
-    var color: String
+    let value: String
+    let color: String
 }

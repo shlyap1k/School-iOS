@@ -83,7 +83,7 @@ struct CartItemView: View {
         preview: "https://www.recordnet.com/gcdn/presto/2021/03/22/NRCD/9d9dd9e4-e84a-402e-ba8f-daa659e6e6c5-PhotoWord_003.JPG?width=660&height=425&fit=crop&format=pjpg&auto=webp",
         title: "Preview product",
         size: "M",
-        quantity: 3
+        quantity: 3, price: 9000
     )), removal: { _ in
 
     })

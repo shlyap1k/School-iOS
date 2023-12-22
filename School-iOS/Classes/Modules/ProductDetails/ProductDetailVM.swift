@@ -42,7 +42,7 @@ class ProductDetailVM: ObservableObject {
             preview: product.preview,
             title: product.title,
             size: size,
-            quantity: count
+            quantity: count, price: product.price
         )
     }
 

@@ -106,7 +106,6 @@ struct OrdersListItemView: View {
                 status: "in_work",
                 products: [
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e66",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -115,7 +114,6 @@ struct OrdersListItemView: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e64",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -124,7 +122,6 @@ struct OrdersListItemView: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -133,7 +130,6 @@ struct OrdersListItemView: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -142,7 +138,6 @@ struct OrdersListItemView: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -151,7 +146,6 @@ struct OrdersListItemView: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -159,25 +153,6 @@ struct OrdersListItemView: View {
                         quantity: 5,
                         price: 9000.0
                     ),
-
-//                    .init(
-//                        id: UUID(),
-//                        productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
-//                        preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
-//                        title: "title",
-//                        size: "M",
-//                        quantity: 5,
-//                        price: 9000.0
-//                    ),
-//                    .init(
-//                        id: UUID(),
-//                        productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
-//                        preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
-//                        title: "title",
-//                        size: "M",
-//                        quantity: 5,
-//                        price: 9000.0
-//                    ),
                 ]
             )
         ), cancelOrder: { _ in }, dateFormat: OrdersListVM().dateFormat
