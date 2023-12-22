@@ -75,20 +75,6 @@ struct CartScreen: View {
     }
 }
 
-extension View {
-    func navigationBarBackground(
-        background: Color = .orange,
-        fontColor: ColorScheme = .light
-    ) -> some View {
-        modifier(
-            ColoredNavigationBar(
-                background: background,
-                colorScheme: fontColor
-            )
-        )
-    }
-}
-
 // MARK: - ColoredNavigationBar
 
 struct ColoredNavigationBar: ViewModifier {

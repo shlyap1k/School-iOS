@@ -18,4 +18,4 @@ struct OrderStatus: RawRepresentable, Codable, Equatable, Hashable {
     public static let cancelled = OrderStatus(rawValue: "cancelled")
 
     public var rawValue: String
-}   
+}
