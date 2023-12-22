@@ -13,7 +13,7 @@ struct OrdersListScreen: View {
             ScrollView {
                 LazyVStack {
                     ForEach($viewModel.orders, id: \.id.self) { $order in
-                        OrdersListItem(order: $order, cancelOrder: viewModel.cancelOrder, dateFormat: viewModel.dateFormat)
+                        OrdersListItemView(order: $order, cancelOrder: viewModel.cancelOrder, dateFormat: viewModel.dateFormat)
                             .overlay(alignment: .bottom) {
                                 if order.id != viewModel.orders.last?.id {
                                     Divider()

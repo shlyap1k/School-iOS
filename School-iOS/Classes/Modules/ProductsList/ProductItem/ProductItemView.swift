@@ -7,7 +7,7 @@ import SwiftUI
 
 // MARK: - ProductItem
 
-struct ProductItem: View {
+struct ProductItemView: View {
     var model: Product
 
     var body: some View {
@@ -31,7 +31,7 @@ struct ProductItem: View {
 }
 
 #Preview {
-    ProductItem(
+    ProductItemView(
         model: Product(
             id: "aboba",
             title: "Men's Nike J.J. Watt Black Arizona Cardinals Legend Jersey",

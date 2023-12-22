@@ -15,7 +15,7 @@ struct CartScreen: View {
         ZStack(alignment: .bottom) {
             ScrollView {
                 ForEach($viewModel.cart.products, id: \.id) { $product in
-                    CartItem(product: $product, removal: viewModel.removeProduct)
+                    CartItemView(product: $product, removal: viewModel.removeProduct)
                         .onReceive(Just(product), perform: { product in
                             viewModel.saveChanges(product: product)
 

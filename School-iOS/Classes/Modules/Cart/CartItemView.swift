@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct CartItem: View {
+struct CartItemView: View {
     @Binding var product: OrderProduct
 
     @State var offset = CGSize.zero
@@ -78,7 +78,7 @@ struct CartItem: View {
 }
 
 #Preview {
-    CartItem(product: .constant(OrderProduct(
+    CartItemView(product: .constant(OrderProduct(
         productId: "aboba",
         preview: "https://www.recordnet.com/gcdn/presto/2021/03/22/NRCD/9d9dd9e4-e84a-402e-ba8f-daa659e6e6c5-PhotoWord_003.JPG?width=660&height=425&fit=crop&format=pjpg&auto=webp",
         title: "Preview product",

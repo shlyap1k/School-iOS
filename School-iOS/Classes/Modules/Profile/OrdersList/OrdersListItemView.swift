@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct OrdersListItem: View {
+struct OrdersListItemView: View {
     // MARK: Internal
 
     @Binding var order: Order
@@ -95,7 +95,7 @@ struct OrdersListItem: View {
 }
 
 #Preview {
-    OrdersListItem(
+    OrdersListItemView(
         order: .constant(
             .init(
                 id: "1d2b7c22-7692-418c-9d9d-98c7db686b6e",

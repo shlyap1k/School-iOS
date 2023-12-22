@@ -16,7 +16,7 @@ struct ProductsListScreen: View {
                 LazyVStack {
                     ForEach(viewModel.products, id: \.self) { product in
                         NavigationLink(value: ProductsListRoutes.product(product)) {
-                            ProductItem(model: product)
+                            ProductItemView(model: product)
                                 .overlay(alignment: .bottom) {
                                     if product.id != viewModel.products.last?.id {
                                         Divider()
