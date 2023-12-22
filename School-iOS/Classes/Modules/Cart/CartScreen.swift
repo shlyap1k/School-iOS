@@ -75,23 +75,6 @@ struct CartScreen: View {
     }
 }
 
-// MARK: - ColoredNavigationBar
-
-struct ColoredNavigationBar: ViewModifier {
-    var background: Color
-    var colorScheme: ColorScheme
-
-    func body(content: Content) -> some View {
-        content
-            .toolbarBackground(
-                background,
-                for: .navigationBar
-            )
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(colorScheme, for: .navigationBar)
-    }
-}
-
 #Preview {
     NavigationStack {
         CartScreen(viewModel: CartVM())
