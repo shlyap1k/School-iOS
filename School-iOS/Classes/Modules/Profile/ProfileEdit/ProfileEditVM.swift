@@ -5,6 +5,7 @@
 
 import Factory
 import Foundation
+import SwiftUI
 
 class ProfileEditVM: ObservableObject {
     // MARK: Internal
@@ -20,6 +21,8 @@ class ProfileEditVM: ObservableObject {
     @Published var isLoading: Bool = false
 
     @Published var imageError: String?
+
+    @Published var isSaved: Bool = false
 
     func validate() -> Bool {
         var isValid = true
@@ -104,6 +107,7 @@ class ProfileEditVM: ObservableObject {
         guard validate() else {
             return
         }
+
         let changes: [UpdateUserPayload] = getChanges()
 
         if !changes.isEmpty {
@@ -117,6 +121,7 @@ class ProfileEditVM: ObservableObject {
                     DispatchQueue.main.async { [weak self] in
                         self?.isLoading = false
                         self?.saveImageChange()
+                        self?.isSaved = true
                     }
                 case let .failure(reason):
                     occupationModel.error = reason.detail.message
@@ -125,6 +130,8 @@ class ProfileEditVM: ObservableObject {
                     }
                 }
             }
+        } else {
+            saveImageChange()
         }
     }
 
@@ -137,6 +144,9 @@ class ProfileEditVM: ObservableObject {
                 }
                 let imageRequest = UserRequest.uploadPhoto(photo: imageData, uuid: UUID().uuidString)
                 let _: RestResult<VoidResult> = await restProvider.make(imageRequest)
+                DispatchQueue.main.async { [weak self] in
+                    self?.isSaved = true
+                }
             case .failure:
                 DispatchQueue.main.async { [weak self] in
                     self?.imageError = L10n.Profile.Edit.imageError
