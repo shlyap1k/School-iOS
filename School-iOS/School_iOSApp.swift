@@ -60,5 +60,7 @@ extension UINavigationController {
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         navigationBar.topItem?.backButtonDisplayMode = .minimal
+        UIPageControl.appearance().currentPageIndicatorTintColor = .black
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
     }
 }

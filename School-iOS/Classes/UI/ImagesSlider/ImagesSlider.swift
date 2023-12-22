@@ -19,15 +19,7 @@ struct ImagesSlider: View {
         .tabViewStyle(.page)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .indexViewStyle(.page(backgroundDisplayMode: .never))
-        .onAppear {
-            setupAppearance()
-        }
         .frame(height: 244)
-    }
-
-    func setupAppearance() {
-        UIPageControl.appearance().currentPageIndicatorTintColor = .black
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
     }
 }
 
