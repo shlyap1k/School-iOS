@@ -40,6 +40,7 @@ struct RegisterScreen: View {
                         .focused($isFocused, equals: .password)
                 }
             }
+            .scrollIndicators(.hidden)
             .onTapGesture {
                 isFocused = nil
             }

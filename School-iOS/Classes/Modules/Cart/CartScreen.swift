@@ -29,6 +29,7 @@ struct CartScreen: View {
                 }
                 .padding(.bottom, 56 + 16)
             }
+            .scrollIndicators(.hidden)
             if !viewModel.cart.products.isEmpty {
                 NavigationLink(value: CartRoutes.checkout) {
                     StyledButton(title: L10n.Cart.checkout, style: .blue, action: {})

@@ -25,6 +25,7 @@ struct OrdersListScreen: View {
                     }
                 }
             }
+            .scrollIndicators(.hidden)
         }
         .padding(16)
         .isLoading($viewModel.isLoading, $viewModel.isEmpty)

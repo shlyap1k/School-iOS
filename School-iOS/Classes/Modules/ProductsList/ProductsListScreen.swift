@@ -33,8 +33,8 @@ struct ProductsListScreen: View {
                         NextPageLoader(nextPage: viewModel.nextPage)
                     }
                 }
-                .scrollIndicators(.hidden)
             }
+            .scrollIndicators(.hidden)
         }
         .isLoading($viewModel.isLoading, $viewModel.isEmpty)
         .placeholder(viewModel.placeholder)

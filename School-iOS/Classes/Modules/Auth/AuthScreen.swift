@@ -29,6 +29,7 @@ struct AuthScreen: View {
                     .padding(.top, 16)
                     .focused($isFocused, equals: .password)
             }
+            .scrollIndicators(.hidden)
 
             Spacer()
 

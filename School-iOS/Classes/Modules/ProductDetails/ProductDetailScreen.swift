@@ -40,6 +40,7 @@ struct ProductDetailScreen: View {
                     }
                 }.padding(.bottom, 32 + 56)
             }
+            .scrollIndicators(.hidden)
 
             if !viewModel.showGoToCart {
                 StyledButton(title: L10n.ProductDetails.buy, style: .blue, action: {
