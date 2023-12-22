@@ -30,14 +30,14 @@ class ProductDetailVM: ObservableObject {
 
     let product: Product
 
-    let order_id: UUID = .init()
+    let orderId: UUID = .init()
 
     var orderItem: OrderProduct? {
         guard let size = sizeSelectorModel.selectedSize?.value else {
             return nil
         }
         return OrderProduct(
-            id: order_id,
+            id: orderId,
             productId: product.id,
             preview: product.preview,
             title: product.title,

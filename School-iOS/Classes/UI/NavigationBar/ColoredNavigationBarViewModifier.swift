@@ -1,9 +1,6 @@
 //
-//  ColoredNavigationBarViewModifier.swift
-//  School
-//
-//  Created by Shlyap1k on 22.12.2023.
-//  Copyright © 2023 asigonin. All rights reserved.
+// HH School
+// Created by Shlyap1k.
 //
 
 import Foundation
@@ -23,4 +20,3 @@ struct ColoredNavigationBar: ViewModifier {
             .toolbarColorScheme(colorScheme, for: .navigationBar)
     }
 }
-
