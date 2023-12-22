@@ -17,6 +17,11 @@ struct SchoolApp: App {
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses?.insert(NFXProtocol.self, at: 0)
         NFX.sharedInstance().start()
+        if appState.state.accessToken != nil {
+            _viewState = .init(initialValue: .list)
+        } else {
+            _viewState = .init(initialValue: .auth)
+        }
     }
 
     // MARK: Internal
