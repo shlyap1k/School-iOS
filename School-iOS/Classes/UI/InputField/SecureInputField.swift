@@ -34,9 +34,10 @@ struct SecureInputField: View {
             }
             if let error = model.error {
                 Text(error)
+                    .applyStyle(.regular12)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.red)
-                    .padding(.leading, 24)
+                    .foregroundColor(Assets.red.swiftUIColor)
+                    .padding(.leading, 8)
             }
         }
     }

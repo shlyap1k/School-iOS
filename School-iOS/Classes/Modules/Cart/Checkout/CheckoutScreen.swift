@@ -7,7 +7,7 @@ import SwiftUI
 
 // MARK: - FocusedField
 
-enum FocusedField: Hashable {
+private enum FocusedField: Hashable {
     case address, apartment
 }
 
