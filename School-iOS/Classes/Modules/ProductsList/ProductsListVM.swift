@@ -29,32 +29,36 @@ class ProductsListVM: ObservableObject {
             let result: RestResult<[Product]> = await restProvider.make(request)
             switch result {
             case let .success(response):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     if response.isEmpty {
-                        self.lastPageReached = true
+                        self?.lastPageReached = true
                     } else {
-                        self.isEmpty = false
+                        self?.isEmpty = false
                     }
 
-                    self.products += response
+                    self?.products += response
 
-                    self.placeholder = self.products.count == 0 ? .emptyCatalog() : nil
+                    self?.placeholder = self?.products.count == 0 ? .emptyCatalog() : nil
 
-                    self.isLoading = false
+                    self?.isLoading = false
                 }
             case let .failure(reason):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     switch reason.detail {
                     case .noConnection:
-                        self.placeholder = .noConnection(isLoading: self.isLoadingBinding, action: { [weak self] in
-                            self?.fetchProducts()
-                        })
+                        if let self {
+                            self.placeholder = .noConnection(isLoading: self.isLoadingBinding, action: { [weak self] in
+                                self?.fetchProducts()
+                            })
+                        }
                     default:
-                        self.placeholder = .unknown(isLoading: self.isLoadingBinding, action: { [weak self] in
-                            self?.fetchProducts()
-                        })
+                        if let self {
+                            self.placeholder = .unknown(isLoading: self.isLoadingBinding, action: { [weak self] in
+                                self?.fetchProducts()
+                            })
+                        }
                     }
-                    self.isLoading = false
+                    self?.isLoading = false
                 }
             }
         }

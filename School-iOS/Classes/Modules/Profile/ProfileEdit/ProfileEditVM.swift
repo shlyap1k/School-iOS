@@ -114,14 +114,14 @@ class ProfileEditVM: ObservableObject {
                 switch result {
                 case let .success(response):
                     appState.state.profile = response
-                    DispatchQueue.main.async {
-                        self.isLoading = false
-                        self.saveImageChange()
+                    DispatchQueue.main.async { [weak self] in
+                        self?.isLoading = false
+                        self?.saveImageChange()
                     }
                 case let .failure(reason):
                     occupationModel.error = reason.detail.message
-                    DispatchQueue.main.async {
-                        self.isLoading = false
+                    DispatchQueue.main.async { [weak self] in
+                        self?.isLoading = false
                     }
                 }
             }
@@ -138,16 +138,16 @@ class ProfileEditVM: ObservableObject {
                 let imageRequest = UserRequest.uploadPhoto(photo: imageData, uuid: UUID().uuidString)
                 let _: RestResult<VoidResult> = await restProvider.make(imageRequest)
             case .failure:
-                DispatchQueue.main.async {
-                    self.imageError = L10n.Profile.Edit.imageError
+                DispatchQueue.main.async { [weak self] in
+                    self?.imageError = L10n.Profile.Edit.imageError
                 }
             case .empty:
-                DispatchQueue.main.async {
-                    self.isLoading = false
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = false
                 }
             case .loading:
-                DispatchQueue.main.async {
-                    self.isLoading = true
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = true
                 }
             }
         }

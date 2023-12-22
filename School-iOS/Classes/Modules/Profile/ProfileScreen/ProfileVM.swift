@@ -25,9 +25,9 @@ class ProfileVM: ObservableObject {
             let result: RestResult<ProfileResponse> = await restProvider.make(request)
             switch result {
             case let .success(response):
-                DispatchQueue.main.async {
-                    self.profile = response.profile
-                    self.fetchImage()
+                DispatchQueue.main.async { [weak self] in
+                    self?.profile = response.profile
+                    self?.fetchImage()
                 }
             case .failure:
                 return
@@ -51,22 +51,22 @@ class ProfileVM: ObservableObject {
             )
             switch result {
             case let .success(response):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     if let uiImage = UIImage(data: response) {
-                        self.userImage.imageState = .success(
+                        self?.userImage.imageState = .success(
                             .init(image: uiImage)
                         )
                     }
-                    self.isLoading = false
+                    self?.isLoading = false
                 }
             case .failure:
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                    switch self.userImage.imageState {
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = false
+                    switch self?.userImage.imageState {
                     case .success:
                         return
                     default:
-                        self.userImage.imageState = .empty
+                        self?.userImage.imageState = .empty
                     }
                 }
             }
