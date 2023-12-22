@@ -20,7 +20,9 @@ struct ProductsListScreen: View {
                                 .overlay(alignment: .bottom) {
                                     if product.id != viewModel.products.last?.id {
                                         Divider()
-                                            .padding([.leading, .trailing], 16)
+                                            .padding(.leading, 19)
+                                            .padding(.trailing, 13)
+//                                            .padding([.leading, .trailing], 16)
                                     }
                                 }
                                 .applyStyle(.bold16)

@@ -25,8 +25,8 @@ struct ProductItem: View {
                 Badges(badges: model.badge)
             }
         }
-        .padding([.leading, .trailing], 16)
-        .padding([.top, .bottom], 18)
+        .padding([.leading, .trailing, .top], 16)
+        .padding(.bottom, 18)
     }
 }
 
