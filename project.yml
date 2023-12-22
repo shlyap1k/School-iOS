@@ -36,7 +36,7 @@ targets:
     platform: iOS
     deploymentTarget: 16.0
     info:
-      path: School-iOS/Info.plist
+      path: School-iOS/Resources/Info.plist
       properties:
         NSAppClip:
           NSAppClipRequestEphemeralUserNotification: NO
