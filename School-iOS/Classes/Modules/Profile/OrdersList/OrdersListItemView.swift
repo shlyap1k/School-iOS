@@ -21,14 +21,14 @@ struct OrdersListItemView: View {
                 .lineLimit(1)
 
             switch order.status {
-            case "in_work":
+            case .inWork:
                 if let dateDelivery = order.dateDelivery {
                     Text("\(L10n.OrdersList.delivery) \(dateFormat(dateDelivery))")
                 }
-            case "cancelled":
+            case .cancelled:
                 Text(L10n.OrdersList.cancelled)
             default:
-                Text("")
+                EmptyView()
             }
 
             Text("\(order.deliveryAddress)")
@@ -65,13 +65,13 @@ struct OrdersListItemView: View {
                 Spacer()
 
                 switch order.status {
-                case "in_work":
+                case .inWork:
                     StyledButton(title: L10n.OrdersList.cancelDelivery, style: .redSmall) {
                         isPresented.toggle()
                     }
                     .frame(width: 120)
                 default:
-                    Text("")
+                    EmptyView()
                 }
             }
         }
@@ -103,7 +103,7 @@ struct OrdersListItemView: View {
                 createdDelivery: .now,
                 dateDelivery: .now,
                 deliveryAddress: "string, string",
-                status: "in_work",
+                status: OrderStatus(rawValue: "in_work"),
                 products: [
                     .init(
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e66",

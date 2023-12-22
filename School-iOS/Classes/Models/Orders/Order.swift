@@ -13,6 +13,6 @@ struct Order: Decodable {
     let createdDelivery: Date
     let dateDelivery: Date?
     let deliveryAddress: String
-    let status: String
+    let status: OrderStatus
     let products: [OrderProduct]
 }
