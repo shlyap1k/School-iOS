@@ -15,7 +15,6 @@ struct TabBar: View {
             NavigationStack {
                 ProductsListScreen(tabSelection: $selectedTab)
             }
-            .environmentObject(snackerModel)
             .tabItem {
                 Image(.catalog)
                     .renderingMode(.template)
@@ -26,7 +25,6 @@ struct TabBar: View {
             NavigationStack {
                 CartScreen()
             }
-            .environmentObject(snackerModel)
             .tabItem {
                 Image(.cart)
                     .renderingMode(.template)
@@ -44,6 +42,7 @@ struct TabBar: View {
             }
             .tag(TabBarRoutes.profile)
         }
+        .environmentObject(snackerModel)
         .overlay(alignment: .top) {
             if snackerModel.isPresented {
                 SnackerView(model: snackerModel)

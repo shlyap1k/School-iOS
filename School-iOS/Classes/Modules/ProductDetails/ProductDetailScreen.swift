@@ -67,7 +67,7 @@ struct ProductDetailScreen: View {
                         viewModel.showGoToCart.toggle()
                         viewModel.addToCart()
                     } else {
-                        snackerModel.isPresented.toggle()
+                        snackerModel.isPresented = true
                         snackerModel.text = L10n.ProductDetails.buyError
                         snackerModel.background = Assets.red.swiftUIColor
                     }
