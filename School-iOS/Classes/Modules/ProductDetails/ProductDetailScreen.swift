@@ -78,7 +78,6 @@ struct ProductDetailScreen: View {
                     StyledButton(title: L10n.ProductDetails.cart, style: .green, action: {
                         viewModel.goToCart(tabSelection: &tabSelection)
                         viewModel.saveCount()
-                        viewModel.reset()
                     })
 
                     CountSelector(count: $viewModel.count, style: .big)
@@ -89,6 +88,9 @@ struct ProductDetailScreen: View {
         .coordinateSpace(name: coordinateSpaceName)
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
+        .onDisappear {
+            viewModel.reset()
+        }
     }
 
     // MARK: Private
