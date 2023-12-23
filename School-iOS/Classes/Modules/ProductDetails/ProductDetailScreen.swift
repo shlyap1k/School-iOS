@@ -8,6 +8,8 @@ import SwiftUI
 // MARK: - ProductDetailScreen
 
 struct ProductDetailScreen: View {
+    // MARK: Internal
+
     @Binding var tabSelection: TabBarRoutes
 
     @StateObject var viewModel: ProductDetailVM
@@ -45,7 +47,7 @@ struct ProductDetailScreen: View {
                 }.padding(.bottom, 32 + 56)
                     .background(GeometryReader { geometry in
                         Color.clear
-                            .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scroll")).origin)
+                            .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named(coordinateSpaceName)).origin)
                     })
                     .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
                         if value.y <= -1 {
@@ -83,7 +85,7 @@ struct ProductDetailScreen: View {
                 .padding(16)
             }
         }
-        .coordinateSpace(name: "scroll")
+        .coordinateSpace(name: coordinateSpaceName)
         .navigationTitle(
             viewModel.showError ? L10n.ProductDetails.buyError : title
         )
@@ -93,6 +95,10 @@ struct ProductDetailScreen: View {
         )
         .navigationBarTitleDisplayMode(.inline)
     }
+
+    // MARK: Private
+
+    private let coordinateSpaceName: String = "scroll"
 }
 
 // MARK: - ScrollOffsetPreferenceKey
