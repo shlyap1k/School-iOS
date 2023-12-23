@@ -20,6 +20,8 @@ struct CheckoutScreen: View {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
+    @EnvironmentObject var snackerModel: SnackerModel
+
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
@@ -60,6 +62,9 @@ struct CheckoutScreen: View {
             .scrollIndicators(.hidden)
             StyledButton(isLoading: $viewModel.isLoading, title: L10n.CartCheckout.checkout, style: .blue) {
                 viewModel.checkout {
+                    snackerModel.text = L10n.Cart.success
+                    snackerModel.background = Assets.blackSuccess.swiftUIColor
+                    snackerModel.isPresented = true
                     presentationMode.wrappedValue.dismiss()
                 }
             }

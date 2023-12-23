@@ -16,6 +16,8 @@ struct ProductDetailScreen: View {
 
     @State var title: String = ""
 
+    @EnvironmentObject var snackerModel: SnackerModel
+
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
@@ -64,11 +66,10 @@ struct ProductDetailScreen: View {
                     if viewModel.sizeSelectorModel.selectedSize != nil {
                         viewModel.showGoToCart.toggle()
                         viewModel.addToCart()
-                        if viewModel.showError {
-                            viewModel.showError.toggle()
-                        }
                     } else {
-                        viewModel.showError.toggle()
+                        snackerModel.isPresented.toggle()
+                        snackerModel.text = L10n.ProductDetails.buyError
+                        snackerModel.background = Assets.red.swiftUIColor
                     }
                 })
                 .padding(16)
@@ -86,13 +87,7 @@ struct ProductDetailScreen: View {
             }
         }
         .coordinateSpace(name: coordinateSpaceName)
-        .navigationTitle(
-            viewModel.showError ? L10n.ProductDetails.buyError : title
-        )
-        .navigationBarBackground(
-            background: viewModel.showError ? Assets.red.swiftUIColor : Assets.white.swiftUIColor,
-            fontColor: viewModel.showError ? ColorScheme.dark : ColorScheme.light
-        )
+        .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -147,6 +142,6 @@ private struct ScrollOffsetPreferenceKey: PreferenceKey {
                     "Brand: Nike",
                 ]
             )
-        )
+        ), snackerModel: .init()
     )
 }

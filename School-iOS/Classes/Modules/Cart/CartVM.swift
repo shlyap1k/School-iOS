@@ -19,21 +19,9 @@ class CartVM: ObservableObject {
 
     @Published var deliveryDate: Date = .now
 
-    @Published var isCompleted: Bool = false
-
-    func unsetCheckoutCompleted() {
-        appState.state.checkoutCompleted? = false
-    }
-
     func clearCart() {
         cart.products = []
         appState.state.cart = cart
-    }
-
-    func loadIsCompleted() {
-        if let isCompleted = appState.state.checkoutCompleted {
-            self.isCompleted = isCompleted
-        }
     }
 
     func loadCart() {

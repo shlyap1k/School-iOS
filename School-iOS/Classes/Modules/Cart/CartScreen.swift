@@ -9,7 +9,7 @@ import SwiftUI
 // MARK: - CartScreen
 
 struct CartScreen: View {
-    @ObservedObject var viewModel: CartVM = .init()
+    @StateObject var viewModel: CartVM = .init()
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -40,11 +40,7 @@ struct CartScreen: View {
         }
         .placeholder(viewModel.cart.products.isEmpty ? .emptyCart() : nil)
         .onAppear {
-            viewModel.loadIsCompleted()
             viewModel.loadCart()
-        }
-        .onDisappear {
-            viewModel.unsetCheckoutCompleted()
         }
         .navigationDestination(for: CartRoutes.self, destination: { route in
             switch route {
@@ -54,13 +50,7 @@ struct CartScreen: View {
                 CartScreen()
             }
         })
-        .navigationTitle(
-            viewModel.isCompleted ? L10n.Cart.success : L10n.Cart.title
-        )
-        .navigationBarBackground(
-            background: viewModel.isCompleted ? Assets.blackSuccess.swiftUIColor : Assets.white.swiftUIColor,
-            fontColor: viewModel.isCompleted ? ColorScheme.dark : ColorScheme.light
-        )
+        .navigationTitle(L10n.Cart.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

@@ -71,7 +71,6 @@ class CheckoutVM: ObservableObject {
                 DispatchQueue.main.async { [weak self] in
                     self?.resetCart()
                     self?.isLoading = false
-                    self?.appState.state.checkoutCompleted = true
                     onComplete?()
                 }
             case let .failure(reason):

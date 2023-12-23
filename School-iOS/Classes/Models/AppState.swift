@@ -37,5 +37,4 @@ struct AppState: Codable {
     var accessToken: String?
     var profile: Profile?
     var cart: OrderCheckout?
-    var checkoutCompleted: Bool?
 }
