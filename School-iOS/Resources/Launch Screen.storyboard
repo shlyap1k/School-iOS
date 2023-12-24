@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fs1-FR-3oj">
-                                <rect key="frame" x="0.0" y="321.66666666666669" width="393" height="209.00000000000006"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fs1-FR-3oj">
+                                <rect key="frame" x="0.0" y="334" width="279.33333333333331" height="209"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app.logo" translatesAutoresizingMaskIntoConstraints="NO" id="g2w-wZ-HMK">
-                                        <rect key="frame" x="126" y="0.0" width="141" height="141"/>
+                                        <rect key="frame" x="69" y="0.0" width="141" height="141"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="141" id="hCO-5k-Ef4"/>
                                             <constraint firstAttribute="width" constant="141" id="ktF-TX-PpI"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery App" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og0-mt-MDV">
-                                        <rect key="frame" x="57" y="149" width="279.33333333333331" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery App" textAlignment="natural" lineBreakMode="clip" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og0-mt-MDV">
+                                        <rect key="frame" x="0.0" y="149" width="279.33333333333331" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                         <color key="textColor" name="white"/>
                                         <nil key="highlightedColor"/>
@@ -39,8 +39,8 @@
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" name="blue"/>
                         <constraints>
-                            <constraint firstItem="Fs1-FR-3oj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZzR-T8-Vbj"/>
-                            <constraint firstItem="Fs1-FR-3oj" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="lhI-aQ-jRQ" userLabel="Stack View.width = View width"/>
+                            <constraint firstItem="Fs1-FR-3oj" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="YLc-Mb-FXU"/>
+                            <constraint firstItem="Fs1-FR-3oj" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="ZL9-Mz-MCu"/>
                         </constraints>
                     </view>
                 </viewController>
