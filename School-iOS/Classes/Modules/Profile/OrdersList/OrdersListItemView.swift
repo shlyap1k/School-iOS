@@ -36,7 +36,7 @@ struct OrdersListItemView: View {
             HStack {
                 HStack(spacing: -22) {
                     if !order.products.isEmpty {
-                        ForEach(order.products[0 ... min(3, order.products.count - 1)]) { product in
+                        ForEach(order.products[0 ... min(3, order.products.count - 1)], id: \.preview) { product in
                             if let preview = product.preview {
                                 LoadImage(imageUrl: preview)
                                     .frame(width: 44, height: 44)
@@ -115,7 +115,7 @@ struct OrdersListItemView: View {
                     ),
                     .init(
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e64",
-                        preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
+                        preview: "https://cdn.sportmaster.ru/upload/resize_cache/iblock/094/800_800_1/76741660299.jpg",
                         title: "title",
                         size: "M",
                         quantity: 5,
