@@ -29,6 +29,9 @@ struct ProductsListScreen: View {
                                 .multilineTextAlignment(.leading)
                         }
                     }
+                    if let placeholder = viewModel.placeholder, !viewModel.products.isEmpty {
+                        PlaceholderView(model: placeholder)
+                    }
                     if !viewModel.lastPageReached {
                         NextPageLoader(nextPage: viewModel.nextPage)
                     }
@@ -37,7 +40,7 @@ struct ProductsListScreen: View {
             .scrollIndicators(.hidden)
         }
         .isLoading($viewModel.isLoading, $viewModel.isEmpty)
-        .placeholder(viewModel.placeholder)
+        .placeholder(viewModel.products.isEmpty ? viewModel.placeholder : nil)
         .navigationTitle(L10n.ProductsList.title)
         .navigationDestination(for: ProductsListRoutes.self, destination: { route in
             switch route {

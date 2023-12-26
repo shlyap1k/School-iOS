@@ -20,6 +20,9 @@ struct OrdersListScreen: View {
                                 }
                             }
                     }
+                    if let placeholder = viewModel.placeholder, !viewModel.orders.isEmpty {
+                        PlaceholderView(model: placeholder)
+                    }
                     if !viewModel.lastPageReached {
                         NextPageLoader(nextPage: viewModel.nextPage)
                     }
@@ -29,7 +32,7 @@ struct OrdersListScreen: View {
         }
         .padding(16)
         .isLoading($viewModel.isLoading, $viewModel.isEmpty)
-        .placeholder(viewModel.placeholder)
+        .placeholder(viewModel.orders.isEmpty ? viewModel.placeholder : nil)
         .navigationTitle(L10n.OrdersList.title)
         .navigationBarTitleDisplayMode(.inline)
     }
