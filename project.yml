@@ -31,12 +31,12 @@ settings:
       OTHER_SWIFT_FLAGS: -D RELEASE
       SWIFT_COMPILATION_MODE: wholemodule
 targets:
-  Ekf:
+  School:
     type: application
     platform: iOS
     deploymentTarget: 16.0
     info:
-      path: School-iOS/Info.plist
+      path: School-iOS/Resources/Info.plist
       properties:
         NSAppClip:
           NSAppClipRequestEphemeralUserNotification: NO
@@ -65,7 +65,7 @@ targets:
               if [ "${CONFIGURATION}" == "Debug" ]; then
                 export PATH="$PATH:/opt/homebrew/bin"
                 if which mint >/dev/null; then
-                  mint run swiftformat swiftformat School-iOS --quiet --conflictmarkers ignore
+                mint run swiftformat swiftformat School-iOS --quiet --conflictmarkers ignore
                 fi
               fi
             fi

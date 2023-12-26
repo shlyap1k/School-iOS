@@ -34,13 +34,13 @@ struct ProfileScreen: View {
             )
             VStack {
                 NavigationLink(value: ProfileRoutes.ordersList) {
-                    MenuItem(title: L10n.Profile.Menu.ordersList, action: {})
+                    MenuItemView(title: L10n.Profile.Menu.ordersList, action: {})
                         .allowsHitTesting(false)
                 }
                 .overlay(alignment: .bottom) {
                     Divider()
                 }
-                MenuItem(title: L10n.Profile.Menu.logout, action: { isPresented.toggle() })
+                MenuItemView(title: L10n.Profile.Menu.logout, action: { isPresented.toggle() })
             }.padding([.leading, .trailing], 16)
             Spacer()
         }
@@ -59,6 +59,7 @@ struct ProfileScreen: View {
             NavigationLink(value: ProfileRoutes.profileEdit) {
                 Button(action: {}) {
                     Image(.pencil).resizable()
+                        .scaledToFit()
                         .frame(width: 22, height: 22)
                 }
                 .allowsHitTesting(false)

@@ -88,6 +88,8 @@ internal enum L10n {
   internal enum ProductDetails {
     /// Купить
     internal static let buy = L10n.tr("Localizable", "productDetails.buy", fallback: "Купить")
+    /// Выберите размер!
+    internal static let buyError = L10n.tr("Localizable", "productDetails.buyError", fallback: "Выберите размер!")
     /// В корзину
     internal static let cart = L10n.tr("Localizable", "productDetails.cart", fallback: "В корзину")
     /// Размер

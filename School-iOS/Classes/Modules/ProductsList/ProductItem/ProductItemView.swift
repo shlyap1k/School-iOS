@@ -7,18 +7,14 @@ import SwiftUI
 
 // MARK: - ProductItem
 
-struct ProductItem: View {
+struct ProductItemView: View {
     var model: Product
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            AsyncImage(url: URL(string: model.preview)) { image in
-                image.resizable()
-            } placeholder: {
-                LoaderView()
-            }
-            .frame(width: 116, height: 116)
-            .padding(.trailing, 18)
+            LoadImage(imageUrl: model.preview)
+                .frame(width: 116, height: 116)
+                .padding(.trailing, 18)
             VStack(alignment: .leading, spacing: 0) {
                 Text(model.title)
                     .lineLimit(3)
@@ -29,15 +25,14 @@ struct ProductItem: View {
                 Badges(badges: model.badge)
             }
         }
-        .padding([.leading, .trailing], 16)
-        .padding([.top, .bottom], 18)
+        .padding([.leading, .trailing, .top], 16)
+        .padding(.bottom, 18)
     }
 }
 
 #Preview {
-    ProductItem(
-        model:
-        Product(
+    ProductItemView(
+        model: Product(
             id: "aboba",
             title: "Men's Nike J.J. Watt Black Arizona Cardinals Legend Jersey",
             department: "Джерси",

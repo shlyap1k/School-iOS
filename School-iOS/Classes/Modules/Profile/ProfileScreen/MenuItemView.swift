@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct MenuItem: View {
+struct MenuItemView: View {
     var title: String
     var action: (() -> Void) = {}
 
@@ -24,5 +24,5 @@ struct MenuItem: View {
 }
 
 #Preview {
-    MenuItem(title: "aboba", action: {})
+    MenuItemView(title: "aboba", action: {})
 }

@@ -8,10 +8,12 @@ import SwiftUI
 struct TabBar: View {
     // MARK: Internal
 
+    @StateObject var snackerModel: SnackerModel = .init()
+
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack {
-                ProductsListScreen()
+                ProductsListScreen(tabSelection: $selectedTab)
             }
             .tabItem {
                 Image(.catalog)
@@ -40,13 +42,15 @@ struct TabBar: View {
             }
             .tag(TabBarRoutes.profile)
         }
+        .environmentObject(snackerModel)
+        .overlay(alignment: .top) {
+            if snackerModel.isPresented {
+                SnackerView(model: snackerModel)
+            }
+        }
     }
 
     // MARK: Private
 
     @State private var selectedTab: TabBarRoutes = .catalog
 }
-
-// #Preview {
-//    TabBar()
-// }

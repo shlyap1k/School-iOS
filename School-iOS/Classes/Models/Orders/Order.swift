@@ -8,11 +8,11 @@ import Foundation
 // MARK: - Order
 
 struct Order: Decodable {
-    var id: String
-    var number: Int
-    var createdDelivery: Date
-    var dateDelivery: Date?
-    var deliveryAddress: String
-    var status: String
-    var products: [OrderProduct]
+    let id: String
+    let number: Int
+    let createdDelivery: Date
+    let dateDelivery: Date?
+    let deliveryAddress: String
+    let status: OrderStatus
+    let products: [OrderProduct]
 }

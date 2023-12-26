@@ -58,17 +58,17 @@ class UserImageModel: ObservableObject {
 
     private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {
         imageSelection.loadTransferable(type: ProfileImage.self) { result in
-            DispatchQueue.main.async {
-                guard imageSelection == self.imageSelection else {
+            DispatchQueue.main.async { [weak self] in
+                guard imageSelection == self?.imageSelection else {
                     return
                 }
                 switch result {
                 case let .success(profileImage?):
-                    self.imageState = .success(profileImage)
+                    self?.imageState = .success(profileImage)
                 case .success(nil):
-                    self.imageState = .empty
+                    self?.imageState = .empty
                 case let .failure(error):
-                    self.imageState = .failure(error)
+                    self?.imageState = .failure(error)
                 }
             }
         }

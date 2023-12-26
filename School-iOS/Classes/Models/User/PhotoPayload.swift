@@ -6,5 +6,5 @@
 import Foundation
 
 struct PhotoPayload: Encodable {
-    var photo: Data
+    let photo: Data
 }

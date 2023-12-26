@@ -37,9 +37,16 @@ struct ProfileEditScreen: View {
 
             Spacer()
 
+            if viewModel.isSaved {
+                Rectangle()
+                    .hidden()
+                    .onAppear {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            }
+
             StyledButton(isLoading: $viewModel.isLoading, title: L10n.Profile.Edit.action, style: .blue, action: {
                 viewModel.saveProfileChanges()
-                presentationMode.wrappedValue.dismiss()
             })
         }
         .padding(16)

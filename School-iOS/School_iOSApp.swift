@@ -17,6 +17,12 @@ struct SchoolApp: App {
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses?.insert(NFXProtocol.self, at: 0)
         NFX.sharedInstance().start()
+        setupPagecControls()
+        if appState.state.accessToken != nil {
+            _viewState = .init(initialValue: .list)
+        } else {
+            _viewState = .init(initialValue: .auth)
+        }
     }
 
     // MARK: Internal
@@ -54,11 +60,21 @@ struct SchoolApp: App {
     @State private var viewState: ViewState = .auth
 
     @Injected(\.appState) private var appState
+
+    private func setupPagecControls() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .black
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+    }
 }
 
 extension UINavigationController {
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         navigationBar.topItem?.backButtonDisplayMode = .minimal
+
+        var navbarAppearance = UINavigationBarAppearance()
+        navbarAppearance.backgroundColor = .systemBackground
+        navbarAppearance.shadowColor = .clear
+        navigationBar.standardAppearance = navbarAppearance
     }
 }

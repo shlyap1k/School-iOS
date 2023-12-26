@@ -7,10 +7,10 @@ import Foundation
 
 struct OrderProduct: Codable, Identifiable {
     var id: UUID? = UUID()
-    var productId: String
-    var preview: String?
-    var title: String?
-    var size: String
+    let productId: String
+    let preview: String?
+    let title: String?
+    let size: String
     var quantity: Int
-    var price: Double?
+    let price: Double?
 }

@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct OrdersListItem: View {
+struct OrdersListItemView: View {
     // MARK: Internal
 
     @Binding var order: Order
@@ -21,30 +21,31 @@ struct OrdersListItem: View {
                 .lineLimit(1)
 
             switch order.status {
-            case "in_work":
+            case .inWork:
                 if let dateDelivery = order.dateDelivery {
                     Text("\(L10n.OrdersList.delivery) \(dateFormat(dateDelivery))")
                 }
-            case "cancelled":
+            case .cancelled:
                 Text(L10n.OrdersList.cancelled)
             default:
-                Text("")
+                EmptyView()
             }
 
             Text("\(order.deliveryAddress)")
 
             HStack {
                 HStack(spacing: -22) {
-                    ForEach(order.products[0 ... min(3, order.products.count - 1)]) { product in
-                        if let preview = product.preview {
-                            AsyncImage(url: URL(string: preview)) { image in
-                                image.resizable()
+                    if !order.products.isEmpty {
+                        ForEach(order.products[0 ... min(3, order.products.count - 1)], id: \.preview) { product in
+                            if let preview = product.preview {
+                                LoadImage(imageUrl: preview)
                                     .frame(width: 44, height: 44)
                                     .clipShape(Circle())
-                                    .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
-                            } placeholder: {
-                                LoaderView()
-                                    .frame(width: 44, height: 44, alignment: .center)
+                                    .background(
+                                        Circle()
+                                            .foregroundStyle(.white)
+                                            .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+                                    )
                             }
                         }
                     }
@@ -64,13 +65,13 @@ struct OrdersListItem: View {
                 Spacer()
 
                 switch order.status {
-                case "in_work":
+                case .inWork:
                     StyledButton(title: L10n.OrdersList.cancelDelivery, style: .redSmall) {
                         isPresented.toggle()
                     }
                     .frame(width: 120)
                 default:
-                    Text("")
+                    EmptyView()
                 }
             }
         }
@@ -94,7 +95,7 @@ struct OrdersListItem: View {
 }
 
 #Preview {
-    OrdersListItem(
+    OrdersListItemView(
         order: .constant(
             .init(
                 id: "1d2b7c22-7692-418c-9d9d-98c7db686b6e",
@@ -102,10 +103,9 @@ struct OrdersListItem: View {
                 createdDelivery: .now,
                 dateDelivery: .now,
                 deliveryAddress: "string, string",
-                status: "in_work",
+                status: OrderStatus(rawValue: "in_work"),
                 products: [
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e66",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -114,16 +114,14 @@ struct OrdersListItem: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e64",
-                        preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
+                        preview: "https://cdn.sportmaster.ru/upload/resize_cache/iblock/094/800_800_1/76741660299.jpg",
                         title: "title",
                         size: "M",
                         quantity: 5,
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -132,7 +130,6 @@ struct OrdersListItem: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -141,7 +138,6 @@ struct OrdersListItem: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -150,7 +146,6 @@ struct OrdersListItem: View {
                         price: 9000.0
                     ),
                     .init(
-                        id: UUID(),
                         productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
                         preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
                         title: "title",
@@ -158,25 +153,6 @@ struct OrdersListItem: View {
                         quantity: 5,
                         price: 9000.0
                     ),
-
-//                    .init(
-//                        id: UUID(),
-//                        productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
-//                        preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
-//                        title: "title",
-//                        size: "M",
-//                        quantity: 5,
-//                        price: 9000.0
-//                    ),
-//                    .init(
-//                        id: UUID(),
-//                        productId: "061f02a0-8d12-4828-ab33-6b319a367e63",
-//                        preview: "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533150-d9254664c08370f8572c_full.jpg&w=340",
-//                        title: "title",
-//                        size: "M",
-//                        quantity: 5,
-//                        price: 9000.0
-//                    ),
                 ]
             )
         ), cancelOrder: { _ in }, dateFormat: OrdersListVM().dateFormat

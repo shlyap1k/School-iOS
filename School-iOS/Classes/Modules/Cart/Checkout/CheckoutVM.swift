@@ -6,7 +6,7 @@
 import Factory
 import Foundation
 
-class CheckoutFormVM: ObservableObject {
+class CheckoutVM: ObservableObject {
     // MARK: Internal
 
     @Published var houseModel: InputFieldModel = .init(text: "")
@@ -68,16 +68,15 @@ class CheckoutFormVM: ObservableObject {
             let result: RestResult<OrderCheckoutResponse> = await restProvider.make(request)
             switch result {
             case .success:
-                DispatchQueue.main.async {
-                    self.resetCart()
-                    self.isLoading = false
-                    self.appState.state.checkoutCompleted = true
+                DispatchQueue.main.async { [weak self] in
+                    self?.resetCart()
+                    self?.isLoading = false
                     onComplete?()
                 }
             case let .failure(reason):
-                DispatchQueue.main.async {
-                    self.apartmentModel.error = reason.detail.message
-                    self.isLoading = false
+                DispatchQueue.main.async { [weak self] in
+                    self?.apartmentModel.error = reason.detail.message
+                    self?.isLoading = false
                 }
             }
         }

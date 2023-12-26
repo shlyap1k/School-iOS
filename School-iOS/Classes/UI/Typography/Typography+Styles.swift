@@ -6,6 +6,10 @@
 import Foundation
 
 extension Typography {
+    static let regular12 = Typography(
+        uiFont: .systemFont(ofSize: 12, weight: .regular),
+        lineHeight: 22
+    )
     static let regular14 = Typography(
         uiFont: .systemFont(ofSize: 14, weight: .regular),
         lineHeight: 22

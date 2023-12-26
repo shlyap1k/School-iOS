@@ -11,27 +11,15 @@ struct ImagesSlider: View {
     var body: some View {
         TabView {
             ForEach(viewModel.images) { imageModel in
-                AsyncImage(url: URL(string: imageModel.url)) { image in
-                    image.image?
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200)
-                }
+                LoadImage(imageUrl: imageModel.url)
+                    .frame(width: 200, height: 200)
             }
             .frame(maxHeight: .infinity, alignment: .top)
         }
         .tabViewStyle(.page)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .indexViewStyle(.page(backgroundDisplayMode: .never))
-        .onAppear {
-            setupAppearance()
-        }
         .frame(height: 244)
-    }
-
-    func setupAppearance() {
-        UIPageControl.appearance().currentPageIndicatorTintColor = .black
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
     }
 }
 
@@ -42,6 +30,9 @@ struct ImagesSlider: View {
         ),
         ImageModel(
             url: "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+        ),
+        ImageModel(
+            url: "https://.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
         ),
     ]))
 }

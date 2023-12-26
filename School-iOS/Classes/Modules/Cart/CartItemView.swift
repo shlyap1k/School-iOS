@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct CartItem: View {
+struct CartItemView: View {
     @Binding var product: OrderProduct
 
     @State var offset = CGSize.zero
@@ -21,14 +21,9 @@ struct CartItem: View {
 
             HStack(alignment: .top, spacing: 0) {
                 if let preview = product.preview {
-                    AsyncImage(url: URL(string: preview)) {
-                        image in
-                        image.resizable()
-                    } placeholder: {
-                        LoaderView()
-                    }
-                    .frame(width: 116, height: 116)
-                    .padding(.trailing, 18)
+                    LoadImage(imageUrl: preview)
+                        .frame(width: 116, height: 116)
+                        .padding(.trailing, 18)
                 }
 
                 VStack(alignment: .leading, spacing: 0) {
@@ -54,26 +49,26 @@ struct CartItem: View {
             .background(.white)
             .offset(x: offset.width, y: 0)
             .gesture(
-                TapGesture()
-                    .onEnded {
-                        offset = .zero
-                    }
-            )
-            .gesture(
                 DragGesture()
                     .onChanged { gesture in
-                        if gesture.translation.width > -80, gesture.translation.width < 0 {
+                        if (-80 ... 0).contains(gesture.translation.width) {
                             offset = gesture.translation
                         }
                     }
                     .onEnded { _ in
-                        if abs(offset.width) >= 80 {
+                        if offset.width <= -65 {
                             removal(product)
                         } else if abs(offset.width) >= 40 {
                             offset.width = -80
                         } else {
                             offset.width = 0
                         }
+                    }
+            )
+            .gesture(
+                TapGesture()
+                    .onEnded {
+                        offset = .zero
                     }
             )
         }
@@ -83,11 +78,13 @@ struct CartItem: View {
 }
 
 #Preview {
-    CartItem(product: .constant(OrderProduct(
+    CartItemView(product: .constant(OrderProduct(
         productId: "aboba",
         preview: "https://www.recordnet.com/gcdn/presto/2021/03/22/NRCD/9d9dd9e4-e84a-402e-ba8f-daa659e6e6c5-PhotoWord_003.JPG?width=660&height=425&fit=crop&format=pjpg&auto=webp",
         title: "Preview product",
         size: "M",
-        quantity: 3
-    )), removal: { _ in })
+        quantity: 3, price: 9000
+    )), removal: { _ in
+
+    })
 }

@@ -6,6 +6,6 @@
 import Foundation
 
 struct Size: Decodable, Encodable, Hashable {
-    var value: String
-    var isAvailable: Bool
+    let value: String
+    let isAvailable: Bool
 }
